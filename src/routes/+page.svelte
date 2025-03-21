@@ -701,7 +701,7 @@
 	<section class="about-section" id="about">
 		<div class="about-content">
 			<div class="text-container" class:visible={scrollY > 200}>
-				<p class="tagline">THINK IN'INK</p>
+				<p class="tagline">THINK IN INK</p>
 				<p class="description">
 					I create <span class="highlight">immersive experiences</span> that blend technology, 
 					aesthetics, and human perception, transforming spaces into 
@@ -1661,19 +1661,17 @@
 	}
 	
 	.image1 {
-		background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('/images/logotype.svg');
+		background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.05)), url('/images/cards/avperformace.jpg');
 	}
 	
 	.image2 {
-		background-color: #111;
-		background-image: radial-gradient(circle at 30% 40%, #FFE964 5px, transparent 5px),
-						  radial-gradient(circle at 70% 60%, #1A1A1A 8px, transparent 8px);
+		background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.05)), url('/images/cards/interactive.png');
 	}
 	
 	.image3 {
-		background-color: #111;
-		background-image: linear-gradient(45deg, transparent 48%, #FFE964 48%, #FFE964 52%, transparent 52%);
-		background-size: 20px 20px;
+		
+		background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.05)), url('/images/cards/branding.png');
+		
 	}
 	
 	.work-title {

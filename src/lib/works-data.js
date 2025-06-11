@@ -83,10 +83,10 @@ export const worksData = [
     categories: ["Installazione Interattiva", "Arte Digitale"],
     description: "Questa installazione interattiva invita lo spettatore a un viaggio sensoriale che esplora il rapporto tra percezione e distanza, giocando sul confine tra l'astratto e il riconoscibile. Ciò che da lontano appare come una texture indefinita si trasforma, avvicinandosi, in un oggetto reale che riacquista il suo contesto. È un invito a rallentare, a scoprire la bellezza nascosta nell'ordinario e a guardare oltre l'apparenza, ricordandoci che per vedere davvero, occorre fermarsi.",
     shortDescription: "Un'installazione interattiva dove la distanza dello spettatore cambia la percezione visiva, trasformando texture astratte in immagini riconoscibili.",
-    image: "/images/cards/beyond-the-frame.jpg",
+    image: "/images/cards/beyondmockup1.png",
     link: "/works/beyond-the-frame",
     // MODIFICATO: heroMedia
-    heroMedia:  { type: 'image', src: "/images/hero/beyond-the-frame.jpg" },
+    heroMedia:  { type: 'image', src: "/images/cards/beyondmockup1.png" },
     technologies: [
         "TouchDesigner",
         "Arduino",
@@ -104,37 +104,49 @@ export const worksData = [
     solution: "È stato sviluppato un sistema in TouchDesigner che gestisce l'interazione video-prossimità. Utilizzando sensori a ultrasuoni collegati ad Arduino, il sistema rileva la distanza dello spettatore e la mappa a uno specifico momento del video, che è stato post-prodotto per creare una transizione progressiva. L'installazione è stata progettata per essere modulare, utilizzando schermi o proiettori incorniciati per mantenere un'estetica fotografica.",
     // MODIFICATO: gallery
     gallery: [
-        { type: 'image', src: "/images/gallery/btf/immagine1.jpg" },
-        { type: 'image', src: "/images/gallery/btf/immagine2.jpg" },
-        { type: 'image', src: "/images/gallery/btf/immagine3.jpg" }
+        { type: 'image', src: "/images/cards/beyond2.png" },
+        { type: 'image', src: "/images/cards/beyondmockup1.png" },
+        { type: 'image', src: "/images/cards/beyondmockup.png" }
     ]
 },
     {
-        id: 'av-performance',
-        title: "AV Performance",
-        year: 2023,
-        categories: ["Performance", "Arte Digitale"],
-        description: "An immersive audiovisual performance exploring the intersection of sound and visual art, pushing the boundaries of multimedia expression.",
-        shortDescription: "Immersive audiovisual experience blending sound and visuals.",
-        image: "/images/cards/avperformace.jpg",
-        link: "/works/av-performance",
-        // MODIFICATO: heroMedia
-        heroMedia:  { type: 'image', src: "/images/cards/avperformace.jpg" },
-        technologies: ["Ableton Live", "Max/MSP", "TouchDesigner"],
-        keyFeatures: [
-            "Real-time audio-visual synthesis",
-            "Interactive generative graphics",
-            "Adaptive sound landscapes"
+        id: 'symbioglitch',
+        title: "SymbioGlitch - Live VIDEOCITTÀ",
+        year: 2024,
+        categories: ["Live Visuals", "Installazione Immersiva", "Arte Digitale"],
+        description: "Symbioglitch è un'esplorazione artistica profonda del rapporto tra l'umanità e il mondo naturale. Attraverso un collage visivo e sonoro, il progetto si propone di denunciare le contraddizioni e le tensioni di questo dialogo, cercando di trasmettere emozioni complesse e stimolanti allo spettatore. Il montaggio delle immagini sarà randomico, sfruttando la casualità per creare qualcosa di unico e inaspettato, proprio come fa la natura stessa. Contrapponendo riprese di cose apparentemente distanti e non comunicanti, si creano nuovi significati e rivelazioni disturbanti sul rapporto tra l'uomo e la natura. L'estetica di 'Symbioglitch' è caratterizzata da un mix di glitch, oscurità e pessimismo. Utilizzando cambi di scena incalzanti, effetti di movimento distorti e manipolazioni visive, il progetto crea un'esperienza visiva disturbante e incerta, che mira a provocare reazioni viscerali nello spettatore. Si caratterizza per modifiche pesanti e quasi distruttive applicate ai video originali. Attraverso un processo che mira a denaturalizzare e modificare drasticamente il footage originale, si crea un effetto visivo e sonoro che sfida le percezioni convenzionali ed esplora nuove dimensioni del rapporto fra l'uomo e la natura. Questo approccio enfatizza la casualità nel montaggio delle immagini, aggiungendo un ulteriore strato di complessità e imprevedibilità alla narrazione visiva del progetto.",
+        shortDescription: "Performance audiovisiva live che esplora le connessioni distorte tra umanità e natura attraverso estetiche glitch e un montaggio casuale, proiettata su una parete di 25 metri a Videocittà 2024.",
+        image: "/images/cards/avperformace.jpg", // Placeholder - fornire il percorso reale
+        link: "/works/symbioglitch",
+        // NUOVO CAMPO: heroMedia per supportare immagini, video o pdf come elemento principale
+        heroMedia: { type: 'image', src: "/images/cards/avperformace.jpg" }, // Esempio: { type: 'video', src: "/videos/symbioglitch-hero.mp4" }
+        technologies: [
+            "TouchDesigner",
+            "Resolume Arena",
+            "MIDI Controller",
+            "Audio Reactive Systems",
+            "Generative Art"
         ],
-        challenge: "Creating a seamless interaction between audio and visual elements in real-time.",
-        solution: "Developed a custom performance system using modular software that allows dynamic audio-visual mapping.",
-        // MODIFICATO: gallery
+        keyFeatures: [
+            "Generazione e manipolazione live di contenuti visuali tramite TouchDesigner.",
+            "Projection mapping e fusione dei contenuti in tempo reale con Resolume Arena su una parete di 25 metri.",
+            "Controllo interattivo dei parametri visuali tramite MIDI controller.",
+            "Montaggio casuale di immagini e suoni per output unici e inaspettati.",
+            "Accostamento di elementi disparati per creare nuovi significati.",
+            "Esperienza visiva disturbante e incerta volta a provocare reazioni viscerali.",
+            "Modifiche visive pesanti e distruttive del footage originale."
+        ],
+        challenge: "La sfida principale era trasmettere efficacemente le 'connessioni distorte tra umanità e natura' attraverso un'estetica di glitch, oscurità e pessimismo, richiedendo significative modifiche e un montaggio casuale degli elementi visivi e sonori per sfidare le percezioni convenzionali. Tecnicamente, l'integrazione di TouchDesigner per i visual generativi con Resolume Arena per il projection mapping su una grande parete di 25 metri, il tutto controllato in tempo reale via MIDI, ha richiesto una robusta sincronizzazione e ottimizzazione.",
+        solution: "Il progetto ha utilizzato una pipeline visuale live robusta. TouchDesigner è stato impiegato per creare il contenuto visuale generativo e pesantemente modificato, che è stato poi inviato a Resolume Arena per una fusione e un projection mapping senza soluzione di continuità sulla parete di 25 metri. Il controllo in tempo reale e la manipolazione dinamica dei parametri visuali sono stati ottenuti tramite controller MIDI, consentendo una performance live fluida e reattiva. La collaborazione con sound designer ha assicurato un'esperienza audiovisiva coesa.",
+        // NUOVO CAMPO: gallery che è un array di oggetti per supportare immagini, video o pdf
         gallery: [
+            { type: 'image', src: "/images/cards/avperformace.jpg" }, // Esempio: { type: 'video', src: "/videos/symbioglitch-clip1.mp4" }
+            { type: 'video', src: "/images/cards/avperformace.jpg" }, // Esempio di video nella galleria
             { type: 'image', src: "/images/cards/avperformace.jpg" },
-            { type: 'image', src: "/images/cards/avperformace.jpg" },
-            { type: 'image', src: "/images/cards/avperformace.jpg" }
+            { type: 'pdf', src: "/documents/symbioglitch-overview.pdf" } // Esempio di PDF nella galleria
         ]
     },
+    
     {
         id: 'brand-identity',
         title: "Brand Identity Design",
@@ -188,43 +200,7 @@ export const worksData = [
         ]
     },
     // Nuovo progetto SymbioGlitch con la nuova struttura
-    {
-        id: 'symbioglitch',
-        title: "SymbioGlitch",
-        year: 2024,
-        categories: ["Live Visuals", "Installazione Immersiva", "Arte Digitale"],
-        description: "Symbioglitch è un'esplorazione artistica profonda del rapporto tra l'umanità e il mondo naturale. Attraverso un collage visivo e sonoro, il progetto si propone di denunciare le contraddizioni e le tensioni di questo dialogo, cercando di trasmettere emozioni complesse e stimolanti allo spettatore. Il montaggio delle immagini sarà randomico, sfruttando la casualità per creare qualcosa di unico e inaspettato, proprio come fa la natura stessa. Contrapponendo riprese di cose apparentemente distanti e non comunicanti, si creano nuovi significati e rivelazioni disturbanti sul rapporto tra l'uomo e la natura. L'estetica di 'Symbioglitch' è caratterizzata da un mix di glitch, oscurità e pessimismo. Utilizzando cambi di scena incalzanti, effetti di movimento distorti e manipolazioni visive, il progetto crea un'esperienza visiva disturbante e incerta, che mira a provocare reazioni viscerali nello spettatore. Si caratterizza per modifiche pesanti e quasi distruttive applicate ai video originali. Attraverso un processo che mira a denaturalizzare e modificare drasticamente il footage originale, si crea un effetto visivo e sonoro che sfida le percezioni convenzionali ed esplora nuove dimensioni del rapporto fra l'uomo e la natura. Questo approccio enfatizza la casualità nel montaggio delle immagini, aggiungendo un ulteriore strato di complessità e imprevedibilità alla narrazione visiva del progetto.",
-        shortDescription: "Un'immersiva performance audiovisiva live che esplora le connessioni distorte tra umanità e natura attraverso estetiche glitch e un montaggio casuale, controllata via TouchDesigner, Resolume Arena, e MIDI controllers, e proiettata su una parete di 25 metri a Videocittà 2024.",
-        image: "/images/cards/symbioglitch.jpg", // Placeholder - fornire il percorso reale
-        link: "/works/symbioglitch",
-        // NUOVO CAMPO: heroMedia per supportare immagini, video o pdf come elemento principale
-        heroMedia: { type: 'image', src: "/images/hero/symbioglitch-hero.jpg" }, // Esempio: { type: 'video', src: "/videos/symbioglitch-hero.mp4" }
-        technologies: [
-            "TouchDesigner",
-            "Resolume Arena",
-            "MIDI Controller",
-            "Audio Reactive Systems",
-            "Generative Art"
-        ],
-        keyFeatures: [
-            "Generazione e manipolazione live di contenuti visuali tramite TouchDesigner.",
-            "Projection mapping e fusione dei contenuti in tempo reale con Resolume Arena su una parete di 25 metri.",
-            "Controllo interattivo dei parametri visuali tramite MIDI controller.",
-            "Montaggio casuale di immagini e suoni per output unici e inaspettati.",
-            "Accostamento di elementi disparati per creare nuovi significati.",
-            "Esperienza visiva disturbante e incerta volta a provocare reazioni viscerali.",
-            "Modifiche visive pesanti e distruttive del footage originale."
-        ],
-        challenge: "La sfida principale era trasmettere efficacemente le 'connessioni distorte tra umanità e natura' attraverso un'estetica di glitch, oscurità e pessimismo, richiedendo significative modifiche e un montaggio casuale degli elementi visivi e sonori per sfidare le percezioni convenzionali. Tecnicamente, l'integrazione di TouchDesigner per i visual generativi con Resolume Arena per il projection mapping su una grande parete di 25 metri, il tutto controllato in tempo reale via MIDI, ha richiesto una robusta sincronizzazione e ottimizzazione.",
-        solution: "Il progetto ha utilizzato una pipeline visuale live robusta. TouchDesigner è stato impiegato per creare il contenuto visuale generativo e pesantemente modificato, che è stato poi inviato a Resolume Arena per una fusione e un projection mapping senza soluzione di continuità sulla parete di 25 metri. Il controllo in tempo reale e la manipolazione dinamica dei parametri visuali sono stati ottenuti tramite controller MIDI, consentendo una performance live fluida e reattiva. La collaborazione con sound designer ha assicurato un'esperienza audiovisiva coesa.",
-        // NUOVO CAMPO: gallery che è un array di oggetti per supportare immagini, video o pdf
-        gallery: [
-            { type: 'image', src: "/images/gallery/symbioglitch/image1.jpg" }, // Esempio: { type: 'video', src: "/videos/symbioglitch-clip1.mp4" }
-            { type: 'video', src: "/videos/symbioglitch-clip2.mp4" }, // Esempio di video nella galleria
-            { type: 'image', src: "/images/gallery/symbioglitch/image3.jpg" },
-            { type: 'pdf', src: "/documents/symbioglitch-overview.pdf" } // Esempio di PDF nella galleria
-        ]
-    }
+    
 ];
 
 // Function to get a work by its ID

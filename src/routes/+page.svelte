@@ -721,11 +721,11 @@
 					<div class="card-front">
 						<div class="work-image image1"></div>
 						<div class="work-title">
-							<h3>Live Visual Performance</h3>
+							<h3>Interactive Installations</h3>
 						</div>
 					</div>
 					<div class="card-back">
-						<p>Real-time visual performance system for live music events</p>
+						<p>Creative Direction for Installations</p>
 						<a href="/works" class="view-btn">View Work</a>
 					</div>
 				</div>
@@ -736,11 +736,11 @@
 					<div class="card-front">
 						<div class="work-image image2"></div>
 						<div class="work-title">
-							<h3>Interactive Installation</h3>
+							<h3>Live Visual Performance</h3>
 						</div>
 					</div>
 					<div class="card-back">
-						<p>Motion-reactive projection mapping installation</p>
+						<p>Real-time visual performance system for live music events</p>
 						<a href="/works" class="view-btn">View Work</a>
 					</div>
 				</div>
@@ -1661,16 +1661,16 @@
 	}
 	
 	.image1 {
-		background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.05)), url('/images/cards/avperformace.jpg');
+		background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.05)), url('/images/cards/kollateral4.png');
 	}
 	
 	.image2 {
-		background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.05)), url('/images/cards/interactive.png');
+		background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.05)), url('/images/cards/avperformace.jpg');
 	}
 	
 	.image3 {
 		
-		background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.05)), url('/images/cards/branding.png');
+		background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.05)), url('/images/cards/forum.png');
 		
 	}
 	

@@ -1,15 +1,15 @@
 export const worksData = [
     {
     id: 'forum-archive-reverie',
-    title: "Forum - Archive Reverie",
+    title: "FORUM - ARCHIVE REVERIE",
     year: 2025,
     categories: ["Installazione Immersiva", "Web 3D", "Performance"],
     description: "Per il 55° anniversario dei Forum Studios, Archive Reverie affronta la sfida di rivitalizzare l'archivio storico, superando la logica del database statico. La visione trasforma il patrimonio dello studio in un paesaggio memoriale da esplorare liberamente, un ambiente evocativo dove frammenti sonori e visivi diventano echi di una memoria viva, incentivando la scoperta casuale e rendendo l'utente autore della propria esperienza.",
     shortDescription: "Un ecosistema interattivo che trasforma l'archivio storico dei Forum Studios in un paesaggio memoriale 3D esplorabile.",
     image: "/images/cards/forum.png",
     link: "/works/forum-archive-reverie",
-    // MODIFICATO: heroMedia ora è un oggetto con tipo e src
-    heroMedia:  { type: 'video', src: "/images/TRAILER_meg.mp4" },
+    // MODIFICATO: heroMedia ora punta a Vimeo con il suo ID
+    heroMedia: { type: 'vimeo', videoId: '1096516384' },
     technologies: [
         "React",
         "Three.js (@react-three/fiber)",
@@ -32,7 +32,6 @@ export const worksData = [
     ],
     challenge: "La sfida principale era rivitalizzare un archivio storico superando la logica del database statico. Tecnicamente, si trattava di trattare tre superfici video non sincronizzate come un'unica, continua tela visiva, e di creare un sistema performativo e flessibile per la manipolazione dei contenuti.",
     solution: "È stato sviluppato un ecosistema interconnesso con cinque output. La soluzione centrale è una web app 3D che presenta l'archivio come una costellazione di contenuti. Un tool di creazione custom  e una pipeline di rendering offline  permettono di usare l'archivio come strumento creativo ('Archive-as-Instrument'), garantendo coerenza tra l'esperienza web, la video-installazione e le performance live.",
-    // MODIFICATO: gallery ora è un array di oggetti con tipo e src
     figmaEmbedUrl: "https://embed.figma.com/proto/UmqXbICxnNZsk3brOajAHn/FORUM?page-id=1741%3A20&node-id=2027-126&viewport=1269%2C60631%2C0.51&scaling=min-zoom&content-scaling=fixed&embed-host=share",
     gallery: [
         { type: 'image', src: "/images/gallery/forum/immagine1.jpg" },
@@ -42,15 +41,14 @@ export const worksData = [
 },
 {
     id: 'kollateral',
-    title: "Kollateral",
+    title: "KOLLATERAL",
     year: 2025,
     categories: ["Installazione Interattiva", "Arte Audiovisiva"],
     description: "Kollateral esplora la luce come forza vitale che persiste oltre il trauma. Un telo sospeso, segnato da bruciature e lacerazioni, diventa il punto in cui questa energia si manifesta. Mosso dal suono, il tessuto si contrae e respira, diventando un corpo animato da un impulso vitale che trasforma la lacerazione in possibilità. La luce non è ostacolata dalla ferita: è proprio da lì che emerge.",
     shortDescription: "Un prototipo di installazione dove un telo lacerato, mosso dal suono, diventa un corpo che respira, lasciando emergere la luce dalle sue ferite.",
     image: "/images/cards/kollateral4.png",
     link: "/works/kollateral",
-    // MODIFICATO: heroMedia
-    heroMedia:  { type: 'video', src: "/images/cards/MAIN_16-9.mp4" },
+    heroMedia: { type: 'youtube', videoId: 'VYWhh3v2-LU' },
     technologies: [
         "TouchDesigner",
         "Ableton Live",
@@ -65,11 +63,11 @@ export const worksData = [
         "Illuminazione dinamica con teste mobili controllate via DMX e integrate in TouchDesigner.",
         "Gestione delle sequenze e degli atti dell'opera tramite trigger MIDI inviati da Ableton a TouchDesigner."
     ],
+    figmaEmbedUrl: "https://embed.figma.com/proto/k0GTgBcvxZax45PHgdhmGG/KOLLATERAL-%7C-SUBVIRAL?page-id=128%3A221&node-id=128-312&embed-host=share",
     challenge: "La sfida progettuale è stata quella di dare vita al concetto di un 'corpo che respira' attraverso un telo inanimato. Tecnicamente, ciò ha richiesto la creazione di una perfetta sincronia tra la composizione sonora, il movimento fisico del telo (indotto dai ventilatori) e l'illuminazione dinamica, per trasformare una lacerazione da semplice danno a un punto di passaggio per la luce.",
     solution: "È stato sviluppato un sistema integrato che collega Ableton Live a TouchDesigner. Ableton gestisce la traccia audio e l'invio di trigger MIDI per la progressione delle scene. TouchDesigner riceve i dati per controllare in tempo reale sia l'attivazione dei ventilatori che muovono il telo, sia il colore e il movimento delle luci (via DMX), creando un'esperienza immersiva e coesa dove suono, luce e materia sono indissolubilmente legati.",
-    // MODIFICATO: gallery
     gallery: [
-        { type: 'pdf', src: "/images/cards/KOLLATERAL.pdf" },
+        
         { type: 'image', src: "/images/cards/kollateral1.png" },
         { type: 'image', src: "/images/cards/kollateral4.png" },
         { type: 'image', src: "/images/cards/kollateral2.png" },
@@ -79,15 +77,15 @@ export const worksData = [
 },
 {
     id: 'beyond-the-frame',
-    title: ":Beyond the Frame",
+    title: ":BEYOND THE FRAME",
     year: 2024,
     categories: ["Installazione Interattiva", "Arte Digitale"],
     description: "Questa installazione interattiva invita lo spettatore a un viaggio sensoriale che esplora il rapporto tra percezione e distanza, giocando sul confine tra l'astratto e il riconoscibile. Ciò che da lontano appare come una texture indefinita si trasforma, avvicinandosi, in un oggetto reale che riacquista il suo contesto. È un invito a rallentare, a scoprire la bellezza nascosta nell'ordinario e a guardare oltre l'apparenza, ricordandoci che per vedere davvero, occorre fermarsi.",
     shortDescription: "Un'installazione interattiva dove la distanza dello spettatore cambia la percezione visiva, trasformando texture astratte in immagini riconoscibili.",
     image: "/images/cards/beyondmockup1.png",
     link: "/works/beyond-the-frame",
-    // MODIFICATO: heroMedia
-    heroMedia:  { type: 'image', src: "/images/cards/beyondmockup1.png" },
+    figmaEmbedUrl:"https://embed.figma.com/proto/0uWNVAvqtuqKGO1g3as7jJ/Beyond-the-Frame?page-id=0%3A1&node-id=0-3&embed-host=share",
+    heroMedia: { type: 'image', src: "/images/cards/beyondmockup1.png" },
     technologies: [
         "TouchDesigner",
         "Arduino",
@@ -103,7 +101,6 @@ export const worksData = [
     ],
     challenge: "La sfida consisteva nel creare una transizione fluida e tecnicamente stabile tra la texture astratta e il soggetto finale, basata sulla posizione esatta dello spettatore. Questo ha richiesto un'attenta fase di test e ottimizzazione per calibrare la risposta del sensore, la reattività del video e assicurare una transizione senza ritardi o scatti.",
     solution: "È stato sviluppato un sistema in TouchDesigner che gestisce l'interazione video-prossimità. Utilizzando sensori a ultrasuoni collegati ad Arduino, il sistema rileva la distanza dello spettatore e la mappa a uno specifico momento del video, che è stato post-prodotto per creare una transizione progressiva. L'installazione è stata progettata per essere modulare, utilizzando schermi o proiettori incorniciati per mantenere un'estetica fotografica.",
-    // MODIFICATO: gallery
     gallery: [
         { type: 'image', src: "/images/cards/beyond2.png" },
         { type: 'image', src: "/images/cards/beyondmockup1.png" },
@@ -112,7 +109,7 @@ export const worksData = [
 },
 {
     id: 'symbioglitch',
-    title: "SymbioGlitch - Live VIDEOCITTÀ",
+    title: "SYMBIOGLITCH - VIDEOCITTÀ 2024",
     year: 2024,
     categories: ["Live Visuals", "Installazione Immersiva", "Arte Digitale"],
     description: "Symbioglitch è un'esplorazione artistica profonda del rapporto tra l'umanità e il mondo naturale. Attraverso un collage visivo e sonoro, il progetto si propone di denunciare le contraddizioni e le tensioni di questo dialogo, cercando di trasmettere emozioni complesse e stimolanti allo spettatore. Il montaggio delle immagini sarà randomico, sfruttando la casualità per creare qualcosa di unico e inaspettato, proprio come fa la natura stessa. Contrapponendo riprese di cose apparentemente distanti e non comunicanti, si creano nuovi significati e rivelazioni disturbanti sul rapporto tra l'uomo e la natura. L'estetica di 'Symbioglitch' è caratterizzata da un mix di glitch, oscurità e pessimismo. Utilizzando cambi di scena incalzanti, effetti di movimento distorti e manipolazioni visive, il progetto crea un'esperienza visiva disturbante e incerta, che mira a provocare reazioni viscerali nello spettatore. Si caratterizza per modifiche pesanti e quasi distruttive applicate ai video originali. Attraverso un processo che mira a denaturalizzare e modificare drasticamente il footage originale, si crea un effetto visivo e sonoro che sfida le percezioni convenzionali ed esplora nuove dimensioni del rapporto fra l'uomo e la natura. Questo approccio enfatizza la casualità nel montaggio delle immagini, aggiungendo un ulteriore strato di complessità e imprevedibilità alla narrazione visiva del progetto.",
@@ -145,54 +142,8 @@ export const worksData = [
         { type: 'pdf', src: "/documents/symbioglitch-overview.pdf" }
     ]
 },
-{
-    id: 'brand-identity',
-    title: "Brand Identity Design",
-    year: 2022,
-    categories: ["Branding", "Design"],
-    description: "Comprehensive brand identity design for an innovative tech startup, focusing on modern minimalism and cutting-edge visual communication.",
-    shortDescription: "Minimalist brand identity for a forward-thinking tech company.",
-    image: "/images/cards/branding.png",
-    link: "/works/brand-identity",
-    heroMedia: { type: 'image', src: "/images/cards/branding.png" },
-    technologies: ["Adobe Illustrator", "Adobe Photoshop", "Figma"],
-    keyFeatures: [
-        "Cohesive visual language",
-        "Adaptable logo system",
-        "Modern color palette"
-    ],
-    challenge: "Creating a unique visual identity that stands out in a competitive tech landscape.",
-    solution: "Developed a flexible branding system with a clean, futuristic aesthetic.",
-    gallery: [
-        { type: 'image', src: "/images/cards/branding.png" },
-        { type: 'image', src: "/images/cards/branding.png" },
-        { type: 'image', src: "/images/cards/branding.png" }
-    ]
-},
-{
-    id: 'interactive-installation',
-    title: "Interactive Digital Installation",
-    year: 2023,
-    categories: ["Installazione Interattiva", "Arte Digitale"],
-    description: "An interactive digital art installation that responds to audience movement and engagement, creating a dynamic and immersive experience.",
-    shortDescription: "Responsive digital art installation with audience interaction.",
-    image: "/images/cards/interactive.png",
-    link: "/works/interactive-installation",
-    heroMedia: { type: 'image', src: "/assets/img/1730732511970-Untitled design 2 2.png" },
-    technologies: ["openFrameworks", "Kinect", "Arduino"],
-    keyFeatures: [
-        "Motion-responsive visuals",
-        "Real-time audience interaction",
-        "Generative art system"
-    ],
-    challenge: "Creating an intuitive and engaging interactive experience.",
-    solution: "Developed a responsive system using motion tracking and generative graphics.",
-    gallery: [
-        { type: 'image', src: "/images/cards/interactive.png" },
-        { type: 'image', src: "/images/cards/interactive.png" },
-        { type: 'image', src: "/images/cards/interactive.png" }
-    ]
-},
+
+
 // --- NUOVI PROGETTI DA COMPILARE ---
 {
     id: 'bmw-reignite-the-pleasure',
@@ -205,6 +156,7 @@ export const worksData = [
     link: '/works/bmw-reignite-the-pleasure',
     heroMedia: { type: 'image', src: '/images/hero/bmw-reignite-the-pleasure.png' },
     technologies: ['Tecnologia 1'],
+    figmaEmbedUrl:"https://embed.figma.com/proto/VJKiZCYc869sU3yl3mW5a0/BMW?page-id=370%3A249&node-id=286-8&scaling=scale-down&content-scaling=fixed&embed-host=share",
     keyFeatures: ['Caratteristica 1'],
     challenge: 'Sfida da inserire.',
     solution: 'Soluzione da inserire.',
@@ -222,6 +174,7 @@ export const worksData = [
     heroMedia: { type: 'image', src: '/images/hero/circularthub.png' },
     technologies: ['Tecnologia 1'],
     keyFeatures: ['Caratteristica 1'],
+    figmaEmbedUrl:"https://embed.figma.com/proto/0uWNVAvqtuqKGO1g3as7jJ/Beyond-the-Frame?page-id=0%3A1&node-id=0-3&embed-host=share",
     challenge: 'Sfida da inserire.',
     solution: 'Soluzione da inserire.',
     gallery: [{ type: 'image', src: '/images/gallery/circularthub/1.png' }]
@@ -308,18 +261,19 @@ export const worksData = [
 },
 {
     id: 'vinted-non-mi-metti',
-    title: 'VINTED - NON MI METTI',
+    title: 'VINTED - NON MI METTI?',
     year: 2025,
     categories: ['Placeholder'],
     description: 'Descrizione completa da inserire.',
     shortDescription: 'Descrizione breve da inserire.',
     image: '/images/cards/vinted-non-mi-metti.png',
     link: '/works/vinted-non-mi-metti',
-    heroMedia: { type: 'image', src: '/images/hero/vinted-non-mi-metti.png' },
+    heroMedia: { type: 'youtube', videoId: 'y5pSa9Mp-qg' },
     technologies: ['Tecnologia 1'],
     keyFeatures: ['Caratteristica 1'],
     challenge: 'Sfida da inserire.',
     solution: 'Soluzione da inserire.',
+    figmaEmbedUrl:"https://embed.figma.com/proto/7mD2tcVCpDlpjDgzdq7nXy/Vinted?page-id=191%3A65&node-id=232-139&embed-host=share",
     gallery: [{ type: 'image', src: '/images/gallery/vinted-non-mi-metti/1.png' }]
 },
 {
@@ -347,7 +301,7 @@ export const worksData = [
     shortDescription: 'Descrizione breve da inserire.',
     image: '/images/cards/friends-in-my-head.png',
     link: '/works/friends-in-my-head',
-    heroMedia: { type: 'image', src: '/images/hero/friends-in-my-head.png' },
+    heroMedia: { type: 'vimeo', videoId: '1097622993' },
     technologies: ['Tecnologia 1'],
     keyFeatures: ['Caratteristica 1'],
     challenge: 'Sfida da inserire.',
@@ -363,7 +317,7 @@ export const worksData = [
     shortDescription: 'Descrizione breve da inserire.',
     image: '/images/cards/one-of-these-days.png',
     link: '/works/one-of-these-days',
-    heroMedia: { type: 'image', src: '/images/hero/one-of-these-days.png' },
+    heroMedia: { type: 'youtube', videoId: 'AmHK1_hq3cQ' },
     technologies: ['Tecnologia 1'],
     keyFeatures: ['Caratteristica 1'],
     challenge: 'Sfida da inserire.',
@@ -395,7 +349,8 @@ export const worksData = [
     shortDescription: 'Descrizione breve da inserire.',
     image: '/images/cards/subviral.png',
     link: '/works/subviral',
-    heroMedia: { type: 'image', src: '/images/hero/subviral.png' },
+    heroMedia: { type: 'vimeo', videoId: '1093522831' },
+    figmaEmbedUrl: "https://embed.figma.com/proto/k0GTgBcvxZax45PHgdhmGG/KOLLATERAL-%7C-SUBVIRAL?page-id=186%3A115&node-id=186-353&viewport=482%2C221%2C0.18&scaling=contain&content-scaling=fixed&embed-host=share",
     technologies: ['Tecnologia 1'],
     keyFeatures: ['Caratteristica 1'],
     challenge: 'Sfida da inserire.',

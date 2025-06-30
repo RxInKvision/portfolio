@@ -3,6 +3,7 @@
 	import { goto } from '$app/navigation';
 	import { worksData } from '$lib/works-data';
 	
+	
 	let ready = false;
 	let scrollY = 0;
 	let mouseX = 0;

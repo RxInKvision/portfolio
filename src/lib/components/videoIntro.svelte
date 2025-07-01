@@ -118,6 +118,6 @@
         background-color: rgba(255,255,255,0.1);
     }
     .play-button svg {
-        transform: translateX(4px); /* Centra l'icona del play */
+        transform: translateX(4px); /* Centra l'icona del playuuuu */
     }
 </style>

@@ -1,87 +1,61 @@
-/* RxInK Portfolio Global Styles */
+/* src/app.css */
 
+/* Import del font per tutto il sito */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap');
+
+/* Variabili Globali per il Tema Scuro */
 :root {
-	--rxink-yellow: #FFE964;
-	--rxink-black: #1A1A1A;
-	--rxink-dark-gray: #494949;
-	--rxink-white: #FFFFFF;
-	--rxink-green: #62A87C;
-	
-	--font-primary: 'ABC Favorit Mono', 'Arial', sans-serif;
-	
-	--transition-standard: all 0.3s ease;
-  }
-  
-  * {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-  }
-  
-  body {
-	font-family: var(--font-primary);
-	background-color: var(--rxink-yellow);
-	color: var(--rxink-black);
-	line-height: 1.6;
-	overflow-x: hidden;
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-	font-weight: bold;
-	line-height: 1.2;
-  }
-  
-  a {
-	color: inherit;
-	text-decoration: none;
-  }
-  
-  img {
-	max-width: 100%;
-	height: auto;
-	display: block;
-  }
-  
-  button {
-	font-family: inherit;
-	cursor: pointer;
-  }
-  
-  .container {
-	width: 100%;
-	max-width: 1200px;
-	margin: 0 auto;
-	padding: 0 2rem;
-  }
-  
-  /* Utility Classes */
-  .text-center {
-	text-align: center;
-  }
-  
-  .mt-1 { margin-top: 0.5rem; }
-  .mt-2 { margin-top: 1rem; }
-  .mt-3 { margin-top: 1.5rem; }
-  .mt-4 { margin-top: 2rem; }
-  .mt-5 { margin-top: 2.5rem; }
-  
-  .mb-1 { margin-bottom: 0.5rem; }
-  .mb-2 { margin-bottom: 1rem; }
-  .mb-3 { margin-bottom: 1.5rem; }
-  .mb-4 { margin-bottom: 2rem; }
-  .mb-5 { margin-bottom: 2.5rem; }
-  
-  /* Responsive Adjustments */
-  @media (max-width: 768px) {
-	h1 {
-	  font-size: 2rem;
-	}
-	
-	h2 {
-	  font-size: 1.8rem;
-	}
-	
-	.container {
-	  padding: 0 1rem;
-	}
-  }
+    --page-bg: #111;
+    --page-text: #FFE964;
+    --page-secondary-text: #C4C4C4;
+    --page-accent: #4A8D65;
+    
+    /* Imposta il font di base per tutto il sito */
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+/* Stili di base del Body */
+body {
+    background-color: var(--page-bg);
+    color: var(--page-text);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    margin: 0;
+}
+
+/* Stili generici per i link */
+a {
+    color: var(--page-accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--page-text);
+}
+
+/* src/app.css */
+
+/* ... (tutti gli stili che hai già) ... */
+
+
+/* --- NUOVO: Stili per Animazioni Globali --- */
+
+/* Stato iniziale degli elementi da animare */
+.animatable {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Stato finale quando l'elemento diventa visibile */
+.animatable.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Applica un leggero ritardo a elementi multipli per un effetto a cascata */
+.animatable:nth-child(2) { transition-delay: 0.1s; }
+.animatable:nth-child(3) { transition-delay: 0.2s; }
+.animatable:nth-child(4) { transition-delay: 0.3s; }
+/* ... puoi continuare se necessario ... */

@@ -1,6 +1,7 @@
 <script>
     import { onMount } from 'svelte';
-    
+    import { animate } from '$lib/actions/animate.js';
+
     let ready = false;
     let scrollY = 0;
     let mouseX = 0;
@@ -19,6 +20,7 @@
     onMount(() => {
         document.documentElement.style.setProperty('--background-color', '#111');
         document.documentElement.style.setProperty('--text-color', '#FFE964');
+        document.documentElement.style.setProperty('--page-secondary-text', '#C4C4C4');
         
         if (pageContainer) {
             pageContainer.classList.add('dark-mode');
@@ -27,7 +29,6 @@
         const allLogos = document.querySelectorAll('.responsive-svg');
         allLogos.forEach(logo => {
             logo.classList.add('on-dark');
-            logo.classList.remove('on-light');
         });
         
         setupSmoothAnimations();
@@ -86,26 +87,6 @@
 <svelte:head>
     <title>About | Riccardo Pichi</title>
     <meta name="description" content="About Riccardo Pichi - Media Designer and Visual Artist" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
-    <style>
-        body {
-            background-color: var(--background-color) !important;
-            color: var(--text-color) !important;
-            transition: background-color 0.05s ease, color 0.05s ease !important;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        h1, h2, h3, p, a {
-            transition: color 0.00s ease !important;
-        }
-    </style>
 </svelte:head>
 
 <svelte:window bind:scrollY on:mousemove={handleMouseMove}/>
@@ -132,12 +113,11 @@
         </ul>
     </nav>
     
-    <div class="about-container appear always-visible">
-        <div class="about-sidebar">
+    <div class="about-container">
+        <div class="about-sidebar animatable" use:animate>
             <div class="profile-section">
                 <div class="profile-image-container">
                     <img src="/images/profile/riccardo-pichi.jpg" alt="Riccardo Pichi" class="profile-image" />
-                    <div class="profile-accent"></div>
                 </div>
                 
                 <div class="sidebar-section">
@@ -169,7 +149,7 @@
         </div>
         
         <div class="about-content">
-            <div class="page-header">
+            <div class="page-header animatable" use:animate>
                 <div class="name-container">
                     <h1>RICCARDO PICHI</h1>
                     <div class="position-text">MEDIA DESIGNER | VISUAL ARTIST</div>
@@ -178,44 +158,44 @@
             </div>
             
             <div class="story-section">
-                <h2 class="section-title">PROFILE</h2>
+                <h2 class="section-title animatable" use:animate>PROFILE</h2>
                 
                 <div class="story-content">
-                    <p class="narrative">
-                        My relationship with technology has always been about creation. Growing up in Rome, I spent less time playing games and more time using computers as tools to build, design, and bring ideas to life. This hands-on, multidisciplinary curiosity has defined my entire path.
+                    <p class="narrative animatable" use:animate>
+                        My work lies at the intersection of <span class="fw-bold">art, technology, and space</span>. Since childhood, I’ve used computers not just for consumption, but as tools for creation. This hands-on approach across <span class="fw-regular-italic">both physical and digital media</span> has been the foundation of my practice.
                     </p>
                     
-                    <div class="story-block">
+                    <div class="story-block animatable" use:animate>
                         <p>
-                            It led me to IED Rome, where I recently graduated with top honors (110/110) in <span class="highlight">Media Design and New Technologies for Art</span>. The program was a perfect fit for my eclectic, easily-bored nature, allowing me to dive into a wide range of stimuli and outputs—from code and motion graphics to physical installations.
+                            This path naturally led me to IED Rome, where I recently graduated with honors (110/110) in <span class="fw-medium">Media Design and New Technologies for Art</span>. The program was the perfect fit for my eclectic and restless nature, allowing me to dive into a wide range of outputs: <span class="fw-light">from video clips, motion graphics, and VFX to dynamic websites, app prototypes, and large-scale multimedia installations.</span>
                         </p>
                     </div>
 
-                    <div class="journey-milestone">
+                    <div class="journey-milestone animatable" use:animate>
                         <div class="milestone-dot"></div>
                         <div class="milestone-content">
                             <h3>From Theory to Practice</h3>
                             <p>
-                                My education has been intensely practical. I've had the opportunity to handle everything from video clips, VFX, and logo design to dynamic websites and app prototypes. I thrive on turning theory into tangible results, which has led me to perform live audioreactive visuals at major events like <span class="highlight">Videocittà 2024</span> (with Alice Felloni) and at renowned venues such as Spazio900.
+                                My education has been intensely practical. I thrive on turning theory into tangible results, which has led me to perform live, creating audioreactive visuals for major events like <span class="fw-medium">Videocittà 2024</span> (with Alice Felloni) and at renowned venues such as <span class="fw-medium">Spazio900</span>.
                             </p>
                             <p style="margin-top: 1rem;">
-                                These high-pressure environments taught me to be methodical and adaptable. And, of course, I love seeing my work on a massive LED wall.
+                                These high-pressure environments taught me to be methodical and adaptable. And, of course, there's a unique satisfaction in seeing your work command a massive LED wall.
                             </p>
                         </div>
                     </div>
-                     <div class="journey-milestone">
+                     <div class="journey-milestone animatable" use:animate>
                         <div class="milestone-dot"></div>
                         <div class="milestone-content">
                             <h3>My Focus</h3>
                             <p>
-                                What fascinates me most is the entire process of bringing a concept from non-existence into reality. My goal is to work on <span class="highlight">large-scale installations</span>, for both artistic and brand-focused projects. It's in this field that I find the perfect synthesis of all the stimuli I need to feel fulfilled: a place where space, narrative, and technology converge to create a single, impactful experience.
+                                My primary ambition is to design and develop <span class="fw-bold">large-scale installations</span>. Whether for artistic or commercial purposes, this is where my passion converges: the orchestration of space, narrative, and technology to create a single, powerful experience. The process of bringing something from <span class="fw-regular-italic">non-existence to reality</span> is what truly drives me.
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div class="cta-section">
+            <div class="cta-section animatable" use:animate>
                 <p class="cta-message">
                     I'm always open to new collaborations and challenges. If you have an idea that requires a blend of creative vision and technical expertise, let's connect.
                 </p>
@@ -227,7 +207,7 @@
         </div>
     </div>
     
-    <footer>
+    <footer class="animatable" use:animate>
         <div class="footer-content">
             <p class="copyright">&copy; {new Date().getFullYear()} RICCARDO PICHI</p>
             <p class="tagline">THINK IN'INK</p>
@@ -236,19 +216,25 @@
 </div>
 
 <style>
-    /* Stile Globale */
+    :root {
+        font-family: 'IBM Plex Mono', monospace;
+    }
+    .fw-bold { font-weight: 700; color: var(--page-text); }
+    .fw-medium { font-weight: 500; color: var(--page-text); }
+    .fw-regular-italic { font-style: italic; color: var(--page-secondary-text); }
+    .fw-light { font-weight: 300; color: var(--page-secondary-text); }
+
     .dark-mode { --page-bg: #111; --page-text: #FFE964; --page-secondary-text: #C4C4C4; --page-accent: #4A8D65; }
-    :global(.responsive-svg.on-light) { filter: brightness(0) saturate(100%); transition: filter 0.05s ease; }
-	:global(.responsive-svg.on-dark) { filter: invert(90%) sepia(39%) saturate(692%) hue-rotate(325deg) brightness(103%) contrast(103%); transition: filter 0.05s ease; }
+    :global(.responsive-svg.on-light) { filter: brightness(0) saturate(100%); }
+    :global(.responsive-svg.on-dark) { filter: invert(90%) sepia(39%) saturate(692%) hue-rotate(325deg) brightness(103%) contrast(103%); }
     
-    /* Sfondo */
-    .svg-background-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; overflow: hidden; pointer-events: none; }
-    .svg-layer { position: absolute; top: -150%; left: -150%; width: 400%; height: 400%; transition: transform 1.5s cubic-bezier(0.2, 0.8, 0.2, 1); will-change: transform; pointer-events: none; }
-    .svg-layer-1 { z-index: 1; opacity: 0.02; }
-    .svg-layer-2 { z-index: 2; opacity: 0.03; }
-    .svg-layer-3 { z-index: 3; opacity: 0.04; }
-    .svg-layer-4 { z-index: 4; opacity: 0.03; }
-    .svg-layer-5 { z-index: 5; opacity: 0.02; }
+    .svg-background-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; pointer-events: none; }
+    .svg-layer { position: absolute; top: -150%; left: -150%; width: 400%; height: 400%; will-change: transform; }
+    .svg-layer-1 { opacity: 0.02; }
+    .svg-layer-2 { opacity: 0.03; }
+    .svg-layer-3 { opacity: 0.04; }
+    .svg-layer-4 { opacity: 0.03; }
+    .svg-layer-5 { opacity: 0.02; }
     .svg-pattern { position: absolute; width: 100%; height: 100%; background-repeat: repeat; filter: grayscale(100%); mix-blend-mode: overlay; }
     .bg-far { background-image: url('/images/full-logo.svg'); background-size: 600px auto; }
     .bg-medium-far { background-image: url('/images/logotype.svg'); background-size: 450px auto; }
@@ -256,50 +242,43 @@
     .bg-medium-near { background-image: url('/images/logotype.svg'); background-size: 250px auto; transform: rotate(45deg); }
     .bg-near { background-image: url('/images/pictogram.svg'); background-size: 100px auto; }
     
-    /* Layout Principale */
     .landing-page { min-height: 100vh; overflow-x: hidden; position: relative; }
-    .main-nav { position: fixed; top: 0; left: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 2rem; z-index: 1000; background: rgba(17, 17, 17, 0.5); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+    .main-nav { position: fixed; top: 0; left: 0; right: 0; width: auto; display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 2rem; z-index: 1000; background: rgba(17, 17, 17, 0.5); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
     .nav-logo img { width: 40px; height: 40px; }
     .nav-links { display: flex; list-style: none; gap: 2rem; margin: 0; padding: 0; }
     .nav-links li.active a { color: var(--page-text); }
     .nav-links a { text-decoration: none; font-size: 0.9rem; font-weight: bold; position: relative; padding: 8px 0; color: var(--page-secondary-text); transition: color 0.3s ease; }
     .nav-links a:hover { color: var(--page-text); }
-    .about-container { display: grid; grid-template-columns: 320px 1fr; gap: 4rem; max-width: 1200px; margin: 0 auto; padding: 8rem 2rem 4rem; position: relative; z-index: 2; }
-    .appear { opacity: 0; transform: translateY(20px); transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
-    .appear.always-visible { opacity: 1; transform: translateY(0); }
     
-    /* Sidebar */
+    .about-container { display: grid; grid-template-columns: 320px 1fr; gap: 4rem; max-width: 1200px; margin: 0 auto; padding: 8rem 2rem 4rem; position: relative; z-index: 2; }
+    
     .about-sidebar { position: sticky; top: 8rem; align-self: start; }
     .profile-image-container { position: relative; margin-bottom: 2.5rem; overflow: hidden; border-radius: 8px;}
-    .profile-image { width: 100%; height: auto; display: block; }
-    .profile-accent { display: none; }
+    .profile-image { width: 100%; display: block; }
     .sidebar-section { margin-bottom: 2.5rem; }
     h3 { color: var(--page-secondary-text); font-size: 0.8rem; margin: 0 0 1rem 0; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; }
     .sidebar-list { list-style: none; padding: 0; margin: 0; }
-    .contact-list li { display: flex; align-items: center; margin-bottom: 0.8rem; font-size: 0.85rem; color: var(--page-secondary-text);}
+    .contact-list li { display: flex; align-items: center; margin-bottom: 0.8rem; font-size: 0.9rem; color: var(--page-secondary-text);}
     .icon { color: var(--page-accent); margin-right: 0.8rem; }
     .social-links { display: flex; gap: 1rem; margin-top: 1.2rem; }
     .social-link { color: var(--page-secondary-text); transition: all 0.3s ease; }
     .social-link:hover { color: var(--page-text); transform: translateY(-2px); }
-    .language-bars { display: flex; flex-direction: column; gap: 1rem; }
-    .language-name { font-size: 0.75rem; letter-spacing: 0.05em; color: var(--page-secondary-text); }
+    .language-name { font-size: 0.8rem; letter-spacing: 0.05em; color: var(--page-secondary-text); }
     .bar-container { height: 4px; background-color: rgba(255, 255, 255, 0.1); border-radius: 2px; overflow: hidden; }
     .bar-fill { height: 100%; background-color: var(--page-accent); border-radius: 2px; }
     
-    /* MODIFICA: Stili dei tag come nell'altra pagina */
-    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.8rem; }
     .skill-tag {
         font-family: 'IBM Plex Mono', monospace;
         font-weight: 500;
         text-transform: uppercase;
-        font-size: 0.7rem;
         letter-spacing: 0.05em;
         background: rgba(255, 255, 255, 0.05);
         backdrop-filter: blur(4px);
         -webkit-backdrop-filter: blur(4px);
         border: 1px solid rgba(255, 255, 255, 0.1);
         color: var(--page-secondary-text);
-        padding: 0.6rem 0.8rem;
+        padding: 0.6rem 1rem;
         border-radius: 6px;
         transition: all 0.3s ease;
     }
@@ -310,45 +289,30 @@
         border-color: rgba(74, 141, 101, 0.5);
     }
     
-    /* Contenuto Principale */
     .about-content { padding-right: 1rem; }
     .page-header { margin-bottom: 4rem; position: relative; }
     .name-container { margin-bottom: 1rem; }
-    h1 { font-size: 3rem; color: var(--page-text); margin: 0 0 0.5rem 0; line-height: 1.1; font-weight: 700; }
+    h1 { font-family: 'IBM Plex Mono', monospace; font-size: 3rem; color: var(--page-text); margin: 0 0 0.5rem 0; line-height: 1.1; font-weight: 700; }
     .position-text { color: var(--page-accent); font-size: 1rem; letter-spacing: 0.05em; }
     .header-accent { width: 80px; height: 3px; background-color: var(--page-accent); }
     .section-title { font-size: 1.3rem; color: var(--page-accent); margin: 0 0 2rem 0; letter-spacing: 0.05em; }
     .story-section, .philosophy-section, .toolbox-section { margin-bottom: 5rem; }
-    .narrative { font-size: 1.2rem; line-height: 1.7; margin-bottom: 2rem; max-width: 65ch; color: var(--page-secondary-text);}
-    .highlight { color: var(--page-text); font-weight: 500; }
-    .story-block { border-left: 2px solid rgba(255,255,255,0.15); padding-left: 1.5rem; margin: 2rem 0; color: var(--page-secondary-text); line-height: 1.7;}
+    .narrative { font-size: 1.2rem; line-height: 1.7; margin-bottom: 2rem; max-width: 65ch; color: var(--page-secondary-text); font-weight: 300; }
+    .story-block { border-left: 2px solid rgba(255,255,255,0.15); padding-left: 1.5rem; margin: 2rem 0; color: var(--page-secondary-text); line-height: 1.7; font-weight: 300;}
     .journey-milestone { display: flex; margin-bottom: 2.5rem; position: relative; }
     .milestone-dot { width: 10px; height: 10px; background-color: var(--page-accent); border-radius: 50%; margin-top: 8px; margin-right: 1.5rem; flex-shrink: 0; }
     .milestone-content h3 { font-size: 1.1rem; color: var(--page-text); margin-bottom: 0.8rem; font-weight: 500; }
-    .milestone-content p { line-height: 1.7; color: var(--page-secondary-text); max-width: 65ch;}
+    .milestone-content p { line-height: 1.7; color: var(--page-secondary-text); max-width: 65ch; font-weight: 300;}
     
-    /* Sezione CTA e Footer */
     .cta-section { margin-top: 5rem; padding: 3rem; background-color: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; text-align: center; }
-    .cta-message { font-size: 1.2rem; line-height: 1.6; margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto; color: var(--page-secondary-text);}
+    .cta-message { font-size: 1.2rem; line-height: 1.6; margin-bottom: 2rem; max-width: 700px; margin: 0 auto 2rem auto; color: var(--page-secondary-text); font-weight: 300;}
     .cta-buttons { display: flex; justify-content: center; gap: 1.5rem; }
-    .cta-button { display: inline-block; padding: 0.8rem 1.5rem; background-color: var(--page-accent); color: #000; text-decoration: none; font-weight: 600; font-size: 0.9rem; border-radius: 4px; transition: all 0.3s ease; }
+    .cta-button { display: inline-block; padding: 0.8rem 1.5rem; background-color: var(--page-accent); color: #000; text-decoration: none; font-weight: 700; font-size: 0.9rem; border-radius: 4px; transition: all 0.3s ease; }
     .cta-button:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); }
     .cta-button.outline { background-color: transparent; border: 1px solid var(--page-accent); color: var(--page-text); }
-    footer { padding: 3rem 2rem; border-top: 1px solid rgba(255,255,255,0.1); position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; margin-top: 5rem; }
+    
+    footer { padding: 3rem 2rem; border-top: 1px solid rgba(255,255,255,0.1); position: relative; z-index: 2; max-width: 1200px; margin: 5rem auto 0 auto; }
     .footer-content { display: flex; justify-content: space-between; }
     .copyright, .tagline { font-size: 0.8rem; color: var(--page-secondary-text);}
     .tagline { color: var(--page-accent); }
-    
-    /* Media Queries */
-    @media (max-width: 1024px) {
-        .about-container { grid-template-columns: 280px 1fr; gap: 3rem; }
-        h1 { font-size: 2.5rem; }
-    }
-    @media (max-width: 768px) {
-        .about-container { grid-template-columns: 1fr; gap: 4rem; }
-        .about-sidebar { position: relative; top: 0; max-width: 400px; margin: 0 auto; }
-        .main-nav { padding: 1rem; }
-        .nav-links { gap: 1.5rem; }
-        .cta-buttons { flex-direction: column; max-width: 300px; margin: 0 auto; gap: 1rem; }
-    }
 </style>

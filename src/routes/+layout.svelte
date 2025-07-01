@@ -1,125 +1,111 @@
 <script>
-	import { fade } from 'svelte/transition';
-	import { onMount } from 'svelte';
+    import { onMount } from 'svelte';
+    import { fade } from 'svelte/transition';
+    import VideoIntro from '$lib/components/VideoIntro.svelte';
+    import CustomCursor from '$lib/components/CustomCursor.svelte';
 
-	// Handle page transitions
-	let loaded = false;
+    let showIntro = false;
+    let siteVisible = false;
 
-	onMount(() => {
-		// Set loaded to true after a short delay to allow for smooth animation
-		setTimeout(() => {
-			loaded = true;
-		}, 500);
-	});
+    onMount(() => {
+        if (!sessionStorage.getItem('introShown')) {
+            showIntro = true;
+        } else {
+            siteVisible = true;
+        }
+    });
+
+    function handleIntroComplete() {
+        showIntro = false;
+        siteVisible = true;
+        sessionStorage.setItem('introShown', 'true');
+    }
 </script>
 
 <svelte:head>
-	<style>
-		@font-face {
-			font-family: 'ABC Favorit Mono';
-			src: url('/fonts/ABCFavoritMono-Regular-Trial.woff2') format('woff2');
-			font-weight: normal;
-			font-style: normal;
-			font-display: swap;
-		}
-		
-		@font-face {
-			font-family: 'ABC Favorit Mono';
-			src: url('/fonts/ABCFavoritMono-Bold-Trial.woff2') format('woff2');
-			font-weight: bold;
-			font-style: normal;
-			font-display: swap;
-		}
-		
-		:root {
-			--primary-color: #FFDE59;
-			--secondary-color: #7BA77B;
-			--background-color: #1E1E1E;
-			--text-color: #FFFFFF;
-			--border-color: #333333;
-		}
-		
-		/* Global reset */
-		*, *::before, *::after {
-			box-sizing: border-box;
-			margin: 0;
-			padding: 0;
-		}
-		
-		/* Font reset - ensures ABC Favorit Mono is used everywhere */
-		html, body, button, input, textarea, select {
-			font-family: 'ABC Favorit Mono', monospace !important;
-		}
-		
-		body {
-			background-color: var(--background-color);
-			color: var(--text-color);
-			line-height: 1.6;
-			overflow-x: hidden;
-		}
-		
-		a {
-			color: inherit;
-			text-decoration: none;
-		}
-		
-		img {
-			max-width: 100%;
-			height: auto;
-			display: block;
-		}
-	</style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap');
+        
+        :root {
+            --page-bg: #111;
+            --page-text: #FFE964;
+            --page-secondary-text: #C4C4C4;
+            --page-accent: #4A8D65;
+        }
+        
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            cursor: none;
+        }
+        
+        html, body {
+            font-family: 'IBM Plex Mono', monospace !important;
+            background-color: var(--page-bg);
+            color: var(--page-text);
+            transition: background-color 0.3s ease-out;
+        }
+        
+        /* Logica "Electric Mode" Globale */
+        body.electric-mode {
+            --page-bg: #FFE964;
+            --page-text: #111;
+            --page-secondary-text: #333;
+            --page-accent: #111;
+        }
+        
+        /* Forzatura inversione su tutti gli elementi di testo e contenitori */
+        h1, h2, h3, h4, h5, h6, p, span, a, li, div, button, footer, header, nav {
+            color: var(--page-text);
+            transition: color 0.3s ease-out, background-color 0.3s ease-out, border-color 0.3s ease-out, opacity 0.3s ease-out;
+        }
+        
+        /* Eccezioni per mantenere i colori corretti in electric mode */
+        body.electric-mode .nav-links a.active,
+        body.electric-mode .back-button,
+        body.electric-mode .tagline,
+        body.electric-mode .detail-section h3,
+        body.electric-mode .project-features li::before {
+            color: var(--page-accent) !important;
+        }
+
+        body.electric-mode .category-tag,
+        body.electric-mode .tech-item,
+        body.electric-mode .skill-tag {
+            background-color: rgba(0,0,0,0.1) !important;
+            border-color: rgba(0,0,0,0.2) !important;
+            color: var(--page-text) !important;
+        }
+
+        body.electric-mode .responsive-svg.on-dark {
+            filter: brightness(0) saturate(100%); /* Da giallo a nero */
+        }
+        
+        a { text-decoration: none; }
+        img { max-width: 100%; height: auto; display: block; }
+    </style>
 </svelte:head>
 
 <div class="app">
-	{#if loaded}
-		<main transition:fade={{ duration: 500 }}>
-			<slot />
-		</main>
-	{:else}
-		<div class="loader">
-			<div class="logo-animation">
-				<svg viewBox="0 0 100 60" width="100" height="60">
-					<g fill="#FFDE59">
-						<rect x="45" y="20" width="10" height="60" />
-						<rect x="25" y="40" width="10" height="25" />
-						<rect x="65" y="40" width="10" height="25" />
-					</g>
-				</svg>
-			</div>
-			<p>THINK IN'INK</p>
-		</div>
-	{/if}
+    <CustomCursor />
+
+    {#if showIntro}
+        <VideoIntro src="/video/intro.mp4" on:complete={handleIntroComplete} />
+    {/if}
+
+    {#if siteVisible}
+        <main transition:fade={{ duration: 500 }}>
+            <slot />
+        </main>
+    {/if}
 </div>
 
 <style>
-	.app {
-		min-height: 100vh;
-		position: relative;
-	}
-	
-	.loader {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background-color: #1E1E1E;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		z-index: 1000;
-	}
-	
-	.logo-animation {
-		margin-bottom: 1rem;
-	}
-	
-	.loader p {
-		font-size: 1.2rem;
-		font-weight: bold;
-		letter-spacing: 0.1em;
-		color: #FFE964;
-	}
+    .app {
+        min-height: 100vh;
+        position: relative;
+        background-color: var(--page-bg);
+        transition: background-color 0.3s ease-out;
+    }
 </style>

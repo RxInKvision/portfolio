@@ -1,7 +1,7 @@
 <script>
     import { onMount } from 'svelte';
     import { fade } from 'svelte/transition';
-    import VideoIntro from '$lib/components/VideoIntro.svelte';
+    import VideoIntro from '$lib/components/videoIntro.svelte';
     import CustomCursor from '$lib/components/CustomCursor.svelte';
 
     let showIntro = false;

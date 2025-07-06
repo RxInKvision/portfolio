@@ -180,20 +180,28 @@ export const worksData = [
 // --- NUOVI PROGETTI DA COMPILARE ---
 {
     id: 'bmw-reignite-the-pleasure',
-    title: 'BMW - REIGNITE THE PLEASURE',
+    title: 'BMW - RE:IGNITE THE PLEASURE',
     year: 2025,
     categories: ['Placeholder'],
     description: 'Descrizione completa da inserire.',
     shortDescription: 'Descrizione breve da inserire.',
-    image: '/images/cards/bmw-reignite-the-pleasure.png',
+    image: '/images/projects/bmw/hero.png',
     link: '/works/bmw-reignite-the-pleasure',
-    heroMedia: { type: 'image', src: '/images/hero/bmw-reignite-the-pleasure.png' },
+    heroMedia: { type: 'image', src: '/images/projects/bmw/hero.png' },
     technologies: ['Tecnologia 1'],
-    figmaEmbedUrl:"https://embed.figma.com/proto/VJKiZCYc869sU3yl3mW5a0/BMW?page-id=370%3A249&node-id=286-8&scaling=scale-down&content-scaling=fixed&embed-host=share",
+    figmaEmbedUrl:"https://embed.figma.com/proto/VJKiZCYc869sU3yl3mW5a0/BMW?page-id=370%3A249&node-id=286-8&scaling=min-zoom&content-scaling=fixed&embed-host=share",
     keyFeatures: ['Caratteristica 1'],
     challenge: 'Sfida da inserire.',
     solution: 'Soluzione da inserire.',
-    gallery: [{ type: 'image', src: '/images/gallery/bmw-reignite-the-pleasure/1.png' }]
+    gallery: [
+        { type: 'image', src: '/images/projects/bmw/ooh.png' },
+        { type: 'video', src: '/images/projects/bmw/scroll.mp4' },
+        { type: 'video', src: '/images/projects/bmw/landing.mp4' },
+        { type: 'image', src: '/images/projects/bmw/hero.png' },
+
+        { type: 'video', src: '/images/projects/bmw/scroll.mp4' },
+        { type: 'video', src: '/images/projects/bmw/story.mp4' }
+    ]
 },
 {
     id: 'circularthub',
@@ -251,14 +259,23 @@ export const worksData = [
     categories: ['Placeholder'],
     description: 'Descrizione completa da inserire.',
     shortDescription: 'Descrizione breve da inserire.',
-    image: '/images/cards/rxink-personal-brand.png',
+    image: '/images/projects/rxink/pattern.png',
     link: '/works/rxink-personal-brand',
-    heroMedia: { type: 'image', src: '/images/hero/rxink-personal-brand.png' },
+    heroMedia: { type: 'image', src: '/images/projects/rxink/construction.png' },
     technologies: ['Tecnologia 1'],
     keyFeatures: ['Caratteristica 1'],
     challenge: 'Sfida da inserire.',
     solution: 'Soluzione da inserire.',
-    gallery: [{ type: 'image', src: '/images/gallery/rxink-personal-brand/1.png' }]
+    figmaEmbedUrl:"https://embed.figma.com/proto/bCQ5r2B4hhs3sL12B7zodE/Untitled?page-id=120%3A1332&node-id=120-1333&starting-point-node-id=120%3A1333&scaling=scale-down&content-scaling=fixed&embed-host=share",
+    gallery: [{ type: 'image', src: '/images/projects/rxink/black.png' },
+        { type: 'video', src: '/images/projects/rxink/LOGOANIMATION10.mp4' },
+        { type: 'image', src: '/images/projects/rxink/green.png' },
+        { type: 'image', src: '/images/projects/rxink/pattern.png' },
+        { type: 'image', src: '/images/projects/rxink/think.png' },
+        { type: 'video', src: '/images/projects/rxink/logoanimationverticale.mp4' },
+        { type: 'image', src: '/images/projects/rxink/yellow1.png' },
+        { type: 'image', src: '/images/projects/rxink/BannerLinkedin.png' }
+    ]
 },
 {
     id: 'trashfinder',

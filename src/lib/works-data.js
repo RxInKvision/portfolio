@@ -6,7 +6,7 @@ export const worksData = [
     categories: ["Installazione Immersiva", "Web 3D", "Performance"],
     description: "Per il 55° anniversario dei Forum Studios, Archive Reverie affronta la sfida di rivitalizzare l'archivio storico, superando la logica del database statico. La visione trasforma il patrimonio dello studio in un paesaggio memoriale da esplorare liberamente, un ambiente evocativo dove frammenti sonori e visivi diventano echi di una memoria viva, incentivando la scoperta casuale e rendendo l'utente autore della propria esperienza.",
     shortDescription: "Un ecosistema interattivo che trasforma l'archivio storico dei Forum Studios in un paesaggio memoriale 3D esplorabile.",
-    image: "/images/cards/forum.png",
+    image: "/images/projects/forum/titolo.jpg",
     link: "/works/forum-archive-reverie",
     // MODIFICATO: heroMedia ora punta a Vimeo con il suo ID
     heroMedia: { type: 'vimeo', videoId: '1096516384' },
@@ -34,9 +34,25 @@ export const worksData = [
     solution: "È stato sviluppato un ecosistema interconnesso con cinque output. La soluzione centrale è una web app 3D che presenta l'archivio come una costellazione di contenuti. Un tool di creazione custom  e una pipeline di rendering offline  permettono di usare l'archivio come strumento creativo ('Archive-as-Instrument'), garantendo coerenza tra l'esperienza web, la video-installazione e le performance live.",
     figmaEmbedUrl: "https://embed.figma.com/proto/UmqXbICxnNZsk3brOajAHn/FORUM?page-id=1741%3A20&node-id=2027-126&viewport=1269%2C60631%2C0.51&scaling=min-zoom&content-scaling=fixed&embed-host=share",
     gallery: [
-        { type: 'image', src: "/images/gallery/forum/immagine1.jpg" },
-        { type: 'image', src: "/images/gallery/forum/immagine2.jpg" },
-        { type: 'image', src: "/images/gallery/forum/immagine3.jpg" }
+        { type: 'video', src: "/images/projects/forum/video1.mp4" },
+        { type: 'image', src: "/images/projects/forum/1.png" },
+        { type: 'image', src: "/images/projects/forum/still1.png" },
+        { type: 'video', src: "/images/projects/forum/video2.mp4" },
+        { type: 'image', src: "/images/projects/forum/2.png" },
+        { type: 'image', src: "/images/projects/forum/still2.png" },
+        { type: 'video', src: "/images/projects/forum/video3.mp4" },
+        { type: 'image', src: "/images/projects/forum/3.png" },
+        { type: 'image', src: "/images/projects/forum/still3.png" },
+        { type: 'video', src: "/images/projects/forum/video4.mp4" },
+        { type: 'image', src: "/images/projects/forum/4.png" },
+        { type: 'image', src: "/images/projects/forum/still4.png" },
+        
+        { type: 'image', src: "/images/projects/forum/5.png" },
+        { type: 'image', src: "/images/projects/forum/still5.png" },
+        
+        { type: 'image', src: "/images/projects/forum/6.jpg" },
+        { type: 'image', src: "/images/projects/forum/7.jpg" },
+        
     ]
 },
 {
@@ -46,7 +62,7 @@ export const worksData = [
     categories: ["Installazione Interattiva", "Arte Audiovisiva"],
     description: "Kollateral esplora la luce come forza vitale che persiste oltre il trauma. Un telo sospeso, segnato da bruciature e lacerazioni, diventa il punto in cui questa energia si manifesta. Mosso dal suono, il tessuto si contrae e respira, diventando un corpo animato da un impulso vitale che trasforma la lacerazione in possibilità. La luce non è ostacolata dalla ferita: è proprio da lì che emerge.",
     shortDescription: "Un prototipo di installazione dove un telo lacerato, mosso dal suono, diventa un corpo che respira, lasciando emergere la luce dalle sue ferite.",
-    image: "/images/cards/kollateral4.png",
+    image: "/images/cards/kollateral1.png",
     link: "/works/kollateral",
     heroMedia: { type: 'youtube', videoId: 'VYWhh3v2-LU' },
     technologies: [
@@ -75,48 +91,17 @@ export const worksData = [
         { type: 'image', src: "/images/cards/kollateral3.png" }
     ]
 },
-{
-    id: 'beyond-the-frame',
-    title: ":BEYOND THE FRAME",
-    year: 2024,
-    categories: ["Installazione Interattiva", "Arte Digitale"],
-    description: "Questa installazione interattiva invita lo spettatore a un viaggio sensoriale che esplora il rapporto tra percezione e distanza, giocando sul confine tra l'astratto e il riconoscibile. Ciò che da lontano appare come una texture indefinita si trasforma, avvicinandosi, in un oggetto reale che riacquista il suo contesto. È un invito a rallentare, a scoprire la bellezza nascosta nell'ordinario e a guardare oltre l'apparenza, ricordandoci che per vedere davvero, occorre fermarsi.",
-    shortDescription: "Un'installazione interattiva dove la distanza dello spettatore cambia la percezione visiva, trasformando texture astratte in immagini riconoscibili.",
-    image: "/images/cards/beyondmockup1.png",
-    link: "/works/beyond-the-frame",
-    figmaEmbedUrl:"https://embed.figma.com/proto/0uWNVAvqtuqKGO1g3as7jJ/Beyond-the-Frame?page-id=0%3A1&node-id=0-3&embed-host=share",
-    heroMedia: { type: 'image', src: "/images/cards/beyondmockup1.png" },
-    technologies: [
-        "TouchDesigner",
-        "Arduino",
-        "Sensori di prossimità a ultrasuoni",
-        "LED Wall / Proiettori"
-    ],
-    keyFeatures: [
-        "Interazione basata sulla distanza dello spettatore, rilevata da sensori di prossimità.",
-        "Transizione visiva da texture fluida a soggetto riconoscibile programmata in TouchDesigner.",
-        "Concept espositivo non vincolato a uno spazio specifico, ma riproducibile e adattabile.",
-        "Utilizzo di hardware specifico come sensori a ultrasuoni collegati ad Arduino per ogni opera.",
-        "Possibilità di aggiungere un elemento sonoro interattivo che si lega al campo visivo dello spettatore."
-    ],
-    challenge: "La sfida consisteva nel creare una transizione fluida e tecnicamente stabile tra la texture astratta e il soggetto finale, basata sulla posizione esatta dello spettatore. Questo ha richiesto un'attenta fase di test e ottimizzazione per calibrare la risposta del sensore, la reattività del video e assicurare una transizione senza ritardi o scatti.",
-    solution: "È stato sviluppato un sistema in TouchDesigner che gestisce l'interazione video-prossimità. Utilizzando sensori a ultrasuoni collegati ad Arduino, il sistema rileva la distanza dello spettatore e la mappa a uno specifico momento del video, che è stato post-prodotto per creare una transizione progressiva. L'installazione è stata progettata per essere modulare, utilizzando schermi o proiettori incorniciati per mantenere un'estetica fotografica.",
-    gallery: [
-        { type: 'image', src: "/images/cards/beyond2.png" },
-        { type: 'image', src: "/images/cards/beyondmockup1.png" },
-        { type: 'image', src: "/images/cards/beyondmockup.png" }
-    ]
-},
+
 {
     id: 'symbioglitch',
-    title: "SYMBIOGLITCH - VIDEOCITTÀ 2024",
+    title: "VIDEOCITTÀ 2024",
     year: 2024,
     categories: ["Live Visuals", "Installazione Immersiva", "Arte Digitale"],
     description: "Symbioglitch è un'esplorazione artistica profonda del rapporto tra l'umanità e il mondo naturale. Attraverso un collage visivo e sonoro, il progetto si propone di denunciare le contraddizioni e le tensioni di questo dialogo, cercando di trasmettere emozioni complesse e stimolanti allo spettatore. Il montaggio delle immagini sarà randomico, sfruttando la casualità per creare qualcosa di unico e inaspettato, proprio come fa la natura stessa. Contrapponendo riprese di cose apparentemente distanti e non comunicanti, si creano nuovi significati e rivelazioni disturbanti sul rapporto tra l'uomo e la natura. L'estetica di 'Symbioglitch' è caratterizzata da un mix di glitch, oscurità e pessimismo. Utilizzando cambi di scena incalzanti, effetti di movimento distorti e manipolazioni visive, il progetto crea un'esperienza visiva disturbante e incerta, che mira a provocare reazioni viscerali nello spettatore. Si caratterizza per modifiche pesanti e quasi distruttive applicate ai video originali. Attraverso un processo che mira a denaturalizzare e modificare drasticamente il footage originale, si crea un effetto visivo e sonoro che sfida le percezioni convenzionali ed esplora nuove dimensioni del rapporto fra l'uomo e la natura. Questo approccio enfatizza la casualità nel montaggio delle immagini, aggiungendo un ulteriore strato di complessità e imprevedibilità alla narrazione visiva del progetto.",
     shortDescription: "Performance audiovisiva live che esplora le connessioni distorte tra umanità e natura attraverso estetiche glitch e un montaggio casuale, proiettata su una parete di 25 metri a Videocittà 2024.",
-    image: "/images/cards/avperformace.jpg",
+    image: "/images/projects/videocitta/still1.png",
     link: "/works/symbioglitch",
-    heroMedia: { type: 'image', src: "/images/cards/avperformace.jpg" },
+    heroMedia: { type: 'video', src: "/images/projects/videocitta/video6.mp4" },
     technologies: [
         "TouchDesigner",
         "Resolume Arena",
@@ -136,10 +121,58 @@ export const worksData = [
     challenge: "La sfida principale era trasmettere efficacemente le 'connessioni distorte tra umanità e natura' attraverso un'estetica di glitch, oscurità e pessimismo, richiedendo significative modifiche e un montaggio casuale degli elementi visivi e sonori per sfidare le percezioni convenzionali. Tecnicamente, l'integrazione di TouchDesigner per i visual generativi con Resolume Arena per il projection mapping su una grande parete di 25 metri, il tutto controllato in tempo reale via MIDI, ha richiesto una robusta sincronizzazione e ottimizzazione.",
     solution: "Il progetto ha utilizzato una pipeline visuale live robusta. TouchDesigner è stato impiegato per creare il contenuto visuale generativo e pesantemente modificato, che è stato poi inviato a Resolume Arena per una fusione e un projection mapping senza soluzione di continuità sulla parete di 25 metri. Il controllo in tempo reale e la manipolazione dinamica dei parametri visuali sono stati ottenuti tramite controller MIDI, consentendo una performance live fluida e reattiva. La collaborazione con sound designer ha assicurato un'esperienza audiovisiva coesa.",
     gallery: [
-        { type: 'image', src: "/images/cards/avperformace.jpg" },
-        { type: 'video', src: "/images/cards/avperformace.jpg" },
-        { type: 'image', src: "/images/cards/avperformace.jpg" },
-        { type: 'pdf', src: "/documents/symbioglitch-overview.pdf" }
+        { type: 'video', src: "/images/projects/videocitta/video1.mp4" },
+        {type: 'image', src: "/images/cards/avperformace.jpg" },
+        { type: 'video', src: "/images/projects/videocitta/video2.mp4" },
+        { type: 'video', src: "/images/projects/videocitta/video3.mp4" },
+        { type: 'video', src: "/images/projects/videocitta/video4.mp4" },
+        { type: 'video', src: "/images/projects/videocitta/video5.mp4" },
+        
+    ]
+},
+
+{
+    id: 'beyond-the-frame',
+    title: ":BEYOND THE FRAME",
+    year: 2024,
+    categories: ["Installazione Interattiva", "Arte Digitale"],
+    description: "Questa installazione interattiva invita lo spettatore a un viaggio sensoriale che esplora il rapporto tra percezione e distanza, giocando sul confine tra l'astratto e il riconoscibile. Ciò che da lontano appare come una texture indefinita si trasforma, avvicinandosi, in un oggetto reale che riacquista il suo contesto. È un invito a rallentare, a scoprire la bellezza nascosta nell'ordinario e a guardare oltre l'apparenza, ricordandoci che per vedere davvero, occorre fermarsi.",
+    shortDescription: "Un'installazione interattiva dove la distanza dello spettatore cambia la percezione visiva, trasformando texture astratte in immagini riconoscibili.",
+    image: "/images/cards/beyond2.png",
+    link: "/works/beyond-the-frame",
+    figmaEmbedUrl:"https://embed.figma.com/proto/0uWNVAvqtuqKGO1g3as7jJ/Beyond-the-Frame?page-id=0%3A1&node-id=0-3&embed-host=share",
+    heroMedia: { type: 'image', src: "/images/projects/beyond/demo.mp4" },
+    technologies: [
+        "TouchDesigner",
+        "Arduino",
+        "Sensori di prossimità a ultrasuoni",
+        "LED Wall / Proiettori"
+    ],
+    keyFeatures: [
+        "Interazione basata sulla distanza dello spettatore, rilevata da sensori di prossimità.",
+        "Transizione visiva da texture fluida a soggetto riconoscibile programmata in TouchDesigner.",
+        "Concept espositivo non vincolato a uno spazio specifico, ma riproducibile e adattabile.",
+        "Utilizzo di hardware specifico come sensori a ultrasuoni collegati ad Arduino per ogni opera.",
+        "Possibilità di aggiungere un elemento sonoro interattivo che si lega al campo visivo dello spettatore."
+    ],
+    challenge: "La sfida consisteva nel creare una transizione fluida e tecnicamente stabile tra la texture astratta e il soggetto finale, basata sulla posizione esatta dello spettatore. Questo ha richiesto un'attenta fase di test e ottimizzazione per calibrare la risposta del sensore, la reattività del video e assicurare una transizione senza ritardi o scatti.",
+    solution: "È stato sviluppato un sistema in TouchDesigner che gestisce l'interazione video-prossimità. Utilizzando sensori a ultrasuoni collegati ad Arduino, il sistema rileva la distanza dello spettatore e la mappa a uno specifico momento del video, che è stato post-prodotto per creare una transizione progressiva. L'installazione è stata progettata per essere modulare, utilizzando schermi o proiettori incorniciati per mantenere un'estetica fotografica.",
+    gallery: [
+        { type: 'image', src: "/images/cards/beyond2.png" },
+        { type: 'video', src: "/images/projects/beyond/demo.mp4" },
+        { type: 'video', src: "/images/projects/beyond/side1.mp4" },
+        { type: 'video', src: "/images/projects/beyond/_side1.mp4" },
+        { type: 'video', src: "/images/projects/beyond/side2.mp4" },
+        { type: 'video', src: "/images/projects/beyond/_side2.mp4" },
+        { type: 'video', src: "/images/projects/beyond/side3.mp4" },
+        { type: 'video', src: "/images/projects/beyond/_side3.mp4" },
+        { type: 'video', src: "/images/projects/beyond/side4.mp4" },
+        { type: 'video', src: "/images/projects/beyond/_side4.mp4" },
+        { type: 'video', src: "/images/projects/beyond/side5.mp4" },
+        { type: 'video', src: "/images/projects/beyond/_side5.mp4" },
+        { type: 'video', src: "/images/projects/beyond/side6.mp4" },
+        { type: 'video', src: "/images/projects/beyond/_side6.mp4" },
+
     ]
 },
 
@@ -299,14 +332,21 @@ export const worksData = [
     categories: ['Placeholder'],
     description: 'Descrizione completa da inserire.',
     shortDescription: 'Descrizione breve da inserire.',
-    image: '/images/cards/friends-in-my-head.png',
+    image: '/images/projects/friendsinmyhead/still4.png',
     link: '/works/friends-in-my-head',
     heroMedia: { type: 'vimeo', videoId: '1097622993' },
     technologies: ['Tecnologia 1'],
     keyFeatures: ['Caratteristica 1'],
     challenge: 'Sfida da inserire.',
     solution: 'Soluzione da inserire.',
-    gallery: [{ type: 'image', src: '/images/gallery/friends-in-my-head/1.png' }]
+    gallery: [{ type: 'image', src: '/images/projects/friendsinmyhead/still1.png' },
+        { type: 'image', src: '/images/projects/friendsinmyhead/still2.png' },
+        { type: 'image', src: '/images/projects/friendsinmyhead/still3.png' },
+        { type: 'image', src: '/images/projects/friendsinmyhead/still4.png' },
+        { type: 'image', src: '/images/projects/friendsinmyhead/still5.png' },
+        { type: 'image', src: '/images/projects/friendsinmyhead/still6.png' },
+        { type: 'image', src: '/images/projects/friendsinmyhead/still7.png' }
+    ]
 },
 {
     id: 'one-of-these-days',
@@ -331,14 +371,21 @@ export const worksData = [
     categories: ['Placeholder'],
     description: 'Descrizione completa da inserire.',
     shortDescription: 'Descrizione breve da inserire.',
-    image: '/images/cards/roma-crater-mundi.png',
+    image: '/images/projects/romacratermundi/titolo.png',
     link: '/works/roma-crater-mundi',
-    heroMedia: { type: 'image', src: '/images/hero/roma-crater-mundi.png' },
+    heroMedia: { type: 'image', src:'/images/projects/romacratermundi/titolo.png'},
     technologies: ['Tecnologia 1'],
     keyFeatures: ['Caratteristica 1'],
     challenge: 'Sfida da inserire.',
     solution: 'Soluzione da inserire.',
-    gallery: [{ type: 'image', src: '/images/gallery/roma-crater-mundi/1.png' }]
+    gallery: [{ type: 'image', src: '/images/projects/romacratermundi/still1.png' },
+        { type: 'image', src: '/images/projects/romacratermundi/still2.png' },
+        { type: 'image', src: '/images/projects/romacratermundi/still3.png' },
+        { type: 'image', src: '/images/projects/romacratermundi/still4.png' },
+        { type: 'image', src: '/images/projects/romacratermundi/still5.png' },
+        { type: 'image', src: '/images/projects/romacratermundi/still6.png' },
+        { type: 'image', src: '/images/projects/romacratermundi/still7.png' }
+    ]
 },
 {
     id: 'subviral',

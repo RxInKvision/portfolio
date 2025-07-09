@@ -350,7 +350,7 @@ export const worksData = [
     shortDescription: 'Tributo animato al brano dei Pink Floyd, caratterizzato da un\'estetica flat, animazioni ritmiche e un montaggio sincronizzato con la musica.',
     image: '/images/projects/oneofthesedays/10.png' ,
     link: '/works/one-of-these-days',
-    heroMedia: { type: 'youtube', videoId: 'AmHK1_hq3cQ' },
+    heroMedia: { type: 'youtube', videoId: 'MS6i-Be5YXg' },
     technologies: ['Adobe After Effects', 'Adobe Illustrator'],
     keyFeatures: [
         'Animazione 2D basata su grafica vettoriale.',
@@ -405,6 +405,7 @@ export const worksData = [
 },
 
 // --- NUOVI PROGETTI DA COMPILARE ---
+/*
 
 {
     id: 'haizum',
@@ -535,6 +536,7 @@ export const worksData = [
     solution: 'Soluzione da inserire.',
     gallery: [{ type: 'image', src: '/images/gallery/y2kmush/1.png' }]
 }
+    */
 ];
 
 // Function to get a work by its ID

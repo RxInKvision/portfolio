@@ -3,12 +3,11 @@ export const worksData = [
     id: 'forum-archive-reverie',
     title: "FORUM - ARCHIVE REVERIE",
     year: 2025,
-    categories: ["Installazione Immersiva", "Web 3D", "Performance"],
+    categories: ['Installazione Interattiva & Artistica', 'Sviluppo Web & UI/UX', 'Direzione Creativa & Art Direction'],
     description: "Per il 55° anniversario dei Forum Studios, Archive Reverie affronta la sfida di rivitalizzare l'archivio storico, superando la logica del database statico. La visione trasforma il patrimonio dello studio in un paesaggio memoriale da esplorare liberamente, un ambiente evocativo dove frammenti sonori e visivi diventano echi di una memoria viva, incentivando la scoperta casuale e rendendo l'utente autore della propria esperienza.",
     shortDescription: "Un ecosistema interattivo che trasforma l'archivio storico dei Forum Studios in un paesaggio memoriale 3D esplorabile.",
     image: "/images/projects/forum/titolo.jpg",
     link: "/works/forum-archive-reverie",
-    // MODIFICATO: heroMedia ora punta a Vimeo con il suo ID
     heroMedia: { type: 'vimeo', videoId: '1096516384' },
     technologies: [
         "React",
@@ -46,20 +45,79 @@ export const worksData = [
         { type: 'video', src: "/images/projects/forum/video4.mp4" },
         { type: 'image', src: "/images/projects/forum/4.png" },
         { type: 'image', src: "/images/projects/forum/still4.png" },
-        
         { type: 'image', src: "/images/projects/forum/5.png" },
         { type: 'image', src: "/images/projects/forum/still5.png" },
-        
         { type: 'image', src: "/images/projects/forum/6.jpg" },
         { type: 'image', src: "/images/projects/forum/7.jpg" },
-        
+    ]
+},
+
+{
+    id: 'vinted-non-mi-metti',
+    title: 'VINTED - NON MI METTI?',
+    year: 2025,
+    categories: ['Campagna Pubblicitaria', 'Direzione Creativa & Art Direction'],
+    description: 'Il progetto ribalta il punto di vista delle classiche campagne Vinted, spostando l’attenzione da chi vende a ciò che viene lasciato indietro. Attraverso un approccio affettuoso, ironico e leggermente malinconico, il capo d\'abbigliamento viene umanizzato, creando una connessione emotiva con lo spettatore. Il vestito non è solo un oggetto, ma un protagonista invisibile che attende di tornare a vivere. Per rendere questo sguardo visibile, la regia adotta l’object POV: la camera è nascosta nell’armadio, trasformando lo sguardo del vestito in una testimonianza intima e silenziosa.',
+    shortDescription: 'La campagna "Non mi metti?" ribalta il punto di vista delle classiche campagne Vinted, umanizzando un capo d’abbigliamento dimenticato per creare una forte connessione emotiva.',
+    image: '/images/projects/vinted/card.png',
+    link: '/works/vinted-non-mi-metti',
+    heroMedia: { type: 'youtube', videoId: 'y5pSa9Mp-qg' },
+    technologies: ['Adobe Premiere Pro', 'Adobe After Effects', 'Figma', 'Photoshop', 'Sony A7S II'],
+    keyFeatures: [
+        "Regia creativa basata sull'object point-of-view (POV).",
+        "Copywriting emotivo e ironico per umanizzare il prodotto.",
+        "Direzione completa del progetto: dallo script al montaggio finale.",
+        "Creazione di una narrazione malinconica e affettuosa.",
+        "Sviluppo del concept di comunicazione della campagna."
+    ],
+    challenge: 'La sfida era distinguersi dalle tipiche campagne Vinted, incentrate sul venditore. L\'obiettivo era creare una narrazione originale e memorabile, capace di generare un legame emotivo con il pubblico attraverso l\'insolita prospettiva di un oggetto inanimato.',
+    solution: 'Spostando il focus narrativo sul vestito stesso, la campagna ha acquisito un tono unico. L\'uso dell\'object POV, unito a un copywriting che mescola ironia e malinconia, ha permesso di raccontare una storia universale di abbandono e desiderio, trasformando un semplice annuncio di vendita in un piccolo racconto emotivo.',
+    figmaEmbedUrl: "https://embed.figma.com/proto/bCQ5r2B4hhs3sL12B7zodE/Untitled?page-id=213%3A2&node-id=213-303&viewport=384%2C172%2C0.02&scaling=contain&content-scaling=fixed&embed-host=share",
+    gallery: [{ type: 'image', src: '/images/projects/vinted/card.png' },
+        { type: 'image', src: '/images/projects/vinted/1.png' },
+        { type: 'image', src: '/images/projects/vinted/2.png' },
+        { type: 'image', src: '/images/projects/vinted/3.png' },
+        { type: 'image', src: '/images/projects/vinted/4.png' },
+        { type: 'image', src: '/images/projects/vinted/5.png' },
+        { type: 'image', src: '/images/projects/vinted/6.png' }
+    ]
+},
+{
+    id: 'rxink-personal-brand',
+    title: 'RXINK - PERSONAL BRAND',
+    year: 2024,
+    categories: ['Branding & Identità Visiva', 'Motion Design'],
+    description: 'RXINK è il mio brandbook personale, un caso studio di branding dove ogni aspetto dell\'identità visiva è stato esplorato in profondità. Il progetto include la progettazione del logo e del pittogramma, la definizione della palette colori, la scelta dei font, e lo sviluppo di animazioni del logo e di elementi di motion design che definiscono il linguaggio visivo del brand.',
+    shortDescription: 'Progetto di branding personale completo, che definisce ogni aspetto dell\'identità visiva del brand RXINK, dal logo alla motion graphics.',
+    image: '/images/projects/rxink/pattern.png',
+    link: '/works/rxink-personal-brand',
+    heroMedia: { type: 'image', src: '/images/projects/rxink/construction.png' },
+    technologies: ['Adobe Illustrator', 'Adobe After Effects', 'Figma'],
+    keyFeatures: [
+        'Design del logo, pittogramma e sistema di identità visiva.',
+        'Definizione della palette colori e della tipografia.',
+        'Creazione di logo animation e motion graphics.',
+        'Sviluppo di un brandbook completo e coerente.',
+        'Applicazione del brand su vari touchpoint digitali.'
+    ],
+    challenge: 'La sfida era creare un\'identità di brand personale che fosse versatile, riconoscibile e rappresentativa delle mie competenze nel campo del design e della motion graphics, evitando cliché e creando un linguaggio visivo unico.',
+    solution: 'Ho sviluppato un sistema di branding modulare basato su un logo forte e un pittogramma versatile. L\'uso strategico del colore e della motion graphics permette al brand di adattarsi a contesti diversi, mantenendo sempre una forte coerenza e riconoscibilità.',
+    figmaEmbedUrl:"https://embed.figma.com/proto/bCQ5r2B4hhs3sL12B7zodE/Untitled?page-id=120%3A1332&node-id=120-1333&starting-point-node-id=120%3A1333&scaling=scale-down&content-scaling=fixed&embed-host=share",
+    gallery: [{ type: 'image', src: '/images/projects/rxink/black.png' },
+        { type: 'video', src: '/images/projects/rxink/LOGOANIMATION10.mp4' },
+        { type: 'image', src: '/images/projects/rxink/green.png' },
+        { type: 'image', src: '/images/projects/rxink/pattern.png' },
+        { type: 'image', src: '/images/projects/rxink/think.png' },
+        { type: 'video', src: '/images/projects/rxink/logoanimationverticale.mp4' },
+        { type: 'image', src: '/images/projects/rxink/yellow1.png' },
+        { type: 'image', src: '/images/projects/rxink/BannerLinkedin.png' }
     ]
 },
 {
     id: 'kollateral',
     title: "KOLLATERAL",
     year: 2025,
-    categories: ["Installazione Interattiva", "Arte Audiovisiva"],
+    categories: ['Installazione Interattiva & Artistica'],
     description: "Kollateral esplora la luce come forza vitale che persiste oltre il trauma. Un telo sospeso, segnato da bruciature e lacerazioni, diventa il punto in cui questa energia si manifesta. Mosso dal suono, il tessuto si contrae e respira, diventando un corpo animato da un impulso vitale che trasforma la lacerazione in possibilità. La luce non è ostacolata dalla ferita: è proprio da lì che emerge.",
     shortDescription: "Un prototipo di installazione dove un telo lacerato, mosso dal suono, diventa un corpo che respira, lasciando emergere la luce dalle sue ferite.",
     image: "/images/cards/kollateral1.png",
@@ -93,13 +151,44 @@ export const worksData = [
 },
 
 {
+    id: 'bmw-reignite-the-pleasure',
+    title: 'BMW - RE:IGNITE THE PLEASURE',
+    year: 2025,
+    categories: ['Campagna Pubblicitaria', 'Sviluppo Web & UI/UX', 'Direzione Creativa & Art Direction'],
+    description: 'Questa campagna cross-platform riporta in vita un\'icona degli anni \'80, la BMW M3 E30, per venderla al pubblico di oggi. Sfruttando il gioco di parole "RE:" (RE:IGNITE, RE:DISCOVER), la comunicazione crea una forte connessione emotiva evocando momenti di vita condivisi. Il fulcro è un sito web interattivo con una landing page, una sezione con un render 3D animato dell\'auto, una timeline che ripercorre le tappe della vita, e una pagina di vendita per un\'ipotetica riedizione elettrica del veicolo.',
+    shortDescription: 'Campagna cross-platform che reinterpreta l\'iconica BMW M3 E30 per il pubblico moderno, combinando storytelling emotivo e un\'esperienza web interattiva.',
+    image: '/images/projects/bmw/hero.png',
+    link: '/works/bmw-reignite-the-pleasure',
+    heroMedia: { type: 'image', src: '/images/projects/bmw/hero.png' },
+    technologies: ['Svelte', 'JavaScript', 'Blender', 'Adobe After Effects', 'Adobe Illustrator', 'Figma', 'Photoshop'],
+    figmaEmbedUrl:"https://embed.figma.com/proto/VJKiZCYc869sU3yl3mW5a0/BMW?page-id=370%3A249&node-id=286-8&scaling=min-zoom&content-scaling=fixed&embed-host=share",
+    keyFeatures: [
+        'Concept di campagna cross-platform basato su storytelling emotivo.',
+        'Sito web interattivo sviluppato in Svelte e JavaScript.',
+        'Animazione 3D di un modello di auto renderizzato in Blender.',
+        'Copywriting creativo basato sul gioco di parole "RE:".',
+        'Timeline interattiva per esplorare la storia del brand e dell\'utente.'
+    ],
+    challenge: 'La sfida era rendere nuovamente desiderabile un\'icona del passato per un pubblico contemporaneo, bilanciando nostalgia e innovazione. Tecnicamente, l\'obiettivo era integrare un\'esperienza 3D fluida all\'interno di un sito web performante e sviluppare una narrazione coinvolgente su più canali.',
+    solution: 'Attraverso uno storytelling che fa leva su ricordi universali, la campagna crea un ponte emotivo tra passato e presente. Il sito web funge da hub centrale dell\'esperienza, combinando un design moderno con tecnologie interattive come un render 3D esplorabile, per presentare il concept di una E30 elettrica come l\'evoluzione naturale di un mito.',
+    gallery: [
+        { type: 'image', src: '/images/projects/bmw/ooh.png' },
+        { type: 'video', src: '/images/projects/bmw/scroll.mp4' },
+        { type: 'video', src: '/images/projects/bmw/landing.mp4' },
+        { type: 'image', src: '/images/projects/bmw/hero.png' },
+        { type: 'video', src: '/images/projects/bmw/scroll.mp4' },
+        { type: 'video', src: '/images/projects/bmw/story.mp4' }
+    ]
+},
+
+{
     id: 'symbioglitch',
     title: "VIDEOCITTÀ 2024",
     year: 2024,
-    categories: ["Live Visuals", "Installazione Immersiva", "Arte Digitale"],
-    description: "Symbioglitch è un'esplorazione artistica profonda del rapporto tra l'umanità e il mondo naturale. Attraverso un collage visivo e sonoro, il progetto si propone di denunciare le contraddizioni e le tensioni di questo dialogo, cercando di trasmettere emozioni complesse e stimolanti allo spettatore. Il montaggio delle immagini sarà randomico, sfruttando la casualità per creare qualcosa di unico e inaspettato, proprio come fa la natura stessa. Contrapponendo riprese di cose apparentemente distanti e non comunicanti, si creano nuovi significati e rivelazioni disturbanti sul rapporto tra l'uomo e la natura. L'estetica di 'Symbioglitch' è caratterizzata da un mix di glitch, oscurità e pessimismo. Utilizzando cambi di scena incalzanti, effetti di movimento distorti e manipolazioni visive, il progetto crea un'esperienza visiva disturbante e incerta, che mira a provocare reazioni viscerali nello spettatore. Si caratterizza per modifiche pesanti e quasi distruttive applicate ai video originali. Attraverso un processo che mira a denaturalizzare e modificare drasticamente il footage originale, si crea un effetto visivo e sonoro che sfida le percezioni convenzionali ed esplora nuove dimensioni del rapporto fra l'uomo e la natura. Questo approccio enfatizza la casualità nel montaggio delle immagini, aggiungendo un ulteriore strato di complessità e imprevedibilità alla narrazione visiva del progetto.",
+    categories: ['Installazione Interattiva & Artistica', 'Live Visuals'],
+    description: "Symbioglitch esplora il rapporto conflittuale tra umanità e natura attraverso un'estetica glitch e oscura. La performance audiovisiva, proiettata su una parete di 25 metri per Videocittà 2024, utilizza un montaggio casuale e una manipolazione quasi distruttiva del footage per creare un'esperienza visiva disturbante e stimolare reazioni viscerali. Accostando elementi visivi e sonori apparentemente distanti, l'opera genera nuovi e inquietanti significati su questa complessa relazione.",
     shortDescription: "Performance audiovisiva live che esplora le connessioni distorte tra umanità e natura attraverso estetiche glitch e un montaggio casuale, proiettata su una parete di 25 metri a Videocittà 2024.",
-    image: "/images/projects/videocitta/still1.png",
+    image: "/images/projects/videocitta/hero.png",
     link: "/works/symbioglitch",
     heroMedia: { type: 'video', src: "/images/projects/videocitta/video6.mp4" },
     technologies: [
@@ -127,7 +216,6 @@ export const worksData = [
         { type: 'video', src: "/images/projects/videocitta/video3.mp4" },
         { type: 'video', src: "/images/projects/videocitta/video4.mp4" },
         { type: 'video', src: "/images/projects/videocitta/video5.mp4" },
-        
     ]
 },
 
@@ -135,7 +223,7 @@ export const worksData = [
     id: 'beyond-the-frame',
     title: ":BEYOND THE FRAME",
     year: 2024,
-    categories: ["Installazione Interattiva", "Arte Digitale"],
+    categories: ['Installazione Interattiva & Artistica'],
     description: "Questa installazione interattiva invita lo spettatore a un viaggio sensoriale che esplora il rapporto tra percezione e distanza, giocando sul confine tra l'astratto e il riconoscibile. Ciò che da lontano appare come una texture indefinita si trasforma, avvicinandosi, in un oggetto reale che riacquista il suo contesto. È un invito a rallentare, a scoprire la bellezza nascosta nell'ordinario e a guardare oltre l'apparenza, ricordandoci che per vedere davvero, occorre fermarsi.",
     shortDescription: "Un'installazione interattiva dove la distanza dello spettatore cambia la percezione visiva, trasformando texture astratte in immagini riconoscibili.",
     image: "/images/cards/beyond2.png",
@@ -172,54 +260,152 @@ export const worksData = [
         { type: 'video', src: "/images/projects/beyond/_side5.mp4" },
         { type: 'video', src: "/images/projects/beyond/side6.mp4" },
         { type: 'video', src: "/images/projects/beyond/_side6.mp4" },
-
     ]
 },
 
-
-// --- NUOVI PROGETTI DA COMPILARE ---
-{
-    id: 'bmw-reignite-the-pleasure',
-    title: 'BMW - RE:IGNITE THE PLEASURE',
-    year: 2025,
-    categories: ['Placeholder'],
-    description: 'Descrizione completa da inserire.',
-    shortDescription: 'Descrizione breve da inserire.',
-    image: '/images/projects/bmw/hero.png',
-    link: '/works/bmw-reignite-the-pleasure',
-    heroMedia: { type: 'image', src: '/images/projects/bmw/hero.png' },
-    technologies: ['Tecnologia 1'],
-    figmaEmbedUrl:"https://embed.figma.com/proto/VJKiZCYc869sU3yl3mW5a0/BMW?page-id=370%3A249&node-id=286-8&scaling=min-zoom&content-scaling=fixed&embed-host=share",
-    keyFeatures: ['Caratteristica 1'],
-    challenge: 'Sfida da inserire.',
-    solution: 'Soluzione da inserire.',
-    gallery: [
-        { type: 'image', src: '/images/projects/bmw/ooh.png' },
-        { type: 'video', src: '/images/projects/bmw/scroll.mp4' },
-        { type: 'video', src: '/images/projects/bmw/landing.mp4' },
-        { type: 'image', src: '/images/projects/bmw/hero.png' },
-
-        { type: 'video', src: '/images/projects/bmw/scroll.mp4' },
-        { type: 'video', src: '/images/projects/bmw/story.mp4' }
-    ]
-},
 {
     id: 'circularthub',
     title: 'CIRCULARTHUB',
-    year: 2025,
-    categories: ['Placeholder'],
-    description: 'Descrizione completa da inserire.',
-    shortDescription: 'Descrizione breve da inserire.',
-    image: '/images/cards/circularthub.png',
+    year: 2024,
+    categories: ['Sviluppo Web & UI/UX', 'Branding & Identità Visiva'],
+    description: 'CirculArtHub è una piattaforma digitale progettata per la vendita di prodotti artistici e di design realizzati con materiali di recupero (upcycling). Il progetto include la creazione completa della brand identity, la pianificazione della user journey (platform action chart) e la prototipazione di tutte le schermate e della navigabilità su Figma. L\'obiettivo è incentivare l\'economia circolare, lo scambio a mano e dare visibilità ad artisti e designer emergenti che lavorano con il riutilizzo creativo.',
+    shortDescription: 'Piattaforma digitale per la vendita di prodotti upcycled, completa di brand identity, UI/UX e prototipo navigabile.',
+    image: '/images/projects/circularthub/card.png',
     link: '/works/circularthub',
-    heroMedia: { type: 'image', src: '/images/hero/circularthub.png' },
-    technologies: ['Tecnologia 1'],
-    keyFeatures: ['Caratteristica 1'],
-    figmaEmbedUrl:"https://embed.figma.com/proto/0uWNVAvqtuqKGO1g3as7jJ/Beyond-the-Frame?page-id=0%3A1&node-id=0-3&embed-host=share",
-    challenge: 'Sfida da inserire.',
-    solution: 'Soluzione da inserire.',
-    gallery: [{ type: 'image', src: '/images/gallery/circularthub/1.png' }]
+    heroMedia: { type: 'image', src: '/images/projects/circularthub/hero.png' },
+    technologies: ['Figma', 'Adobe Illustrator'],
+    keyFeatures: [
+        'Creazione della brand identity (logo, colori, tipografia).',
+        'Progettazione dell\'interfaccia utente (UI) e dell\'esperienza utente (UX).',
+        'Sviluppo di un prototipo interattivo e navigabile in Figma.',
+        'Definizione della logica della piattaforma e delle interazioni.',
+        'Focus su sostenibilità, riutilizzo e supporto alla comunità artistica.'
+    ],
+    figmaEmbedUrl: "https://embed.figma.com/proto/DUOOxYSzLFFt4C49mpZXUK/CirculArtHub_RxInK?page-id=&node-id=418-372&viewport=-27%2C-97%2C0.02&scaling=contain&content-scaling=fixed&embed-host=share",
+    challenge: 'La sfida principale era progettare un\'interfaccia che fosse allo stesso tempo esteticamente piacevole, intuitiva per artisti e compratori, e capace di comunicare in modo efficace i valori di sostenibilità e unicità dei prodotti venduti.',
+    solution: 'È stato sviluppato un design pulito e moderno, che mette in risalto le immagini dei prodotti. La navigazione è stata semplificata per facilitare la scoperta di nuovi artisti e l\'acquisto. Il prototipo in Figma ha permesso di testare e validare il flusso utente prima dello sviluppo, assicurando un\'esperienza utente coesa e funzionale.',
+    gallery: [{ type: 'image', src: '/images/projects/circularthub/1.png' },
+        { type: 'image', src: '/images/projects/circularthub/2.png' },
+        { type: 'image', src: '/images/projects/circularthub/3.png' },
+        { type: 'image', src: '/images/projects/circularthub/4.png' },
+        { type: 'image', src: '/images/projects/circularthub/5.png' },
+        { type: 'image', src: '/images/projects/circularthub/6.png' },
+        { type: 'image', src: '/images/projects/circularthub/7.png' },
+        { type: 'image', src: '/images/projects/circularthub/card.png' }
+    ]
 },
+
+{
+    id: 'roma-crater-mundi',
+    title: 'ROMA CRATER MUNDI',
+    year: 2024,
+    categories: ['Fotografia', 'Direzione Creativa & Art Direction'],
+    description: '"Roma Crater Mundi" è un progetto artistico e fotografico che trasforma un noto problema urbano, le buche di Roma, in un soggetto di inaspettata bellezza. Attraverso lo sguardo fotografico, le crepe e le voragini nell\'asfalto vengono decontestualizzate e immortalate come paesaggi lunari o crateri astratti, invitando a una riflessione sulla resilienza e sulla capacità di trovare valore estetico anche nel degrado. Il progetto è stato completato con l\'impaginazione di un libro fotografico in InDesign e la stampa su carta di alta qualità.',
+    shortDescription: 'Un progetto fotografico che nobilita le buche di Roma, trasformandole in crateri astratti e paesaggi inaspettati.',
+    image: '/images/projects/romacratermundi/card.jpg',
+    link: '/works/roma-crater-mundi',
+    heroMedia: { type: 'image', src:'/images/projects/romacratermundi/hero.jpg'},
+    technologies: ['Fotografia Digitale (Canon 700D)', 'Adobe InDesign', 'Adobe Photoshop'],
+    keyFeatures: [
+        'Concept artistico che valorizza elementi del degrado urbano.',
+        'Serie fotografica con uno stile visivo coerente.',
+        'Progettazione e impaginazione di un libro fotografico.',
+        'Stampa finale su carta fotografica per esaltare i dettagli.',
+        'Ricerca estetica sulla texture e la composizione astratta.'
+    ],
+    challenge: 'La sfida era elevare un soggetto comunemente associato a disagio e degrado, come le buche stradali, a un livello artistico, trovando angolazioni, luci e composizioni capaci di rivelarne una bellezza nascosta e astratta.',
+    solution: 'Attraverso un attento lavoro di composizione e post-produzione, ogni buca è stata trattata come un paesaggio a sé stante. L\'impaginazione del libro fotografico ha permesso di creare una narrazione visiva sequenziale, guidando lo spettatore in un viaggio attraverso questi "crateri urbani" e consolidando il concept del progetto.',
+    gallery: [{ type: 'image', src: '/images/projects/romacratermundi/still1.png' },
+        { type: 'image', src: '/images/projects/romacratermundi/1.jpg' },
+        { type: 'image', src: '/images/projects/romacratermundi/2.jpg' },
+        { type: 'image', src: '/images/projects/romacratermundi/3.jpg' },
+        { type: 'image', src: '/images/projects/romacratermundi/4.jpg' },
+        { type: 'image', src: '/images/projects/romacratermundi/5.jpg' },
+        { type: 'image', src: '/images/projects/romacratermundi/6.jpg' },
+        { type: 'image', src: '/images/projects/romacratermundi/7.jpg' },
+        { type: 'image', src: '/images/projects/romacratermundi/8.jpg' },
+        { type: 'image', src: '/images/projects/romacratermundi/9.jpg' },
+        { type: 'image', src: '/images/projects/romacratermundi/10.jpg' },
+        { type: 'image', src: '/images/projects/romacratermundi/11.jpg' },
+        { type: 'image', src: '/images/projects/romacratermundi/12.jpg' },
+        { type: 'image', src: '/images/projects/romacratermundi/13.jpg' },
+        { type: 'image', src: '/images/projects/romacratermundi/14.jpg' },
+        { type: 'image', src: '/images/projects/romacratermundi/15.jpg' },
+        { type: 'image', src: '/images/projects/romacratermundi/16.jpg' },
+        { type: 'image', src: '/images/projects/romacratermundi/still2.png' },
+        { type: 'image', src: '/images/projects/romacratermundi/still3.png' },
+        { type: 'image', src: '/images/projects/romacratermundi/still4.png' },
+        { type: 'image', src: '/images/projects/romacratermundi/still5.png' },
+        { type: 'image', src: '/images/projects/romacratermundi/still6.png' },
+        { type: 'image', src: '/images/projects/romacratermundi/still7.png' }
+    ]
+},
+
+{
+    id: 'one-of-these-days',
+    title: 'ONE OF THESE DAYS',
+    year: 2023,
+    categories: ['Video & Motion Design'],
+    description: 'Un tributo visivo al celebre brano dei Pink Floyd, realizzato interamente animando in After Effects disegni creati su Illustrator. Il video esplora un\'estetica "flat", basata su ripetizioni grafiche, giochi di sovrapposizione con metodi di fusione (come "differenza") e un montaggio serrato che segue in modo quasi ossessivo il ritmo e la struttura della musica.',
+    shortDescription: 'Tributo animato al brano dei Pink Floyd, caratterizzato da un\'estetica flat, animazioni ritmiche e un montaggio sincronizzato con la musica.',
+    image: '/images/projects/oneofthesedays/10.png' ,
+    link: '/works/one-of-these-days',
+    heroMedia: { type: 'youtube', videoId: 'AmHK1_hq3cQ' },
+    technologies: ['Adobe After Effects', 'Adobe Illustrator'],
+    keyFeatures: [
+        'Animazione 2D basata su grafica vettoriale.',
+        'Stile visivo "flat" con uso creativo dei livelli.',
+        'Montaggio video strettamente sincronizzato con la traccia musicale.',
+        'Uso di effetti di ripetizione e metodi di fusione per creare pattern complessi.',
+        'Interpretazione visiva di un classico della musica rock.'
+    ],
+    challenge: 'La sfida era tradurre la potenza e l\'atmosfera del brano dei Pink Floyd in un linguaggio visivo coerente, senza essere didascalici. L\'obiettivo era creare un flusso visivo che completasse la musica, mantenendo alta l\'attenzione attraverso la ripetizione e la variazione.',
+    solution: 'Utilizzando forme geometriche semplici e una palette di colori limitata, l\'animazione si concentra sul movimento e sul ritmo. La sincronia tra audio e video è stata la chiave per costruire la tensione, mentre l\'uso dei livelli in "differenza" ha permesso di creare variazioni visive inaspettate, rispecchiando la natura sperimentale del brano.',
+    gallery: [{ type: 'image', src: '/images/projects/oneofthesedays/1.png' },
+        { type: 'image', src: '/images/projects/oneofthesedays/2.png' },
+        { type: 'image', src: '/images/projects/oneofthesedays/3.png' },
+        { type: 'image', src: '/images/projects/oneofthesedays/4.png' },
+        { type: 'image', src: '/images/projects/oneofthesedays/5.png' },
+        { type: 'image', src: '/images/projects/oneofthesedays/6.png' },
+        { type: 'image', src: '/images/projects/oneofthesedays/7.png' },
+        { type: 'image', src: '/images/projects/oneofthesedays/8.png' },
+        { type: 'image', src: '/images/projects/oneofthesedays/9.png' },
+        { type: 'image', src: '/images/projects/oneofthesedays/10.png' }
+    ]
+},
+
+{
+    id: 'friends-in-my-head',
+    title: 'FRIENDS IN MY HEAD',
+    year: 2025,
+    categories: ['Video & Motion Design', 'Direzione Creativa & Art Direction'],
+    description: 'Un cortometraggio diretto e girato in una sola ora come sfida creativa, partendo da quattro parole generate casualmente: caccia, voci, acqua, follia. Il film segue la discesa nella psicosi di un ragazzo affetto da schizofrenia, che si avventura in una riserva di caccia. La narrazione visiva, volutamente amatoriale e delirante, è caratterizzata da uno stile in bianco e nero e un montaggio serrato che riflette il progressivo crollo mentale del protagonista, fino a un tragico epilogo.',
+    shortDescription: 'Cortometraggio sperimentale su un ragazzo schizofrenico, girato in un\'ora e basato su parole casuali, con uno stile delirante in bianco e nero.',
+    image: '/images/projects/friendsinmyhead/still4.png',
+    link: '/works/friends-in-my-head',
+    heroMedia: { type: 'vimeo', videoId: '1097622993' },
+    technologies: ['Adobe After Effects', 'DaVinci Resolve'],
+    keyFeatures: [
+        'Progetto realizzato con un vincolo di tempo stringente (1 ora).',
+        'Narrazione basata su input creativi casuali.',
+        'Regia e montaggio che riflettono uno stato mentale alterato.',
+        'Stile visivo in bianco e nero volutamente grezzo e amatoriale.',
+        'Esplorazione del tema della malattia mentale attraverso il video.'
+    ],
+    challenge: 'La sfida principale era costruire una narrazione coerente e di impatto partendo da concetti slegati e con un tempo di produzione estremamente limitato. L\'obiettivo era trasmettere la sensazione di follia e delirio non solo attraverso la storia, ma anche con lo stile di ripresa e montaggio.',
+    solution: 'Abbracciando i vincoli come elementi stilistici, il risultato è un cortometraggio viscerale. La camera a mano, il montaggio rapido e l\'estetica in bianco e nero a basso contrasto contribuiscono a creare un\'atmosfera opprimente e caotica, immergendo lo spettatore nella prospettiva disturbata del protagonista.',
+    gallery: [{ type: 'image', src: '/images/projects/friendsinmyhead/still1.png' },
+        { type: 'image', src: '/images/projects/friendsinmyhead/still2.png' },
+        { type: 'image', src: '/images/projects/friendsinmyhead/still3.png' },
+        { type: 'image', src: '/images/projects/friendsinmyhead/still4.png' },
+        { type: 'image', src: '/images/projects/friendsinmyhead/still5.png' },
+        { type: 'image', src: '/images/projects/friendsinmyhead/still6.png' },
+        { type: 'image', src: '/images/projects/friendsinmyhead/still7.png' }
+    ]
+},
+
+// --- NUOVI PROGETTI DA COMPILARE ---
+
 {
     id: 'haizum',
     title: 'HAIZUM',
@@ -253,31 +439,6 @@ export const worksData = [
     gallery: [{ type: 'image', src: '/images/gallery/il-viaggio-nel-linguaggio/1.png' }]
 },
 {
-    id: 'rxink-personal-brand',
-    title: 'RXINK - PERSONAL BRAND',
-    year: 2025,
-    categories: ['Placeholder'],
-    description: 'Descrizione completa da inserire.',
-    shortDescription: 'Descrizione breve da inserire.',
-    image: '/images/projects/rxink/pattern.png',
-    link: '/works/rxink-personal-brand',
-    heroMedia: { type: 'image', src: '/images/projects/rxink/construction.png' },
-    technologies: ['Tecnologia 1'],
-    keyFeatures: ['Caratteristica 1'],
-    challenge: 'Sfida da inserire.',
-    solution: 'Soluzione da inserire.',
-    figmaEmbedUrl:"https://embed.figma.com/proto/bCQ5r2B4hhs3sL12B7zodE/Untitled?page-id=120%3A1332&node-id=120-1333&starting-point-node-id=120%3A1333&scaling=scale-down&content-scaling=fixed&embed-host=share",
-    gallery: [{ type: 'image', src: '/images/projects/rxink/black.png' },
-        { type: 'video', src: '/images/projects/rxink/LOGOANIMATION10.mp4' },
-        { type: 'image', src: '/images/projects/rxink/green.png' },
-        { type: 'image', src: '/images/projects/rxink/pattern.png' },
-        { type: 'image', src: '/images/projects/rxink/think.png' },
-        { type: 'video', src: '/images/projects/rxink/logoanimationverticale.mp4' },
-        { type: 'image', src: '/images/projects/rxink/yellow1.png' },
-        { type: 'image', src: '/images/projects/rxink/BannerLinkedin.png' }
-    ]
-},
-{
     id: 'trashfinder',
     title: 'TRASHFINDER',
     year: 2025,
@@ -294,39 +455,6 @@ export const worksData = [
     gallery: [{ type: 'image', src: '/images/gallery/trashfinder/1.png' }]
 },
 {
-    id: 'videocitta-2024',
-    title: 'VIDEOCITTA 2024',
-    year: 2025,
-    categories: ['Placeholder'],
-    description: 'Descrizione completa da inserire.',
-    shortDescription: 'Descrizione breve da inserire.',
-    image: '/images/cards/videocitta-2024.png',
-    link: '/works/videocitta-2024',
-    heroMedia: { type: 'image', src: '/images/hero/videocitta-2024.png' },
-    technologies: ['Tecnologia 1'],
-    keyFeatures: ['Caratteristica 1'],
-    challenge: 'Sfida da inserire.',
-    solution: 'Soluzione da inserire.',
-    gallery: [{ type: 'image', src: '/images/gallery/videocitta-2024/1.png' }]
-},
-{
-    id: 'vinted-non-mi-metti',
-    title: 'VINTED - NON MI METTI?',
-    year: 2025,
-    categories: ['Placeholder'],
-    description: 'Descrizione completa da inserire.',
-    shortDescription: 'Descrizione breve da inserire.',
-    image: '/images/cards/vinted-non-mi-metti.png',
-    link: '/works/vinted-non-mi-metti',
-    heroMedia: { type: 'youtube', videoId: 'y5pSa9Mp-qg' },
-    technologies: ['Tecnologia 1'],
-    keyFeatures: ['Caratteristica 1'],
-    challenge: 'Sfida da inserire.',
-    solution: 'Soluzione da inserire.',
-    figmaEmbedUrl:"https://embed.figma.com/proto/7mD2tcVCpDlpjDgzdq7nXy/Vinted?page-id=191%3A65&node-id=232-139&embed-host=share",
-    gallery: [{ type: 'image', src: '/images/gallery/vinted-non-mi-metti/1.png' }]
-},
-{
     id: 'algorithmube',
     title: 'ALGORITHMUBE',
     year: 2025,
@@ -341,68 +469,6 @@ export const worksData = [
     challenge: 'Sfida da inserire.',
     solution: 'Soluzione da inserire.',
     gallery: [{ type: 'image', src: '/images/gallery/algorithmube/1.png' }]
-},
-{
-    id: 'friends-in-my-head',
-    title: 'FRIENDS IN MY HEAD',
-    year: 2025,
-    categories: ['Placeholder'],
-    description: 'Descrizione completa da inserire.',
-    shortDescription: 'Descrizione breve da inserire.',
-    image: '/images/projects/friendsinmyhead/still4.png',
-    link: '/works/friends-in-my-head',
-    heroMedia: { type: 'vimeo', videoId: '1097622993' },
-    technologies: ['Tecnologia 1'],
-    keyFeatures: ['Caratteristica 1'],
-    challenge: 'Sfida da inserire.',
-    solution: 'Soluzione da inserire.',
-    gallery: [{ type: 'image', src: '/images/projects/friendsinmyhead/still1.png' },
-        { type: 'image', src: '/images/projects/friendsinmyhead/still2.png' },
-        { type: 'image', src: '/images/projects/friendsinmyhead/still3.png' },
-        { type: 'image', src: '/images/projects/friendsinmyhead/still4.png' },
-        { type: 'image', src: '/images/projects/friendsinmyhead/still5.png' },
-        { type: 'image', src: '/images/projects/friendsinmyhead/still6.png' },
-        { type: 'image', src: '/images/projects/friendsinmyhead/still7.png' }
-    ]
-},
-{
-    id: 'one-of-these-days',
-    title: 'ONE OF THESE DAYS',
-    year: 2025,
-    categories: ['Placeholder'],
-    description: 'Descrizione completa da inserire.',
-    shortDescription: 'Descrizione breve da inserire.',
-    image: '/images/cards/one-of-these-days.png',
-    link: '/works/one-of-these-days',
-    heroMedia: { type: 'youtube', videoId: 'AmHK1_hq3cQ' },
-    technologies: ['Tecnologia 1'],
-    keyFeatures: ['Caratteristica 1'],
-    challenge: 'Sfida da inserire.',
-    solution: 'Soluzione da inserire.',
-    gallery: [{ type: 'image', src: '/images/gallery/one-of-these-days/1.png' }]
-},
-{
-    id: 'roma-crater-mundi',
-    title: 'ROMA CRATER MUNDI',
-    year: 2025,
-    categories: ['Placeholder'],
-    description: 'Descrizione completa da inserire.',
-    shortDescription: 'Descrizione breve da inserire.',
-    image: '/images/projects/romacratermundi/titolo.png',
-    link: '/works/roma-crater-mundi',
-    heroMedia: { type: 'image', src:'/images/projects/romacratermundi/titolo.png'},
-    technologies: ['Tecnologia 1'],
-    keyFeatures: ['Caratteristica 1'],
-    challenge: 'Sfida da inserire.',
-    solution: 'Soluzione da inserire.',
-    gallery: [{ type: 'image', src: '/images/projects/romacratermundi/still1.png' },
-        { type: 'image', src: '/images/projects/romacratermundi/still2.png' },
-        { type: 'image', src: '/images/projects/romacratermundi/still3.png' },
-        { type: 'image', src: '/images/projects/romacratermundi/still4.png' },
-        { type: 'image', src: '/images/projects/romacratermundi/still5.png' },
-        { type: 'image', src: '/images/projects/romacratermundi/still6.png' },
-        { type: 'image', src: '/images/projects/romacratermundi/still7.png' }
-    ]
 },
 {
     id: 'subviral',

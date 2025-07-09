@@ -1,5 +1,9 @@
 <script>
-	import { onMount } from 'svelte';
+	import { onMount, onDestroy } from 'svelte';
+	import { gsap } from 'gsap';
+	import { ScrollTrigger } from 'gsap/ScrollTrigger';
+	import Navbar from '$lib/components/Navbar.svelte';
+	import SoftwareLogos from '$lib/components/SoftwareLogos.svelte';
 
 	let ready = false;
 	let scrollY = 0;
@@ -12,24 +16,23 @@
 	let svgLayer1, svgLayer2, svgLayer3, svgLayer4, svgLayer5;
 	let floatingShapes;
 
-	// NUOVO ARRAY DI CONFIGURAZIONE: Controlla dimensione e inclinazione di ogni forma
 	let shapeConfigs = [
-        { x: -35, y: -38, scroll: 0.04,  rotationSpeed: 0.01,  width: 60, height: 80, skew: -25 },
-        { x: 40,  y: -32, scroll: -0.035,rotationSpeed: -0.01, width: 35, height: 50, skew: 25 },
-        { x: -30, y: 36,  scroll: 0.03,  rotationSpeed: 0.008, width: 50, height: 70, skew: -28 },
-        { x: 32,  y: 28,  scroll: -0.025,rotationSpeed: -0.007,width: 45, height: 60, skew: 22 },
-        { x: -38, y: -25, scroll: 0.045, rotationSpeed: 0.01,  width: 70, height: 95, skew: -22 },
-        { x: 30,  y: 35,  scroll: -0.04, rotationSpeed: -0.009,width: 30, height: 45, skew: 30 },
-        { x: -36, y: 30,  scroll: 0.035, rotationSpeed: 0.01,  width: 40, height: 55, skew: -25 },
-        { x: 34,  y: -36, scroll: -0.03, rotationSpeed: -0.008,width: 65, height: 85, skew: 25 },
-        { x: -28, y: -38, scroll: 0.04,  rotationSpeed: 0.01,  width: 38, height: 50, skew: -30 },
-        { x: 36,  y: 24,  scroll: -0.03, rotationSpeed: -0.007,width: 55, height: 75, skew: 28 },
-        { x: -32, y: -28, scroll: 0.035, rotationSpeed: 0.008, width: 60, height: 80, skew: -24 },
-        { x: 38,  y: -25, scroll: -0.04, rotationSpeed: -0.009,width: 48, height: 65, skew: 26 },
-        { x: -25, y: 35,  scroll: 0.025, rotationSpeed: 0.007, width: 30, height: 40, skew: -28 },
-        { x: 30,  y: -32, scroll: -0.045,rotationSpeed: -0.01, width: 75, height: 100,skew: 22 },
-        { x: -40, y: 22,  scroll: 0.035, rotationSpeed: 0.008, width: 42, height: 60, skew: -26 }
-    ];
+		{ x: -35, y: -38, scroll: 0.04,  rotationSpeed: 0.01,  width: 60, height: 80, skew: -25 },
+		{ x: 40,  y: -32, scroll: -0.035,rotationSpeed: -0.01, width: 35, height: 50, skew: 25 },
+		{ x: -30, y: 36,  scroll: 0.03,  rotationSpeed: 0.008, width: 50, height: 70, skew: -28 },
+		{ x: 32,  y: 28,  scroll: -0.025,rotationSpeed: -0.007,width: 45, height: 60, skew: 22 },
+		{ x: -38, y: -25, scroll: 0.045, rotationSpeed: 0.01,  width: 70, height: 95, skew: -22 },
+		{ x: 30,  y: 35,  scroll: -0.04, rotationSpeed: -0.009,width: 30, height: 45, skew: 30 },
+		{ x: -36, y: 30,  scroll: 0.035, rotationSpeed: 0.01,  width: 40, height: 55, skew: -25 },
+		{ x: 34,  y: -36, scroll: -0.03, rotationSpeed: -0.008,width: 65, height: 85, skew: 25 },
+		{ x: -28, y: -38, scroll: 0.04,  rotationSpeed: 0.01,  width: 38, height: 50, skew: -30 },
+		{ x: 36,  y: 24,  scroll: -0.03, rotationSpeed: -0.007,width: 55, height: 75, skew: 28 },
+		{ x: -32, y: -28, scroll: 0.035, rotationSpeed: 0.008, width: 60, height: 80, skew: -24 },
+		{ x: 38,  y: -25, scroll: -0.04, rotationSpeed: -0.009,width: 48, height: 65, skew: 26 },
+		{ x: -25, y: 35,  scroll: 0.025, rotationSpeed: 0.007, width: 30, height: 40, skew: -28 },
+		{ x: 30,  y: -32, scroll: -0.045,rotationSpeed: -0.01, width: 75, height: 100,skew: 22 },
+		{ x: -40, y: 22,  scroll: 0.035, rotationSpeed: 0.008, width: 42, height: 60, skew: -26 }
+	];
 
 	let mousePos = { x: 0, y: 0 };
 	let repulsionRadius = 250;
@@ -50,32 +53,31 @@
 	let draggedShape = null;
 	let dragOffset = { x: 0, y: 0 };
 	let shapeBehaviors = [];
-    let magneticPull = false;
+	let magneticPull = false;
 
 	onMount(() => {
+		gsap.registerPlugin(ScrollTrigger);
 		document.documentElement.style.setProperty('--background-color', '#FFE964');
 		document.documentElement.style.setProperty('--text-color', '#1A1A1A');
 
 		floatingShapes = document.querySelectorAll('.floating-shape.reactive');
 		shapesScale = Array(floatingShapes.length).fill(1);
-        
-        // Applica dimensioni iniziali
-        floatingShapes.forEach((shape, index) => {
-            const config = shapeConfigs[index];
-            if (config) {
-                shape.style.width = `${config.width}px`;
-                shape.style.height = `${config.height}px`;
-            }
-        });
+		
+		floatingShapes.forEach((shape, index) => {
+			const config = shapeConfigs[index];
+			if (config) {
+				shape.style.width = `${config.width}px`;
+				shape.style.height = `${config.height}px`;
+			}
+		});
 
 		initializeShapeBehaviors();
-
 		repulsionRadius = Math.min(window.innerWidth, window.innerHeight) * 0.35;
 		repulsionStrength = Math.min(window.innerWidth, window.innerHeight) * 0.25;
-
 		setupSmoothAnimations();
 		startAutoAnimation();
 		setupShapeInteractivity();
+        setupScrollAnimations();
 
 		setTimeout(() => {
 			ready = true;
@@ -83,12 +85,58 @@
 				mouseMoveEnabled = true;
 			}, 800);
 		}, 500);
-        
-        return () => {
-            window.removeEventListener('resize', handleResize);
-            clearInterval(intervalId);
-        };
+		
+		return () => {
+			window.removeEventListener('resize', handleResize);
+			clearInterval(intervalId);
+            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+		};
 	});
+
+    function setupScrollAnimations() {
+        // Animate elements in the About section
+        gsap.from(".about-section .text-container > *", {
+            scrollTrigger: {
+                trigger: ".about-section",
+                start: "top 80%",
+                end: "bottom top",
+                toggleActions: "play none none reverse",
+            },
+            opacity: 0,
+            y: 50,
+            stagger: 0.3,
+            ease: "power3.out",
+            duration: 1
+        });
+
+        // Animate the work cards
+        gsap.from(".work-card", {
+            scrollTrigger: {
+                trigger: ".works-preview",
+                start: "top 70%",
+                toggleActions: "play none none reverse",
+            },
+            opacity: 0,
+            y: 100,
+            stagger: 0.2,
+            ease: "power3.out",
+            duration: 1.2
+        });
+
+        // Animate elements in the CTA section
+        gsap.from(".cta-section .cta-content > *", {
+            scrollTrigger: {
+                trigger: ".cta-section",
+                start: "top 80%",
+                toggleActions: "play none none reverse",
+            },
+            opacity: 0,
+            y: 50,
+            stagger: 0.3,
+            ease: "power3.out",
+            duration: 1
+        });
+    }
 
 	function initializeShapeBehaviors() {
 		shapeBehaviors = [];
@@ -115,7 +163,7 @@
 				shape.addEventListener('mousedown', (e) => { handleShapeClick(index, e); });
 				shape.addEventListener('touchstart', (e) => { handleShapeClick(index, e.touches[0]); });
 			});
-            window.addEventListener('mousemove', handleMouseDrag);
+			window.addEventListener('mousemove', handleMouseDrag);
 			window.addEventListener('touchmove', handleTouchDrag, { passive: false });
 			window.addEventListener('mouseup', releaseShape);
 			window.addEventListener('touchend', releaseShape);
@@ -136,7 +184,7 @@
 		setTimeout(() => {
 			if (floatingShapes && floatingShapes[index]) {
 				floatingShapes[index].style.pointerEvents = 'none';
-                floatingShapes[index].classList.remove('clicked');
+				floatingShapes[index].classList.remove('clicked');
 				shapesScale[index] = 1;
 			}
 			clickedShape = null;
@@ -148,10 +196,10 @@
 			mousePos.x = e.clientX;
 			mousePos.y = e.clientY;
 			const shape = floatingShapes[draggedShape];
-            const config = shapeConfigs[draggedShape];
-            if (config) {
-			    shape.style.transform = `skewX(${config.skew}deg) translate(${e.clientX - dragOffset.x}px, ${e.clientY - dragOffset.y}px)`;
-            }
+			const config = shapeConfigs[draggedShape];
+			if (config) {
+				shape.style.transform = `skewX(${config.skew}deg) translate(${e.clientX - dragOffset.x}px, ${e.clientY - dragOffset.y}px)`;
+			}
 		}
 	}
 
@@ -161,10 +209,10 @@
 			mousePos.x = e.touches[0].clientX;
 			mousePos.y = e.touches[0].clientY;
 			const shape = floatingShapes[draggedShape];
-            const config = shapeConfigs[draggedShape];
-            if (config) {
-			    shape.style.transform = `skewX(${config.skew}deg) translate(${e.touches[0].clientX - dragOffset.x}px, ${e.touches[0].clientY - dragOffset.y}px)`;
-            }
+			const config = shapeConfigs[draggedShape];
+			if (config) {
+				shape.style.transform = `skewX(${config.skew}deg) translate(${e.touches[0].clientX - dragOffset.x}px, ${e.touches[0].clientY - dragOffset.y}px)`;
+			}
 		}
 	}
 
@@ -180,11 +228,12 @@
 		magneticPull = !magneticPull;
 		repulsionStrength = magneticPull ? 250 : 180;
 	}
-    
-    const handleResize = () => {
-        repulsionRadius = Math.min(window.innerWidth, window.innerHeight) * 0.35;
-        repulsionStrength = Math.min(window.innerWidth, window.innerHeight) * 0.25;
-    };
+	
+	const handleResize = () => {
+		repulsionRadius = Math.min(window.innerWidth, window.innerHeight) * 0.35;
+		repulsionStrength = Math.min(window.innerWidth, window.innerHeight) * 0.25;
+        ScrollTrigger.refresh();
+	};
 
 	function setupSmoothAnimations() {
 		smoothScrollY = window.scrollY;
@@ -262,9 +311,9 @@
 		if (floatingShapes && floatingShapes.length > 0) {
 			floatingShapes.forEach((shape, index) => {
 				if (draggedShape === index) return;
-                
-                const config = shapeConfigs[index];
-                if (!config) return; // Salta se non c'è una configurazione per questa forma
+				
+				const config = shapeConfigs[index];
+				if (!config) return; 
 				
 				const rect = shape.getBoundingClientRect();
 				const shapeCenter = { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 };
@@ -312,7 +361,7 @@
 				const totalY = baseY + forceY + scrollEffect + scrollVelocityY + autoY + behaviorEffect.y;
 				const totalRotation = behaviorEffect.rotate;
 
-                shape.style.transform = `skewX(${config.skew}deg) translate(${totalX}px, ${totalY}px) rotate(${totalRotation}deg) scale(${shapesScale[index]})`;
+				shape.style.transform = `skewX(${config.skew}deg) translate(${totalX}px, ${totalY}px) rotate(${totalRotation}deg) scale(${shapesScale[index]})`;
 			});
 		}
 
@@ -320,26 +369,26 @@
 			giantLogo.style.transform = `translate(${lastMouseX * 10}px, ${lastMouseY * 10}px)`;
 		}
 	}
-    
-    function setDarkMode(isDark) {
-        const newBg = isDark ? '#1A1A1A' : '#FFE964';
-        const newText = isDark ? '#FFE964' : '#1A1A1A';
-        
-        document.documentElement.style.setProperty('--background-color', newBg);
-        document.documentElement.style.setProperty('--text-color', newText);
-        currentBackground = isDark ? "black" : "yellow";
-        
-        if (pageContainer) {
-            pageContainer.classList.toggle('dark-mode', isDark);
-            pageContainer.classList.toggle('light-mode', !isDark);
-        }
-        
-        const allLogos = document.querySelectorAll('.responsive-svg');
-        allLogos.forEach(logo => {
-            logo.classList.toggle('on-dark', isDark);
-            logo.classList.toggle('on-light', !isDark);
-        });
-    }
+	
+	function setDarkMode(isDark) {
+		const newBg = isDark ? '#1A1A1A' : '#FFE964';
+		const newText = isDark ? '#FFE964' : '#1A1A1A';
+		
+		document.documentElement.style.setProperty('--background-color', newBg);
+		document.documentElement.style.setProperty('--text-color', newText);
+		currentBackground = isDark ? "black" : "yellow";
+		
+		if (pageContainer) {
+			pageContainer.classList.toggle('dark-mode', isDark);
+			pageContainer.classList.toggle('light-mode', !isDark);
+		}
+		
+		const allLogos = document.querySelectorAll('.responsive-svg');
+		allLogos.forEach(logo => {
+			logo.classList.toggle('on-dark', isDark);
+			logo.classList.toggle('on-light', !isDark);
+		});
+	}
 
 	function startBackgroundAnimation() {
 		if (isBackgroundAnimating) return;
@@ -403,9 +452,11 @@
 
 <svelte:window bind:scrollY on:mousemove={handleMouseMove}/>
 
+<Navbar />
+
 <div class="landing-page" bind:this={pageContainer} class:light-mode={currentBackground === "yellow"} class:dark-mode={currentBackground === "black"}>
 	<div class="floating-shapes-container">
-        <div class="floating-shape slanted-parallelogram shape-instance-1 reactive"></div>
+		<div class="floating-shape slanted-parallelogram shape-instance-1 reactive"></div>
 		<div class="floating-shape slanted-parallelogram shape-instance-2 reactive"></div>
 		<div class="floating-shape slanted-parallelogram shape-instance-3 reactive"></div>
 		<div class="floating-shape slanted-parallelogram shape-instance-4 reactive"></div>
@@ -456,20 +507,9 @@
 		</div>
 	</div>
 	
-	<nav class="main-nav">
-		<div class="nav-logo">
-			<a href="/"><img src="/images/pictogram.svg" alt="RxInK Logo" class="responsive-svg on-light" /></a>
-		</div>
-		<ul class="nav-links">
-			<li><a href="/works">WORKS</a></li>
-			<li><a href="/about">ABOUT</a></li>
-			<li><a href="/contact">CONTACT</a></li>
-		</ul>
-	</nav>
-	
 	<section class="about-section" id="about">
 		<div class="about-content">
-			<div class="text-container" class:visible={scrollY > 200}>
+			<div class="text-container">
 				<p class="tagline">THINK IN INK</p>
 				<p class="description">
 					I create <span class="highlight">immersive experiences</span> that blend technology, aesthetics, and human perception, transforming spaces into dynamic narratives.
@@ -478,6 +518,8 @@
 		</div>
 	</section>
 	
+	<SoftwareLogos />
+
 	<section class="works-preview" id="works-preview">
 		<h2 class="section-title">SELECTED WORKS</h2>
 		<div class="works-cards">
@@ -488,7 +530,7 @@
 	</section>
 	
 	<section class="cta-section">
-		<div class="cta-content" class:visible={scrollY > 1000}>
+		<div class="cta-content">
 			<h2>WANNA SEE MORE?</h2>
 			<div class="logo-accent">
 				<img src="/images/full-logo.svg" alt="RxInK Logo" class="cta-logo responsive-svg on-light" />
@@ -515,7 +557,7 @@
 		--page-text: #1A1A1A;
 		--page-accent: #62A87C;
 		--shape-glow: rgba(98, 168, 124, 0.7);
-		--shape-bg: rgba(255, 255, 255, 0.08); /* Adjusted alpha for better glass effect */
+		--shape-bg: rgba(255, 255, 255, 0.08);
 		--shape-border: transparent;
 		--glass-bg: rgba(255, 255, 255, 0.1);
 	}
@@ -524,19 +566,16 @@
 		--page-text: #FFE964;
 		--page-accent: #62A87C;
 		--shape-glow: rgba(98, 168, 124, 0.7);
-		--shape-bg: rgba(0, 0, 0, 0.1); /* Adjusted alpha */
+		--shape-bg: rgba(0, 0, 0, 0.1);
 		--shape-border: transparent;
 		--glass-bg: rgba(0, 0, 0, 0.1);
 	}
-    
-    /* === SHAPES === */
-    
-    .floating-shapes-container {
+	
+	/* === SHAPES === */
+	.floating-shapes-container {
 		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
+		top: 0; left: 0;
+		width: 100%; height: 100%;
 		z-index: 999;
 		pointer-events: none;
 		overflow: hidden;
@@ -554,14 +593,11 @@
 		border: 1px solid var(--shape-border);
 	}
 
-    /* The new shape style, as requested */
-    .slanted-parallelogram {
-        width: 80px;
-        height: 100px;
-        transform: skewX(-20deg);
-    }
-    
-    /* Shape Interaction States */
+	.slanted-parallelogram {
+		width: 80px; height: 100px;
+		transform: skewX(-20deg);
+	}
+	
 	.floating-shape.repelled {
 		background: rgba(255, 255, 255, 0.1);
 		box-shadow: 0 0 20px var(--shape-glow);
@@ -585,8 +621,7 @@
 		z-index: 1002;
 		transition: transform 0.3s cubic-bezier(0.18, 1.25, 0.4, 1.1), background 0.3s ease, box-shadow 0.3s ease;
 	}
-    
-    /* Shape Positioning */
+	
 	.shape-instance-1 { top: 15%; left: 20%; }
 	.shape-instance-2 { top: 30%; right: 25%; }
 	.shape-instance-3 { bottom: 25%; left: 15%; }
@@ -601,10 +636,9 @@
 	.shape-instance-12 { top: 80%; right: 5%; }
 	.shape-instance-13 { top: 60%; left: 55%; }
 	.shape-instance-14 { top: 5%; left: 45%; }
-	.shape-instance-15 { bottom: 40%; left: 50%; } /* Adjusted for balance */
+	.shape-instance-15 { bottom: 40%; left: 50%; }
 
-    /* === Global & Page Styles === */
-
+	/* === Global & Page Styles === */
 	:global(.responsive-svg.on-light) {
 		filter: brightness(0) saturate(100%);
 		transition: filter 0.05s ease;
@@ -620,8 +654,7 @@
 		position: relative;
 	}
 
-    /* === Parallax Background === */
-
+	/* === Parallax Background === */
 	.svg-background-container {
 		position: fixed;
 		top: 0; left: 0;
@@ -655,8 +688,7 @@
 	.light-mode .svg-pattern { filter: brightness(0) saturate(100%); }
 	.dark-mode .svg-pattern { filter: invert(90%) sepia(39%) saturate(692%) hue-rotate(325deg) brightness(103%) contrast(103%); }
 
-    /* === UI Controls === */
-
+	/* === UI Controls === */
 	.controls-container {
 		position: fixed;
 		bottom: 20px; right: 20px;
@@ -679,16 +711,11 @@
 		-webkit-backdrop-filter: blur(10px);
 		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 	}
-	.glassmorphic-btn:hover {
-		transform: translateY(-3px);
-		box-shadow: 0 6px 20px rgba(98, 168, 124, 0.2);
-	}
 	.electric-btn.active {
 		background-color: rgba(98, 168, 124, 0.3);
 	}
 
-    /* === Sections & Layout === */
-    
+	/* === Sections & Layout === */
 	.hero { height: 100vh; display: flex; justify-content: center; align-items: center; position: relative; z-index: 1; }
 	.hero-content { text-align: center; z-index: 2; display: flex; flex-direction: column; align-items: center; width: 100%; }
 	.giant-logotype-container {
@@ -707,40 +734,16 @@
 	.title-container.active, .subtitle-container.active { opacity: 1; transform: translateY(0); }
 	h2 { font-size: 1.2rem; font-weight: bold; margin: 0; }
 
-	.main-nav {
-		position: fixed;
-		top: 0; left: 0;
-		width: 100%;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		padding: 1.5rem 2rem;
-		z-index: 1000;
-		background: var(--glass-bg);
-		backdrop-filter: blur(10px);
-		-webkit-backdrop-filter: blur(10px);
-		border-bottom: 1px solid rgba(98, 168, 124, 0.3);
-		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-		transition: all 0.4s ease;
-	}
-	.nav-logo img { width: 40px; height: 40px; transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1), filter 0.4s ease; }
-	.nav-logo:hover img { transform: scale(1.1) rotate(5deg); filter: drop-shadow(0 0 8px var(--page-accent)); }
-	.nav-links { display: flex; list-style: none; gap: 2rem; margin: 0; padding: 0; }
-	.nav-links li { position: relative; }
-	.nav-links a { text-decoration: none; font-size: 0.9rem; font-weight: bold; position: relative; padding: 8px 0; transition: all 0.3s ease; }
-	.nav-links a::after {
-		content: ''; position: absolute; bottom: 0; left: 0;
-		width: 0; height: 3px; background-color: var(--page-accent);
-		transition: width 0.3s cubic-bezier(0.19, 1, 0.22, 1);
-		opacity: 0;
-	}
-	.nav-links a:hover { color: var(--page-accent); text-shadow: 0 0 8px rgba(98, 168, 124, 0.6); }
-	.nav-links a:hover::after { width: 100%; opacity: 1; box-shadow: 0 0 10px var(--page-accent); }
-
-	.about-section { min-height: 70vh; display: flex; align-items: center; justify-content: center; padding: 4rem 2rem; position: relative; z-index: 2; }
+	.about-section { 
+        min-height: 70vh; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        padding: 4rem 2rem; 
+        position: relative; 
+        z-index: 2; 
+    }
 	.about-content { max-width: 800px; margin: 0 auto; }
-	.text-container { opacity: 0; transform: translateY(50px); transition: all 1s cubic-bezier(0.19, 1, 0.22, 1); }
-	.text-container.visible { opacity: 1; transform: translateY(0); }
 	.tagline { font-size: 2rem; margin-bottom: 1rem; font-weight: bold; }
 	.description { font-size: 1.5rem; line-height: 1.6; }
 	.highlight { font-weight: bold; text-decoration: underline; }
@@ -755,41 +758,69 @@
 	.card-back { transform: rotateY(180deg); padding: 2rem; justify-content: center; align-items: center; text-align: center; }
 	.card-back p { color: #FFE964; }
 	.work-image { flex: 1; background-size: cover; background-position: center; }
-	.image1 { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.05)), url('/images/cards/kollateral4.png'); }
-	.image2 { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.05)), url('/images/cards/avperformace.jpg'); }
-	.image3 { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.05)), url('/images/cards/forum.png'); }
+	.image1 { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0)), url('/images/cards/kollateral1.png'); }
+	.image2 { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0)), url('/images/projects/videocitta/hero.png'); }
+	.image3 { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0)), url('/images/projects/circularthub/hero.png'); }
 	.work-title { background: #000000; padding: 1rem; border-top: 1px solid #333; }
 	.work-title h3 { margin: 0; color: #ffffff; font-size: 1.1rem; font-weight: normal; }
 	.view-btn { display: inline-block; background-color: #ffffff; color: #000000; padding: 0.8rem 1.5rem; margin-top: 2rem; text-decoration: none; font-weight: bold; transition: all 0.3s ease; }
-	.view-btn:hover { background-color: #FFE964; transform: translateY(-3px); }
-
-	.cta-section { min-height: 70vh; display: flex; justify-content: center; align-items: center; text-align: center; padding: 2rem; position: relative; z-index: 2; }
-	.cta-content { opacity: 0; transform: translateY(50px); transition: all 1s cubic-bezier(0.19, 1, 0.22, 1); max-width: 800px; }
-	.cta-content.visible { opacity: 1; transform: translateY(0); }
+	
+	.cta-section { 
+        min-height: 70vh; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        text-align: center; 
+        padding: 2rem; 
+        position: relative; 
+        z-index: 2; 
+    }
+	.cta-content { max-width: 800px; width: 100%;}
 	.cta-content h2 { font-size: 1.5rem; margin-bottom: 2rem; font-weight: bold; }
-	.logo-accent { margin: 2rem auto; }
+	/* CORRECTED a logo centering */
+    .logo-accent {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 2rem 0;
+    }
 	.cta-logo { animation: pulse 10s infinite; max-width: 80%; }
 	@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
 	.cta-buttons { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-top: 2rem; }
 	.cta-button { display: inline-block; padding: 1rem 2rem; background-color: #000000; color: #ffffff; font-size: 1rem; font-weight: bold; text-decoration: none; transition: all 0.3s ease; }
-	.cta-button:hover { transform: translateY(-5px); }
 	.cta-button.outline { background-color: transparent; border: 2px solid var(--page-accent); color: var(--page-text); }
 	
 	footer { padding: 3rem 2rem; border-top: 1px solid var(--page-accent); position: relative; z-index: 2; }
 	.footer-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
 	.copyright, .tagline { font-size: 0.8rem; font-weight: bold; }
 	
-    /* === Responsive Adjustments === */
+	/* === UNIFIED HOVER STYLES === */
+	.glassmorphic-btn:hover,
+	.view-btn:hover,
+	.cta-button:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 8px 25px rgba(98, 168, 124, 0.25);
+		background-color: #62A87C;
+	}
+
+	/* Keep text color on solid button hover */
+	.cta-button:not(.outline):hover {
+		color: #ffffff;
+	}
+
+	.cta-button.outline:hover {
+		color: var(--page-accent);
+		border-color: var(--page-accent);
+	}
+	
+	/* === Responsive Adjustments === */
 	@media (max-width: 768px) {
-        .slanted-parallelogram { width: 50px; height: 65px; }
+		.slanted-parallelogram { width: 50px; height: 65px; }
 		.controls-container { flex-direction: row; bottom: 10px; right: 10px; gap: 5px; }
 		.glassmorphic-btn { padding: 8px 10px; font-size: 0.7rem; }
 		h1 { font-size: 3rem; }
 		.description { font-size: 1.2rem; }
 		.works-cards { flex-direction: column; align-items: center; }
-		.main-nav { padding: 1rem; }
-		.nav-links { gap: 1rem; }
-		.nav-links a { font-size: 0.8rem; }
 		.footer-content { flex-direction: column; gap: 1rem; text-align: center; }
 		.giant-logotype-container { width: 70%; max-width: 450px; }
 		.svg-layer { transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1); top: -100%; left: -100%; width: 300%; height: 300%; }
@@ -801,8 +832,8 @@
 	}
 	
 	@media (max-width: 480px) {
-        .slanted-parallelogram { width: 40px; height: 50px; }
-        .shape-instance-6, .shape-instance-7, .shape-instance-12, .shape-instance-14, .shape-instance-15 { display: none; }
+		.slanted-parallelogram { width: 40px; height: 50px; }
+		.shape-instance-6, .shape-instance-7, .shape-instance-12, .shape-instance-14, .shape-instance-15 { display: none; }
 		.giant-logotype-container { width: 80%; max-width: 350px; }
 		.controls-container { right: 5px; bottom: 5px; }
 		.glassmorphic-btn { padding: 6px 8px; font-size: 0.6rem; }

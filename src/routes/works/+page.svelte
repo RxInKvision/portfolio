@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
 	import { worksData } from '$lib/works-data';
+	import Navbar from '$lib/components/Navbar.svelte';
 	
 	
 	let ready = false;
@@ -209,19 +210,7 @@
 		</div>
 	</div>
 
-	<!-- Navigation -->
-	<nav class="main-nav">
-		<div class="nav-logo">
-			<a href="/">
-				<img src="/images/pictogram.svg" alt="RxInK Logo" class="responsive-svg on-light" />
-			</a>
-		</div>
-		<ul class="nav-links">
-			<li class="active"><a href="/works">WORKS</a></li>
-			<li><a href="/about">ABOUT</a></li>
-			<li><a href="/contact">CONTACT</a></li>
-		</ul>
-	</nav>
+<Navbar />
 	
 	<!-- Works Header -->
 	<header class="works-header appear always-visible">

@@ -1,6 +1,7 @@
 <script>
     import { onMount } from 'svelte';
     import { animate } from '$lib/actions/animate.js';
+    import Navbar from '$lib/components/Navbar.svelte';
 
     let ready = false;
     let scrollY = 0;
@@ -100,18 +101,7 @@
         <div class="svg-layer svg-layer-5" bind:this={svgLayer5}><div class="svg-pattern bg-near"></div></div>
     </div>
 
-    <nav class="main-nav">
-        <div class="nav-logo">
-            <a href="/">
-                <img src="/images/pictogram.svg" alt="RxInK Logo" class="responsive-svg on-dark" />
-            </a>
-        </div>
-        <ul class="nav-links">
-            <li><a href="/works">WORKS</a></li>
-            <li class="active"><a href="/about">ABOUT</a></li>
-            <li><a href="/contact">CONTACT</a></li>
-        </ul>
-    </nav>
+<Navbar />
     
     <div class="about-container">
         <div class="about-sidebar animatable" use:animate>

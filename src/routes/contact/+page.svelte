@@ -1,5 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
+	import Navbar from '$lib/components/Navbar.svelte';
 	
 	let ready = false;
 	let scrollY = 0;
@@ -206,19 +207,7 @@
 
 	<!-- Controls removed as electric mode is disabled -->
 
-	<!-- Navigation -->
-	<nav class="main-nav">
-		<div class="nav-logo">
-			<a href="/">
-				<img src="/images/pictogram.svg" alt="RxInK Logo" class="responsive-svg on-light" />
-			</a>
-		</div>
-		<ul class="nav-links">
-			<li><a href="/works">WORKS</a></li>
-			<li><a href="/about">ABOUT</a></li>
-			<li class="active"><a href="/contact">CONTACT</a></li>
-		</ul>
-	</nav>
+	<Navbar />
 	
 	<!-- Contact Section -->
 	<section class="contact-section">

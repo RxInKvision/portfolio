@@ -3,6 +3,7 @@
 	import { getWorkById } from '$lib/works-data';
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
+	import Navbar from '$lib/components/Navbar.svelte';
 
 	import YoutubeEmbed from '$lib/components/YoutubeEmbed.svelte';
 	import VimeoEmbed from '$lib/components/VimeoEmbed.svelte';
@@ -218,18 +219,7 @@
 		<div class="svg-layer svg-layer-5" bind:this={svgLayer5}><div class="svg-pattern bg-near"></div></div>
 	</div>
 
-	<nav class="main-nav">
-		<div class="nav-logo">
-			<a href="/">
-				<img src="/images/pictogram.svg" alt="RxInK Logo" class="responsive-svg on-dark" />
-			</a>
-		</div>
-		<ul class="nav-links">
-			<li class="active"><a href="/works">WORKS</a></li>
-			<li><a href="/about">ABOUT</a></li>
-			<li><a href="/contact">CONTACT</a></li>
-		</ul>
-	</nav>
+	<Navbar />
 
 	{#if work}
 		<div class="project-content" class:ready={readyToAnimate}>

@@ -8,7 +8,7 @@ export const worksData = [
     shortDescription: "Un ecosistema interattivo che trasforma l'archivio storico dei Forum Studios in un paesaggio memoriale 3D esplorabile.",
     image: "/images/projects/forum/titolo.jpg",
     link: "/works/forum-archive-reverie",
-    heroMedia: { type: 'vimeo', videoId: '1096516384' },
+    heroMedia: { type: 'youtube', videoId: '1CkQn1mbHck' },
     technologies: [
         "React",
         "Three.js (@react-three/fiber)",

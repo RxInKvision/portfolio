@@ -96,7 +96,7 @@
 		<div class="portrait" use:clipReveal>
 			<div class="pinner" use:parallax={{ amount: 10 }}>
 				<Media
-					src="profile/riccardo-pichi"
+					src="profile/riccardo-pichi-portrait"
 					fill
 					eager
 					sizes="(max-width: 760px) 100vw, 40vw"

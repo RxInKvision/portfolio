@@ -91,15 +91,16 @@ export const projects = [
 		featured: true,
 		disciplines: ['ai', 'film'],
 		role: { en: 'AI Direction, Writing, Edit', it: 'Regia AI, Scrittura, Montaggio' },
-		cover: 'projects/ai-studies/stills/noir-a',
+		cover: 'projects/ai-studies/stills/duello-a',
 		preview: 'projects/ai-studies/notte',
 		hero: {
 			type: 'video',
-			src: 'projects/ai-studies/noir',
-			poster: 'projects/ai-studies/stills/noir-a',
+			src: 'projects/ai-studies/vespa',
+			poster: 'projects/ai-studies/stills/vespa-a',
 			sound: true,
-			title: { en: 'Noir in Pink', it: 'Noir in rosa' },
-			ref: 'Sin City — Robert Rodriguez & Frank Miller'
+			index: 1,
+			title: { en: 'Vespa', it: 'Vespa' },
+			ref: 'Guy Ritchie'
 		},
 		summary: {
 			en: 'Eight AI short films on Seedance 2.5, emulating the photography and editing of great directors — starring me and my colleagues.',
@@ -133,16 +134,6 @@ export const projects = [
 		},
 		tools: ['Seedance 2.5', 'Higgsfield', 'Reference-driven prompting'],
 		gallery: [
-			{
-				type: 'video',
-				src: 'projects/ai-studies/vespa',
-				poster: 'projects/ai-studies/stills/vespa-a',
-				span: 'full',
-				sound: true,
-				index: 1,
-				title: { en: 'Vespa', it: 'Vespa' },
-				ref: 'Guy Ritchie'
-			},
 			{ type: 'image', src: 'projects/ai-studies/stills/vespa-a' },
 			{ type: 'image', src: 'projects/ai-studies/stills/vespa-b' },
 			{
@@ -181,15 +172,13 @@ export const projects = [
 			},
 			{ type: 'image', src: 'projects/ai-studies/stills/notte-a' },
 			{ type: 'image', src: 'projects/ai-studies/stills/notte-b' },
-			{ type: 'image', src: 'projects/ai-studies/stills/noir-a' },
-			{ type: 'image', src: 'projects/ai-studies/stills/noir-b' },
 			{
 				type: 'video',
 				src: 'projects/ai-studies/ring',
 				poster: 'projects/ai-studies/stills/ring-a',
 				span: 'full',
 				sound: true,
-				index: 6,
+				index: 5,
 				title: { en: 'The Ring', it: 'Il Ring' },
 				ref: { en: 'Raging Bull — Martin Scorsese', it: 'Toro scatenato — Martin Scorsese' }
 			},
@@ -201,7 +190,7 @@ export const projects = [
 				poster: 'projects/ai-studies/stills/trincea-a',
 				span: 'full',
 				sound: true,
-				index: 7,
+				index: 6,
 				title: { en: 'The Trench', it: 'La Trincea' },
 				ref: {
 					en: 'Saving Private Ryan — Steven Spielberg',
@@ -216,7 +205,7 @@ export const projects = [
 				poster: 'projects/ai-studies/stills/duello-a',
 				span: 'full',
 				sound: true,
-				index: 8,
+				index: 7,
 				title: { en: 'Showdown', it: 'Il Duello' },
 				ref: {
 					en: 'The Good, the Bad and the Ugly — Sergio Leone',
@@ -224,7 +213,19 @@ export const projects = [
 				}
 			},
 			{ type: 'image', src: 'projects/ai-studies/stills/duello-a' },
-			{ type: 'image', src: 'projects/ai-studies/stills/duello-b' }
+			{ type: 'image', src: 'projects/ai-studies/stills/duello-b' },
+			{
+				type: 'video',
+				src: 'projects/ai-studies/noir',
+				poster: 'projects/ai-studies/stills/noir-a',
+				span: 'full',
+				sound: true,
+				index: 8,
+				title: { en: 'Noir in Pink', it: 'Noir in rosa' },
+				ref: 'Sin City — Robert Rodriguez & Frank Miller'
+			},
+			{ type: 'image', src: 'projects/ai-studies/stills/noir-a' },
+			{ type: 'image', src: 'projects/ai-studies/stills/noir-b' }
 		]
 	},
 	{

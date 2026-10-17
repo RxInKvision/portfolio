@@ -1,5 +1,5 @@
 // Converts the heavy originals in /media-src into web-ready assets in /static/media.
-// Images -> WebP (1600w + 800w). Videos -> H.264 MP4 (max 1280w, faststart, muted) + WebP poster.
+// Images -> WebP (1600w + 800w). Videos (mp4/mov) -> H.264 MP4 (max 1280w, faststart, muted) + WebP poster.
 // Run with: npm run media   (skips files that are already up to date)
 import { readdir, mkdir, stat, writeFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
@@ -10,7 +10,15 @@ import ffmpeg from 'ffmpeg-static';
 
 const SRC = 'media-src/images';
 const OUT = 'static/media';
-const KEEP_AUDIO = new Set(['cards/MAIN_16-9.mp4']);
+// Videos that keep their soundtrack (everything else is encoded muted for autoplay loops).
+const KEEP_AUDIO = new Set([
+	'cards/MAIN_16-9.mp4',
+	'projects/china/fiume-giallo.mov',
+	'projects/china/mercato.mov',
+	'projects/china/piazza-chong.mov',
+	'projects/china/fiume.mov',
+	'projects/china/bamboo.mov'
+]);
 
 async function walk(dir) {
 	const entries = await readdir(dir, { withFileTypes: true });
@@ -88,7 +96,7 @@ async function video(src, outBase, rel) {
 	await unlink(`${outBase}-poster.png`);
 }
 
-const files = (await walk(SRC)).filter((f) => /\.(png|jpe?g|mp4)$/i.test(f));
+const files = (await walk(SRC)).filter((f) => /\.(png|jpe?g|mp4|mov)$/i.test(f));
 const queue = [...files];
 const workers = Array.from({ length: 3 }, async () => {
 	while (queue.length) {
@@ -97,7 +105,7 @@ const workers = Array.from({ length: 3 }, async () => {
 		const outBase = join(OUT, rel.slice(0, -extname(rel).length));
 		await mkdir(dirname(outBase), { recursive: true });
 		try {
-			if (/\.mp4$/i.test(src)) await video(src, outBase, rel);
+			if (/\.(mp4|mov)$/i.test(src)) await video(src, outBase, rel);
 			else await image(src, outBase);
 			console.log('✓', rel);
 		} catch (e) {

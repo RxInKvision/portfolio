@@ -41,7 +41,7 @@
 </svelte:head>
 
 <section class="head wrap">
-	<p class="mono muted">Index — {projects.length} {t(ui.works.project).toLowerCase()}s</p>
+	<p class="mono muted">Index — {projects.length} {t(ui.works.count)}</p>
 	{#key t(ui.works.title)}
 		<h1 class="display" use:splitLines={{ immediate: true, delay: 0.2 }}>
 			{t(ui.works.title)}<sup class="mono">{projects.length}</sup>
@@ -88,7 +88,7 @@
 			>
 				<span class="mono yellow">{String(i + 1).padStart(2, '0')}</span>
 				<span class="title">{p.title}</span>
-				<span class="mono muted">{p.client}</span>
+				<span class="mono muted">{t(p.client)}</span>
 				<span class="mono muted">{p.disciplines.map((d) => t(disciplines[d])).join(' / ')}</span>
 				<span class="mono muted">{p.year}</span>
 			</a>

@@ -11,7 +11,7 @@
 		fill = false,
 		eager = false,
 		sizes = '(max-width: 760px) 100vw, 60vw',
-		sound = false,
+		poster = null,
 		videoEl = $bindable(),
 		class: klass = ''
 	} = $props();
@@ -26,7 +26,7 @@
 			bind:this={videoEl}
 			use:autoplay
 			src="{base}.mp4"
-			poster="{base}-poster.webp"
+			poster={poster ? `/media/${poster}.webp` : `${base}-poster.webp`}
 			muted
 			loop
 			playsinline
@@ -34,7 +34,6 @@
 			width={dims[0]}
 			height={dims[1]}
 			aria-label={alt}
-			data-sound={sound || null}
 		></video>
 	{:else}
 		<img

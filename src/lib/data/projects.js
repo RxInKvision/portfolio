@@ -16,6 +16,120 @@ export const disciplines = {
 
 export const projects = [
 	{
+		slug: 'china-diaries',
+		title: 'China Diaries',
+		client: { en: 'Personal — short films', it: 'Personale — cortometraggi' },
+		year: 2026,
+		featured: true,
+		disciplines: ['film'],
+		role: {
+			en: 'Direction, Cinematography, Edit, Colour',
+			it: 'Regia, Fotografia, Montaggio, Color'
+		},
+		cover: 'projects/china/stills/donna-rosso',
+		preview: 'projects/china/mercato',
+		hero: {
+			type: 'video',
+			src: 'projects/china/fiume-giallo',
+			poster: 'projects/china/stills/cascata',
+			sound: true,
+			index: 1,
+			title: { en: 'Yellow River', it: 'Fiume Giallo' }
+		},
+		summary: {
+			en: 'Six short films shot on location in China — rivers, markets, workshops and bamboo forests.',
+			it: 'Sei cortometraggi girati in Cina: fiumi, mercati, botteghe e foreste di bambù.'
+		},
+		description: {
+			en: 'A visual diary in six chapters. Each film is a short, self-contained piece built around a single place and its rhythm: the roar of the Yellow River, the crowd of a market, the stillness of a potter’s wheel, the light through a bamboo forest. Real people, real light, no set — the direction lives in where the camera waits and what the edit lets breathe.',
+			it: 'Un diario visivo in sei capitoli. Ogni film è un pezzo breve e autonomo, costruito attorno a un solo luogo e al suo ritmo: il fragore del Fiume Giallo, la folla di un mercato, la quiete di un tornio, la luce tra i bambù. Persone vere, luce vera, nessun set: la regia sta in dove la camera aspetta e in cosa il montaggio lascia respirare.'
+		},
+		challenge: {
+			en: 'Find the story inside real, uncontrolled situations — moments and light that can’t be repeated — and keep one coherent visual language across six very different places.',
+			it: 'Trovare il racconto dentro situazioni reali e non controllate, con momenti e luce che non si possono ripetere, e mantenere un linguaggio visivo coerente tra sei luoghi molto diversi.'
+		},
+		solution: {
+			en: 'Shot in 4K open gate to keep framing free for both horizontal and vertical delivery. A consistent warm, filmic grade and sound-led editing in DaVinci Resolve give the series a single voice.',
+			it: 'Girato in 4K open gate per lasciare libera l’inquadratura sia in orizzontale sia in verticale. Un grading caldo e cinematografico e un montaggio guidato dal suono in DaVinci Resolve danno alla serie un’unica voce.'
+		},
+		highlights: {
+			en: [
+				'Six standalone short films',
+				'4K open-gate capture (4096 × 3112)',
+				'Edited and colour graded in DaVinci Resolve Studio',
+				'Framed for social and horizontal delivery',
+				'Documentary direction with real people and places'
+			],
+			it: [
+				'Sei cortometraggi autonomi',
+				'Ripresa 4K open gate (4096 × 3112)',
+				'Montaggio e color grading in DaVinci Resolve Studio',
+				'Inquadrature pensate per social e formato orizzontale',
+				'Regia documentaria con persone e luoghi reali'
+			]
+		},
+		tools: ['DaVinci Resolve Studio', '4K open gate'],
+		gallery: [
+			{ type: 'image', src: 'projects/china/stills/donna-rosso' },
+			{ type: 'image', src: 'projects/china/stills/cascata' },
+			{
+				type: 'video',
+				src: 'projects/china/mercato',
+				poster: 'projects/china/stills/torre',
+				span: 'full',
+				sound: true,
+				index: 2,
+				title: { en: 'Market', it: 'Mercato' }
+			},
+			{ type: 'image', src: 'projects/china/stills/bambina' },
+			{ type: 'image', src: 'projects/china/stills/strada' },
+			{
+				type: 'video',
+				src: 'projects/china/piazza-chong',
+				poster: 'projects/china/stills/pagoda',
+				span: 'full',
+				sound: true,
+				index: 3,
+				title: { en: 'Chong Square', it: 'Piazza Chong' }
+			},
+			{ type: 'image', src: 'projects/china/stills/pagoda' },
+			{ type: 'image', src: 'projects/china/stills/scatole' },
+			{
+				type: 'video',
+				src: 'projects/china/fiume',
+				poster: 'projects/china/stills/skyline',
+				span: 'full',
+				sound: true,
+				index: 4,
+				title: { en: 'Riverside', it: 'Lungofiume' }
+			},
+			{ type: 'image', src: 'projects/china/stills/skyline' },
+			{ type: 'image', src: 'projects/china/stills/operai' },
+			{
+				type: 'video',
+				src: 'projects/china/argilla',
+				poster: 'projects/china/stills/tornio',
+				span: 'full',
+				sound: false,
+				index: 5,
+				title: { en: 'Clay', it: 'Argilla' }
+			},
+			{ type: 'image', src: 'projects/china/stills/scaffali' },
+			{ type: 'image', src: 'projects/china/stills/tornio' },
+			{
+				type: 'video',
+				src: 'projects/china/bamboo',
+				poster: 'projects/china/stills/padiglione',
+				span: 'full',
+				sound: true,
+				index: 6,
+				title: { en: 'Bamboo', it: 'Bambù' }
+			},
+			{ type: 'image', src: 'projects/china/stills/padiglione' },
+			{ type: 'image', src: 'projects/china/stills/bosco' }
+		]
+	},
+	{
 		slug: 'forum-archive-reverie',
 		title: 'Archive Reverie',
 		client: 'Forum Studios',

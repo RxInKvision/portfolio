@@ -2,6 +2,7 @@
 	import { page } from '$app/state';
 	import Media from '$lib/components/Media.svelte';
 	import VideoEmbed from '$lib/components/VideoEmbed.svelte';
+	import Film from '$lib/components/Film.svelte';
 	import { disciplines } from '$lib/data/projects.js';
 	import { t, ui } from '$lib/i18n.svelte.js';
 	import { splitLines, reveal, clipReveal, parallax, magnetic } from '$lib/motion.svelte.js';
@@ -11,19 +12,10 @@
 	const next = $derived(data.next);
 
 	let figmaLoaded = $state(false);
-	let soundVideo = $state();
-	let soundOn = $state(false);
-
-	function toggleSound() {
-		if (!soundVideo) return;
-		soundOn = !soundOn;
-		soundVideo.muted = !soundOn;
-		if (soundOn) soundVideo.play();
-	}
 </script>
 
 <svelte:head>
-	<title>{p.title} — {p.client} | Riccardo Pichi</title>
+	<title>{p.title} — {t(p.client)} | Riccardo Pichi</title>
 	<meta name="description" content={p.summary.en} />
 	<meta property="og:title" content="{p.title} — Riccardo Pichi" />
 	<meta property="og:description" content={p.summary.en} />
@@ -34,7 +26,7 @@
 	<article>
 		<header class="head wrap">
 			<p class="mono muted" use:reveal={{ y: 16 }}>
-				<a href="/works" class="link">{t(ui.nav.works)}</a> / {p.client}
+				<a href="/works" class="link">{t(ui.nav.works)}</a> / {t(p.client)}
 			</p>
 			<h1 class="display" use:splitLines={{ immediate: true, delay: 0.1 }}>{p.title}</h1>
 			<p class="lead summary" use:splitLines={{ immediate: true, delay: 0.3 }}>{t(p.summary)}</p>
@@ -42,7 +34,7 @@
 			<dl class="facts mono" use:reveal={{ delay: 0.4, y: 20 }}>
 				<div>
 					<dt class="muted">{t(ui.works.client)}</dt>
-					<dd>{p.client}</dd>
+					<dd>{t(p.client)}</dd>
 				</div>
 				<div>
 					<dt class="muted">{t(ui.works.year)}</dt>
@@ -62,6 +54,15 @@
 		<section class="hero wrap" use:clipReveal>
 			{#if p.hero.type === 'youtube' || p.hero.type === 'vimeo'}
 				<VideoEmbed type={p.hero.type} id={p.hero.id} poster={p.hero.poster} title={p.title} />
+			{:else if p.hero.type === 'video' && p.hero.sound}
+				<Film
+					src={p.hero.src}
+					poster={p.hero.poster}
+					index={p.hero.index ?? null}
+					title={t(p.hero.title) ?? ''}
+					eager
+					alt={p.title}
+				/>
 			{:else if p.hero.type === 'video'}
 				<Media type="video" src={p.hero.src} eager alt={p.title} />
 			{:else}
@@ -108,12 +109,16 @@
 			<section class="gallery wrap" aria-label={t(ui.project.gallery)}>
 				{#each p.gallery as item}
 					<figure class:full={item.span === 'full'} use:reveal={{ y: 60 }}>
-						{#if item.sound}
-							<Media type="video" src={item.src} bind:videoEl={soundVideo} alt={p.title} />
-							<button class="sound mono" onclick={toggleSound}>
-								<i class:on={soundOn}><b></b><b></b><b></b></i>
-								{soundOn ? t(ui.project.mute) : t(ui.project.sound)}
-							</button>
+						{#if item.type === 'video' && (item.sound !== undefined || item.title)}
+							<Film
+								src={item.src}
+								poster={item.poster}
+								sound={!!item.sound}
+								index={item.index ?? null}
+								title={t(item.title) ?? ''}
+								place={t(item.place) ?? ''}
+								alt={t(item.title) || p.title}
+							/>
 						{:else}
 							<Media
 								type={item.type}
@@ -147,7 +152,7 @@
 			<div class="wrap next-inner">
 				<p class="mono">{t(ui.project.next)} →</p>
 				<h2 class="display">{next.title}</h2>
-				<p class="mono muted">{next.client} — {next.year}</p>
+				<p class="mono muted">{t(next.client)} — {next.year}</p>
 			</div>
 		</a>
 	</article>
@@ -239,43 +244,6 @@
 	}
 	.gallery .full {
 		grid-column: 1 / -1;
-	}
-	.sound {
-		position: absolute;
-		right: 16px;
-		bottom: 16px;
-		display: flex;
-		align-items: center;
-		gap: 10px;
-		padding: 10px 16px;
-		border-radius: 999px;
-		background: rgba(11, 11, 11, 0.7);
-		backdrop-filter: blur(8px);
-	}
-	.sound i {
-		display: flex;
-		align-items: end;
-		gap: 2px;
-		height: 12px;
-	}
-	.sound b {
-		width: 2px;
-		height: 30%;
-		background: var(--yellow);
-	}
-	.sound i.on b {
-		animation: eq 0.9s ease-in-out infinite alternate;
-	}
-	.sound i.on b:nth-child(2) {
-		animation-delay: -0.3s;
-	}
-	.sound i.on b:nth-child(3) {
-		animation-delay: -0.6s;
-	}
-	@keyframes eq {
-		to {
-			height: 100%;
-		}
 	}
 	.figma {
 		margin-bottom: clamp(80px, 10vw, 160px);

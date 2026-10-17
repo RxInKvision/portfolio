@@ -57,7 +57,7 @@
 	<div class="meta" use:reveal={{ y: 20 }}>
 		<span class="mono idx">{String(index + 1).padStart(2, '0')}</span>
 		<h3 class="title">{project.title}</h3>
-		<span class="mono muted client">{project.client}</span>
+		<span class="mono muted client">{t(project.client)}</span>
 		<span class="mono muted tags"
 			>{project.disciplines.map((d) => t(disciplines[d])).join(' / ')}</span
 		>

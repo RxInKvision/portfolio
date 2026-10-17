@@ -93,6 +93,7 @@ export const ui = {
 		list: { en: 'List', it: 'Lista' },
 		grid: { en: 'Grid', it: 'Griglia' },
 		project: { en: 'Project', it: 'Progetto' },
+		count: { en: 'projects', it: 'progetti' },
 		client: { en: 'Client', it: 'Cliente' },
 		discipline: { en: 'Discipline', it: 'Disciplina' },
 		year: { en: 'Year', it: 'Anno' }

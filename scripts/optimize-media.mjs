@@ -19,6 +19,8 @@ const KEEP_AUDIO = new Set([
 	'projects/china/fiume.mov',
 	'projects/china/bamboo.mov'
 ]);
+// Whole folders whose videos keep audio (finished films and spots).
+const AUDIO_DIRS = ['projects/ai-studies/', 'projects/unicum/'];
 
 async function walk(dir) {
 	const entries = await readdir(dir, { withFileTypes: true });
@@ -59,7 +61,10 @@ async function image(src, outBase) {
 
 async function video(src, outBase, rel) {
 	if (await isFresh(src, `${outBase}.mp4`)) return;
-	const audio = KEEP_AUDIO.has(rel) ? ['-c:a', 'aac', '-b:a', '128k'] : ['-an'];
+	const audio =
+		KEEP_AUDIO.has(rel) || AUDIO_DIRS.some((d) => rel.startsWith(d))
+			? ['-c:a', 'aac', '-b:a', '128k']
+			: ['-an'];
 	await run([
 		'-i',
 		src,

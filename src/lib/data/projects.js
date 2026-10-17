@@ -6,6 +6,7 @@
 // then add an entry below. Order here = order on the site.
 
 export const disciplines = {
+	ai: { en: 'AI Film', it: 'AI Film' },
 	film: { en: 'Film & Direction', it: 'Film & Regia' },
 	installation: { en: 'Installations & Live', it: 'Installazioni & Live' },
 	campaign: { en: 'Campaigns', it: 'Campagne' },
@@ -15,6 +16,203 @@ export const disciplines = {
 };
 
 export const projects = [
+	{
+		slug: 'unicum-spec',
+		title: 'Unicum',
+		client: { en: 'Spec ads', it: 'Spot spec' },
+		year: 2026,
+		featured: true,
+		disciplines: ['ai', 'campaign'],
+		role: { en: 'Concept, AI Direction, Edit', it: 'Concept, Regia AI, Montaggio' },
+		cover: 'projects/unicum/stills/piscina',
+		preview: 'projects/unicum/molto-piu',
+		hero: {
+			type: 'video',
+			src: 'projects/unicum/molto-piu',
+			poster: 'projects/unicum/stills/piscina',
+			sound: true,
+			index: 1,
+			title: { en: 'Molto + di un amaro', it: 'Molto + di un amaro' }
+		},
+		summary: {
+			en: 'Two spec commercials for Unicum, generated entirely with AI — concept, direction and edit.',
+			it: "Due spot spec per Unicum, interamente generati con l'AI: concept, regia e montaggio."
+		},
+		description: {
+			en: 'Two unsolicited spots for Unicum, built around one question: can an AI-generated commercial hold up next to a shot one? “Molto + di un amaro” turns a supermarket aisle into a journey through places and moments; “L’unico che non avanza mai” plays on a house party where every bottle gets left over — except one. Characters, product and locations stay consistent shot after shot, and the edit, rhythm and end card are built exactly like a real campaign.',
+			it: "Due spot non commissionati per Unicum, costruiti attorno a una domanda: uno spot generato con l'AI può reggere il confronto con uno girato? “Molto + di un amaro” trasforma la corsia di un supermercato in un viaggio tra luoghi e momenti; “L’unico che non avanza mai” gioca su una festa in casa dove ogni bottiglia avanza, tranne una. Personaggi, prodotto e location restano coerenti inquadratura dopo inquadratura, e montaggio, ritmo ed end card sono costruiti esattamente come in una campagna vera."
+		},
+		challenge: {
+			en: 'Keep the product faithful — bottle shape, label, colour — and the characters consistent across many shots and locations, while avoiding the generic “AI look” that breaks trust in a commercial.',
+			it: 'Mantenere il prodotto fedele (forma della bottiglia, etichetta, colore) e i personaggi coerenti tra molte inquadrature e location, evitando il “look AI” generico che in uno spot rompe la fiducia.'
+		},
+		solution: {
+			en: 'Directed shot by shot like a live-action job: script and shot list first, reference-driven generation for product and cast, then a real post pipeline — edit, sound and end card — to give each spot the rhythm of broadcast advertising.',
+			it: 'Diretto inquadratura per inquadratura come un set vero: prima script e shot list, poi generazione guidata da reference per prodotto e cast, infine una vera post-produzione (montaggio, suono, end card) per dare a ogni spot il ritmo della pubblicità broadcast.'
+		},
+		highlights: {
+			en: [
+				'Two complete spots: 40 s and 30 s',
+				'Consistent product and characters across locations',
+				'Concept, copy and end card',
+				'Edit and sound designed like a broadcast commercial'
+			],
+			it: [
+				'Due spot completi: 40 s e 30 s',
+				'Prodotto e personaggi coerenti tra location diverse',
+				'Concept, copy ed end card',
+				'Montaggio e suono pensati come uno spot broadcast'
+			]
+		},
+		tools: ['Generative AI video', 'Reference-driven prompting', 'Editing & sound'],
+		gallery: [
+			{ type: 'image', src: 'projects/unicum/stills/scaffale' },
+			{ type: 'image', src: 'projects/unicum/stills/giungla' },
+			{ type: 'image', src: 'projects/unicum/stills/bicchiere', span: 'full' },
+			{
+				type: 'video',
+				src: 'projects/unicum/non-avanza',
+				poster: 'projects/unicum/stills/rossa',
+				span: 'full',
+				sound: true,
+				index: 2,
+				title: { en: 'L’unico che non avanza mai', it: 'L’unico che non avanza mai' }
+			},
+			{ type: 'image', src: 'projects/unicum/stills/ingresso' },
+			{ type: 'image', src: 'projects/unicum/stills/bottiglia' },
+			{ type: 'image', src: 'projects/unicum/stills/rossa', span: 'full' }
+		]
+	},
+	{
+		slug: 'director-studies',
+		title: 'Director Studies',
+		client: { en: 'AI R&D — Seedance 2.5', it: 'R&D AI — Seedance 2.5' },
+		year: 2026,
+		featured: true,
+		disciplines: ['ai', 'film'],
+		role: { en: 'AI Direction, Writing, Edit', it: 'Regia AI, Scrittura, Montaggio' },
+		cover: 'projects/ai-studies/stills/noir-a',
+		preview: 'projects/ai-studies/notte',
+		hero: {
+			type: 'video',
+			src: 'projects/ai-studies/noir',
+			poster: 'projects/ai-studies/stills/noir-a',
+			sound: true,
+			title: { en: 'Noir in Pink', it: 'Noir in rosa' }
+		},
+		summary: {
+			en: 'Eight AI short films on Seedance 2.5, emulating the photography and editing of great directors — starring me and my colleagues.',
+			it: 'Otto cortometraggi AI su Seedance 2.5 che emulano la fotografia e il montaggio di grandi registi, con me e i miei colleghi come protagonisti.'
+		},
+		description: {
+			en: 'An ongoing research series. Each study recreates the visual grammar of a great director — framing, lenses, light, palette and cutting rhythm — across very different genres: a western showdown, a black-and-white boxing drama, a noir with a single colour, a war trench, a night drive in the rain, a medieval joust. The cast is real: me and my colleagues, kept recognisable from shot to shot and from genre to genre.',
+			it: "Una serie di ricerca in corso. Ogni studio ricrea la grammatica visiva di un grande regista (inquadrature, ottiche, luce, palette e ritmo di montaggio) attraverso generi molto diversi: un duello western, un dramma sulla boxe in bianco e nero, un noir con un solo colore, una trincea di guerra, una guida notturna sotto la pioggia, un torneo medievale. Il cast è reale: io e i miei colleghi, riconoscibili da un'inquadratura all'altra e da un genere all'altro."
+		},
+		challenge: {
+			en: 'Make a generative model obey directorial intent — lens choice, blocking, coverage, the cut — instead of producing a generic AI aesthetic, while keeping real faces consistent across shots and genres.',
+			it: "Far rispettare a un modello generativo l'intenzione registica (scelta delle ottiche, blocking, copertura, stacco) invece di un'estetica AI generica, mantenendo coerenti volti reali tra inquadrature e generi."
+		},
+		solution: {
+			en: 'Multi-shot prompts written like a shot list, reference images of the cast, and iteration shot by shot until each sequence reads like the director it studies. Every test is a lesson that goes straight into client work.',
+			it: 'Prompt multi-shot scritti come una shot list, immagini di riferimento del cast e iterazione inquadratura per inquadratura, finché ogni sequenza non “parla” come il regista che studia. Ogni test è una lezione che finisce direttamente nei lavori per i clienti.'
+		},
+		highlights: {
+			en: [
+				'Eight studies, 10–30 s each',
+				'Western, noir, war, boxing, period, night thriller',
+				'Real cast kept consistent across shots',
+				'Photography and editing modelled on great directors'
+			],
+			it: [
+				'Otto studi da 10–30 s',
+				'Western, noir, guerra, boxe, film in costume, thriller notturno',
+				'Cast reale coerente tra le inquadrature',
+				'Fotografia e montaggio modellati sui grandi registi'
+			]
+		},
+		tools: ['Seedance 2.5', 'Higgsfield', 'Reference-driven prompting'],
+		gallery: [
+			{
+				type: 'video',
+				src: 'projects/ai-studies/vespa',
+				poster: 'projects/ai-studies/stills/vespa-a',
+				span: 'full',
+				sound: true,
+				index: 1,
+				title: { en: 'Vespa', it: 'Vespa' }
+			},
+			{ type: 'image', src: 'projects/ai-studies/stills/vespa-a' },
+			{ type: 'image', src: 'projects/ai-studies/stills/vespa-b' },
+			{
+				type: 'video',
+				src: 'projects/ai-studies/bar',
+				poster: 'projects/ai-studies/stills/bar-a',
+				span: 'full',
+				sound: true,
+				index: 2,
+				title: { en: 'Smoke Break', it: 'Pausa sigaretta' }
+			},
+			{ type: 'image', src: 'projects/ai-studies/stills/bar-a' },
+			{ type: 'image', src: 'projects/ai-studies/stills/bar-b' },
+			{
+				type: 'video',
+				src: 'projects/ai-studies/torneo',
+				poster: 'projects/ai-studies/stills/torneo-a',
+				span: 'full',
+				sound: true,
+				index: 3,
+				title: { en: 'The Joust', it: 'Il Torneo' }
+			},
+			{ type: 'image', src: 'projects/ai-studies/stills/torneo-a' },
+			{ type: 'image', src: 'projects/ai-studies/stills/torneo-b' },
+			{
+				type: 'video',
+				src: 'projects/ai-studies/notte',
+				poster: 'projects/ai-studies/stills/notte-a',
+				span: 'full',
+				sound: true,
+				index: 4,
+				title: { en: 'Night Drive', it: 'Guida notturna' }
+			},
+			{ type: 'image', src: 'projects/ai-studies/stills/notte-a' },
+			{ type: 'image', src: 'projects/ai-studies/stills/notte-b' },
+			{ type: 'image', src: 'projects/ai-studies/stills/noir-a' },
+			{ type: 'image', src: 'projects/ai-studies/stills/noir-b' },
+			{
+				type: 'video',
+				src: 'projects/ai-studies/ring',
+				poster: 'projects/ai-studies/stills/ring-a',
+				span: 'full',
+				sound: true,
+				index: 6,
+				title: { en: 'The Ring', it: 'Il Ring' }
+			},
+			{ type: 'image', src: 'projects/ai-studies/stills/ring-a' },
+			{ type: 'image', src: 'projects/ai-studies/stills/ring-b' },
+			{
+				type: 'video',
+				src: 'projects/ai-studies/trincea',
+				poster: 'projects/ai-studies/stills/trincea-a',
+				span: 'full',
+				sound: true,
+				index: 7,
+				title: { en: 'The Trench', it: 'La Trincea' }
+			},
+			{ type: 'image', src: 'projects/ai-studies/stills/trincea-a' },
+			{ type: 'image', src: 'projects/ai-studies/stills/trincea-b' },
+			{
+				type: 'video',
+				src: 'projects/ai-studies/duello',
+				poster: 'projects/ai-studies/stills/duello-a',
+				span: 'full',
+				sound: true,
+				index: 8,
+				title: { en: 'Showdown', it: 'Il Duello' }
+			},
+			{ type: 'image', src: 'projects/ai-studies/stills/duello-a' },
+			{ type: 'image', src: 'projects/ai-studies/stills/duello-b' }
+		]
+	},
 	{
 		slug: 'china-diaries',
 		title: 'China Diaries',

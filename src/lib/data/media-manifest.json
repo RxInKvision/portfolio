@@ -55,6 +55,102 @@
 		765,
 		763
 	],
+	"projects/ai-studies/bar": [
+		1280,
+		720
+	],
+	"projects/ai-studies/duello": [
+		1280,
+		720
+	],
+	"projects/ai-studies/noir": [
+		1280,
+		720
+	],
+	"projects/ai-studies/notte": [
+		1280,
+		548
+	],
+	"projects/ai-studies/ring": [
+		1280,
+		720
+	],
+	"projects/ai-studies/stills/bar-a": [
+		1600,
+		900
+	],
+	"projects/ai-studies/stills/bar-b": [
+		1600,
+		900
+	],
+	"projects/ai-studies/stills/duello-a": [
+		1600,
+		900
+	],
+	"projects/ai-studies/stills/duello-b": [
+		1600,
+		900
+	],
+	"projects/ai-studies/stills/noir-a": [
+		1600,
+		900
+	],
+	"projects/ai-studies/stills/noir-b": [
+		1600,
+		900
+	],
+	"projects/ai-studies/stills/notte-a": [
+		1600,
+		686
+	],
+	"projects/ai-studies/stills/notte-b": [
+		1600,
+		686
+	],
+	"projects/ai-studies/stills/ring-a": [
+		1600,
+		900
+	],
+	"projects/ai-studies/stills/ring-b": [
+		1600,
+		900
+	],
+	"projects/ai-studies/stills/torneo-a": [
+		1600,
+		900
+	],
+	"projects/ai-studies/stills/torneo-b": [
+		1600,
+		900
+	],
+	"projects/ai-studies/stills/trincea-a": [
+		1600,
+		900
+	],
+	"projects/ai-studies/stills/trincea-b": [
+		1600,
+		900
+	],
+	"projects/ai-studies/stills/vespa-a": [
+		1600,
+		900
+	],
+	"projects/ai-studies/stills/vespa-b": [
+		1600,
+		900
+	],
+	"projects/ai-studies/torneo": [
+		1280,
+		720
+	],
+	"projects/ai-studies/trincea": [
+		1280,
+		720
+	],
+	"projects/ai-studies/vespa": [
+		1280,
+		720
+	],
 	"projects/beyond/demo": [
 		1280,
 		720
@@ -518,6 +614,42 @@
 	"projects/rxink/yellow1": [
 		400,
 		400
+	],
+	"projects/unicum/molto-piu": [
+		1280,
+		720
+	],
+	"projects/unicum/non-avanza": [
+		1280,
+		720
+	],
+	"projects/unicum/stills/bicchiere": [
+		1600,
+		900
+	],
+	"projects/unicum/stills/bottiglia": [
+		1600,
+		900
+	],
+	"projects/unicum/stills/giungla": [
+		1600,
+		900
+	],
+	"projects/unicum/stills/ingresso": [
+		1600,
+		900
+	],
+	"projects/unicum/stills/piscina": [
+		1600,
+		900
+	],
+	"projects/unicum/stills/rossa": [
+		1600,
+		900
+	],
+	"projects/unicum/stills/scaffale": [
+		1600,
+		900
 	],
 	"projects/videocitta/hero": [
 		1600,

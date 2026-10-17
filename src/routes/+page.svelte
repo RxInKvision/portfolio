@@ -3,6 +3,7 @@
 	import ProjectCard from '$lib/components/ProjectCard.svelte';
 	import Marquee from '$lib/components/Marquee.svelte';
 	import Logotype from '$lib/components/Logotype.svelte';
+	import { LOGO_W, LOGO_H, LOGO_PATHS } from '$lib/brand.js';
 	import { projects } from '$lib/data/projects.js';
 	import { t, ui, site } from '$lib/i18n.svelte.js';
 	import {
@@ -18,23 +19,40 @@
 
 	const featured = projects.filter((p) => p.featured);
 
-	let hero, sticky, stage, heroLine, heroMeta, intro;
+	let hero, sticky, stage, clip, heroLine, heroMeta, intro;
+
+	// Logo width in vw. The reel is clipped by a vector copy of the wordmark (SVG clipPath),
+	// scaled around the centre so the video bursts through the "I". Vector clipping has no
+	// texture-size limit, unlike a CSS mask-image, which glitched in Chrome at large sizes.
+	const logo = { ms: 72 };
+	function applyLogo() {
+		if (!stage || !clip) return;
+		const w = stage.clientWidth;
+		const h = stage.clientHeight;
+		const lw = (logo.ms / 100) * window.innerWidth;
+		const s = lw / LOGO_W;
+		clip.setAttribute(
+			'transform',
+			`translate(${(w - lw) / 2} ${(h - LOGO_H * s) / 2}) scale(${s})`
+		);
+		sticky.style.setProperty('--ms', logo.ms);
+	}
 
 	onMount(() => {
+		logo.ms = window.matchMedia('(max-width: 760px)').matches ? 88 : 72;
+		applyLogo();
+		window.addEventListener('resize', applyLogo);
+
 		const ctx = gsap.context(() => {
 			if (reducedMotion()) return;
-			const mobile = window.matchMedia('(max-width: 760px)').matches;
-			const start = mobile ? 88 : 72;
 
-			// The reel lives inside the RXINK wordmark and bursts through the "I" on scroll.
-			gsap.set(sticky, { '--ms': start });
 			gsap
 				.timeline({
 					scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom bottom', scrub: 0.6 }
 				})
 				.to(heroMeta, { autoAlpha: 0, y: -30, duration: 0.15 }, 0)
 				.to(sticky.querySelector('.ghost'), { autoAlpha: 0, duration: 0.12 }, 0)
-				.to(sticky, { '--ms': 2600, duration: 0.7, ease: 'power3.in' }, 0)
+				.to(logo, { ms: 2600, duration: 0.7, ease: 'power3.in', onUpdate: applyLogo }, 0)
 				.fromTo(
 					stage.querySelector('.shade'),
 					{ opacity: 0 },
@@ -57,7 +75,10 @@
 				}
 			);
 		});
-		return () => ctx.revert();
+		return () => {
+			window.removeEventListener('resize', applyLogo);
+			ctx.revert();
+		};
 	});
 
 	// Hero entrance once the preloader is gone.
@@ -95,6 +116,14 @@
 <!-- HERO -->
 <section class="hero" bind:this={hero}>
 	<div class="sticky" bind:this={sticky}>
+		<svg class="clip-def" width="0" height="0" aria-hidden="true">
+			<defs>
+				<!-- clipPath can't contain <g>, so the transform lives on the clipPath itself -->
+				<clipPath id="hero-logo-clip" clipPathUnits="userSpaceOnUse" bind:this={clip}>
+					{#each LOGO_PATHS as d}<path {d} />{/each}
+				</clipPath>
+			</defs>
+		</svg>
 		<div class="ghost" aria-hidden="true"><Logotype /></div>
 		<div class="stage" bind:this={stage}>
 			<video
@@ -212,6 +241,11 @@
 		height: 100svh;
 		overflow: hidden;
 	}
+	.clip-def {
+		position: absolute;
+		width: 0;
+		height: 0;
+	}
 	.ghost {
 		position: absolute;
 		left: 50%;
@@ -228,15 +262,8 @@
 	.stage {
 		position: absolute;
 		inset: 0;
-		-webkit-mask-image: url('/brand/logotype.svg');
-		mask-image: url('/brand/logotype.svg');
-		-webkit-mask-repeat: no-repeat;
-		mask-repeat: no-repeat;
-		-webkit-mask-position: 50% 50%;
-		mask-position: 50% 50%;
-		-webkit-mask-size: calc(var(--ms) * 1vw) auto;
-		mask-size: calc(var(--ms) * 1vw) auto;
-		will-change: mask-size;
+		-webkit-clip-path: url(#hero-logo-clip);
+		clip-path: url(#hero-logo-clip);
 	}
 	.stage video {
 		width: 100%;

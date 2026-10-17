@@ -1,33 +1,19 @@
 <script>
 	// RXINK wordmark. Each glyph is a separate path so it can be animated.
+	import { LOGO_W, LOGO_H, LOGO_PATHS } from '$lib/brand.js';
+
 	let { class: klass = '', title = 'RXINK', el = $bindable() } = $props();
 </script>
 
 <svg
 	bind:this={el}
 	class={klass}
-	viewBox="0 0 1918 1229.71"
+	viewBox="0 0 {LOGO_W} {LOGO_H}"
 	fill="currentColor"
 	role="img"
 	aria-label={title}
 >
-	<path class="g" d="M136.37,372.09v406.22L0,857.62v-406.22l136.37-79.31Z" />
-	<path
-		class="g"
-		d="M315.01,698.83v234.64l-136.36,79.31V185.38l157.24-91.84,157.24,91.84v372.92l-94.62,54.27,94.62,54.27v467.53l-136.36,79.31v-538.49l-41.74,23.65ZM356.76,526.29V239.64l-41.74,23.66v288.04l41.74-25.05Z"
-	/>
-	<path
-		class="g"
-		d="M626.7,634.51l-91.84-54.27v-320.39l136.37-79.31v348.22l41.74-23.66V241.59l136.37-79.31v417.96l-94.62,54.27,94.62,54.27v356.91l-136.37,79.31v-384.74l-41.74,23.66v208.72l-136.37,79.31v-363.18l91.84-54.27Z"
-	/>
-	<path class="g" d="M1027.45,0v1150.39l-136.37,79.31V79.31L1027.45,0Z" />
-	<path
-		class="g"
-		d="M1226.43,144.02l157.24,91.84v787.92l-136.37,79.31V290.12l-41.74,23.65v658.86l-136.37,79.31V235.86l157.24-91.84Z"
-	/>
-	<path
-		class="g"
-		d="M1561.78,69.99v389.19l41.74-23.65v-213.17l136.37-79.31v367.63l-94.62,54.27,94.62,54.27v353.44l-136.37,79.31v-381.27l-41.74,23.66v442.66l-136.37,79.31V149.31l136.37-79.31Z"
-	/>
-	<path class="g" d="M1918,372.09v406.22l-136.37,79.31v-406.22l136.37-79.31Z" />
+	{#each LOGO_PATHS as d}
+		<path class="g" {d} />
+	{/each}
 </svg>

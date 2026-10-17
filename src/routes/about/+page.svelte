@@ -19,6 +19,43 @@
 			}
 		},
 		{
+			when: { en: 'Now', it: 'Oggi' },
+			what: { en: 'Immersive & VR experiences', it: 'Esperienze immersive e VR' },
+			where: { en: 'Museum · Eni', it: 'Museo · Eni' },
+			note: {
+				en: 'An immersive film on four LED walls for a museum room; an immersive VR film for Eni',
+				it: 'Un video immersivo su quattro ledwall per la sala di un museo; un video immersivo in VR per Eni'
+			}
+		},
+		{
+			when: { en: 'Now', it: 'Oggi' },
+			what: { en: 'Custom tools & AI tutoring', it: 'Tool su misura e tutoring AI' },
+			where: { en: 'Large companies', it: 'Grandi aziende' },
+			note: {
+				en: 'Bespoke software for enterprise teams; coaching people to bring AI into their workflows',
+				it: 'Software su misura per team aziendali; tutoring per integrare l’AI nei flussi di lavoro'
+			}
+		},
+		{
+			when: { en: '2025', it: '2025' },
+			what: {
+				en: 'Live performance curation — Érotiq',
+				it: 'Cura della performance live — Érotiq'
+			},
+			where: 'Romaeuropa Festival',
+			url: 'https://romaeuropa.net/en/festival-2025/mariaarnal/',
+			note: {
+				en: 'ULTRA CLUB night at Mattatoio, Rome, 26 September 2025',
+				it: 'Serata ULTRA CLUB al Mattatoio di Roma, 26 settembre 2025'
+			}
+		},
+		{
+			when: { en: 'Internship', it: 'Stage' },
+			what: { en: 'Art Director — 6 months', it: 'Art Director — 6 mesi' },
+			where: 'Intertouch',
+			note: { en: 'Digital retail', it: 'Digital retail' }
+		},
+		{
 			when: { en: '2024', it: '2024' },
 			what: { en: 'Live AV performance — Symbioglitch', it: 'Performance AV live — Symbioglitch' },
 			where: 'Videocittà, Rome',
@@ -124,7 +161,7 @@
 			<div class="tags">
 				<span>VFX Direction</span><span>AI Filmmaking</span><span>Art Direction</span><span
 					>Creative Technology</span
-				>
+				><span>Immersive & VR</span><span>AI Tutoring</span>
 			</div>
 		</div>
 		<a href="/contact" class="pill" use:magnetic use:reveal>{t(ui.cta.button)} →</a>
@@ -144,9 +181,9 @@
 					<p class="muted">{t(e.note)}</p>
 				</div>
 				{#if e.url}
-					<a class="mono link where" href={e.url} target="_blank" rel="noopener">{e.where} ↗</a>
+					<a class="mono link where" href={e.url} target="_blank" rel="noopener">{t(e.where)} ↗</a>
 				{:else}
-					<span class="mono where">{e.where}</span>
+					<span class="mono where">{t(e.where)}</span>
 				{/if}
 			</li>
 		{/each}

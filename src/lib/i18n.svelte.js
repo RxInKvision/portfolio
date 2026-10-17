@@ -70,8 +70,8 @@ export const ui = {
 		{
 			title: { en: 'Creative Technology', it: 'Creative Technology' },
 			text: {
-				en: 'Real-time visuals, installations and web experiences — TouchDesigner, WebGL and custom tools that make ideas interactive.',
-				it: 'Visual in tempo reale, installazioni ed esperienze web: TouchDesigner, WebGL e tool custom che rendono le idee interattive.'
+				en: 'Immersive LED and VR experiences, real-time visuals, installations and custom software for companies — plus tutoring to bring AI into everyday workflows.',
+				it: 'Esperienze immersive su ledwall e in VR, visual in tempo reale, installazioni e software su misura per aziende, oltre al tutoring per portare l’AI nei flussi di lavoro.'
 			}
 		}
 	],
@@ -128,8 +128,12 @@ export const ui = {
 				it: 'Oggi mi sto specializzando nella regia VFX e nella regia AI: costruisco pipeline in cui riprese dal vero, 3D e strumenti generativi servono un’unica visione, con la stessa cura per luce, ritmo e racconto del cinema tradizionale.'
 			},
 			{
-				en: 'I graduated with full marks (110/110) in Media Design and New Technologies for Art at IED Rome. Before the agency, I performed live audio-reactive visuals for events like Videocittà 2024 and venues like Spazio900, and built installations where space, sound and image become a single experience.',
-				it: 'Mi sono laureato con 110/110 in Media Design e Nuove Tecnologie per l’Arte allo IED di Roma. Prima dell’agenzia ho performato visual audio-reattivi live per eventi come Videocittà 2024 e locali come Spazio900, e costruito installazioni in cui spazio, suono e immagine diventano un’unica esperienza.'
+				en: 'Right now I’m creating immersive multimedia experiences — a room-scale immersive film across four LED walls for a museum, and an immersive VR film for Eni. I also design and code custom tools and software for large companies, and run tutoring sessions that help people bring AI into their everyday workflows.',
+				it: 'In questo momento sto creando esperienze multimediali immersive: un video immersivo su quattro ledwall in una sala per un museo e un video immersivo in VR per Eni. Progetto e sviluppo inoltre tool e software su misura per grandi aziende, e faccio tutoring per aiutare le persone a integrare l’AI nei propri flussi di lavoro.'
+			},
+			{
+				en: 'I graduated with full marks (110/110) in Media Design and New Technologies for Art at IED Rome. Along the way I curated the live performance of Érotiq at Romaeuropa Festival 2025, spent six months as Art Director intern at the digital retail company Intertouch, performed live audio-reactive visuals for Videocittà 2024 and Spazio900, and built installations where space, sound and image become a single experience.',
+				it: 'Mi sono laureato con 110/110 in Media Design e Nuove Tecnologie per l’Arte allo IED di Roma. Nel mio percorso ho curato la performance live di Érotiq al Romaeuropa Festival 2025, ho fatto uno stage di sei mesi come Art Director in Intertouch, azienda di digital retail, ho performato visual audio-reattivi live per Videocittà 2024 e Spazio900, e ho costruito installazioni in cui spazio, suono e immagine diventano un’unica esperienza.'
 			}
 		],
 		now: { en: 'Now', it: 'Oggi' },

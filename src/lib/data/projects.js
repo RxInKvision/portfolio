@@ -98,7 +98,8 @@ export const projects = [
 			src: 'projects/ai-studies/noir',
 			poster: 'projects/ai-studies/stills/noir-a',
 			sound: true,
-			title: { en: 'Noir in Pink', it: 'Noir in rosa' }
+			title: { en: 'Noir in Pink', it: 'Noir in rosa' },
+			ref: 'Sin City — Robert Rodriguez & Frank Miller'
 		},
 		summary: {
 			en: 'Eight AI short films on Seedance 2.5, emulating the photography and editing of great directors — starring me and my colleagues.',
@@ -139,7 +140,8 @@ export const projects = [
 				span: 'full',
 				sound: true,
 				index: 1,
-				title: { en: 'Vespa', it: 'Vespa' }
+				title: { en: 'Vespa', it: 'Vespa' },
+				ref: 'Guy Ritchie'
 			},
 			{ type: 'image', src: 'projects/ai-studies/stills/vespa-a' },
 			{ type: 'image', src: 'projects/ai-studies/stills/vespa-b' },
@@ -150,7 +152,8 @@ export const projects = [
 				span: 'full',
 				sound: true,
 				index: 2,
-				title: { en: 'Smoke Break', it: 'Pausa sigaretta' }
+				title: { en: 'Smoke Break', it: 'Pausa sigaretta' },
+				ref: 'Fallen Angels — Wong Kar-wai'
 			},
 			{ type: 'image', src: 'projects/ai-studies/stills/bar-a' },
 			{ type: 'image', src: 'projects/ai-studies/stills/bar-b' },
@@ -161,7 +164,8 @@ export const projects = [
 				span: 'full',
 				sound: true,
 				index: 3,
-				title: { en: 'The Joust', it: 'Il Torneo' }
+				title: { en: 'The Joust', it: 'Il Torneo' },
+				ref: { en: 'A Knight of the Seven Kingdoms', it: 'Il cavaliere dei Sette Regni' }
 			},
 			{ type: 'image', src: 'projects/ai-studies/stills/torneo-a' },
 			{ type: 'image', src: 'projects/ai-studies/stills/torneo-b' },
@@ -172,7 +176,8 @@ export const projects = [
 				span: 'full',
 				sound: true,
 				index: 4,
-				title: { en: 'Night Drive', it: 'Guida notturna' }
+				title: { en: 'Night Drive', it: 'Guida notturna' },
+				ref: 'Drive — Nicolas Winding Refn'
 			},
 			{ type: 'image', src: 'projects/ai-studies/stills/notte-a' },
 			{ type: 'image', src: 'projects/ai-studies/stills/notte-b' },
@@ -185,7 +190,8 @@ export const projects = [
 				span: 'full',
 				sound: true,
 				index: 6,
-				title: { en: 'The Ring', it: 'Il Ring' }
+				title: { en: 'The Ring', it: 'Il Ring' },
+				ref: { en: 'Raging Bull — Martin Scorsese', it: 'Toro scatenato — Martin Scorsese' }
 			},
 			{ type: 'image', src: 'projects/ai-studies/stills/ring-a' },
 			{ type: 'image', src: 'projects/ai-studies/stills/ring-b' },
@@ -196,7 +202,11 @@ export const projects = [
 				span: 'full',
 				sound: true,
 				index: 7,
-				title: { en: 'The Trench', it: 'La Trincea' }
+				title: { en: 'The Trench', it: 'La Trincea' },
+				ref: {
+					en: 'Saving Private Ryan — Steven Spielberg',
+					it: 'Salvate il soldato Ryan — Steven Spielberg'
+				}
 			},
 			{ type: 'image', src: 'projects/ai-studies/stills/trincea-a' },
 			{ type: 'image', src: 'projects/ai-studies/stills/trincea-b' },
@@ -207,7 +217,11 @@ export const projects = [
 				span: 'full',
 				sound: true,
 				index: 8,
-				title: { en: 'Showdown', it: 'Il Duello' }
+				title: { en: 'Showdown', it: 'Il Duello' },
+				ref: {
+					en: 'The Good, the Bad and the Ugly — Sergio Leone',
+					it: 'Il buono, il brutto, il cattivo — Sergio Leone'
+				}
 			},
 			{ type: 'image', src: 'projects/ai-studies/stills/duello-a' },
 			{ type: 'image', src: 'projects/ai-studies/stills/duello-b' }

@@ -38,7 +38,7 @@
 	}
 </script>
 
-<div class="film">
+<div class="film" class:captioned={!!title}>
 	{#if sound}
 		<button
 			class="surface"
@@ -70,6 +70,19 @@
 	.film {
 		position: relative;
 	}
+	/* Soft scrim so captions stay readable on bright shots */
+	.captioned::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		z-index: 1;
+		pointer-events: none;
+		background: linear-gradient(to top, rgba(0, 0, 0, 0.55), transparent 32%);
+	}
+	.caption,
+	.sound {
+		z-index: 2;
+	}
 	.surface {
 		display: block;
 		width: 100%;
@@ -78,9 +91,11 @@
 		position: absolute;
 		left: clamp(12px, 2vw, 28px);
 		bottom: clamp(12px, 2vw, 28px);
-		display: flex;
+		display: grid;
+		grid-template-columns: auto 1fr;
 		align-items: baseline;
-		gap: 12px;
+		gap: 6px 12px;
+		max-width: calc(100% - 200px);
 		pointer-events: none;
 		text-shadow: 0 1px 18px rgba(0, 0, 0, 0.5);
 	}
@@ -90,7 +105,8 @@
 		line-height: 1;
 	}
 	.place {
-		opacity: 0.8;
+		grid-column: 2;
+		opacity: 0.85;
 	}
 	.sound {
 		position: absolute;
@@ -135,8 +151,11 @@
 			bottom: auto;
 			top: 12px;
 		}
-		.place {
-			display: none;
+		.caption {
+			max-width: calc(100% - 24px);
+		}
+		.captioned::before {
+			background: linear-gradient(to bottom, rgba(0, 0, 0, 0.55), transparent 40%);
 		}
 	}
 </style>

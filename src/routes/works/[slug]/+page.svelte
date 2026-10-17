@@ -60,6 +60,7 @@
 					poster={p.hero.poster}
 					index={p.hero.index ?? null}
 					title={t(p.hero.title) ?? ''}
+					place={t(p.hero.ref) ?? ''}
 					eager
 					alt={p.title}
 				/>
@@ -116,7 +117,7 @@
 								sound={!!item.sound}
 								index={item.index ?? null}
 								title={t(item.title) ?? ''}
-								place={t(item.place) ?? ''}
+								place={t(item.ref ?? item.place) ?? ''}
 								alt={t(item.title) || p.title}
 							/>
 						{:else}

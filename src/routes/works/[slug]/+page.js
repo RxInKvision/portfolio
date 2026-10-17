@@ -1,16 +1,10 @@
-import { getWorkById } from '$lib/works-data';
 import { error } from '@sveltejs/kit';
+import { projects, getProject, nextProject } from '$lib/data/projects.js';
+
+export const entries = () => projects.map((p) => ({ slug: p.slug }));
 
 export function load({ params }) {
-    const work = getWorkById(params.slug);
-
-    if (!work) {
-        throw error(404, {
-            message: 'Work not found'
-        });
-    }
-
-    return {
-        work
-    };
+	const project = getProject(params.slug);
+	if (!project) error(404, 'Not found');
+	return { project, next: nextProject(params.slug) };
 }

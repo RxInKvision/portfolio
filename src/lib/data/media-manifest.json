@@ -1,0 +1,506 @@
+{
+	"cards/avperformace": [
+		1152,
+		1390
+	],
+	"cards/beyond2": [
+		1600,
+		757
+	],
+	"cards/beyondmockup": [
+		1600,
+		900
+	],
+	"cards/beyondmockup1": [
+		1600,
+		900
+	],
+	"cards/branding": [
+		1044,
+		1301
+	],
+	"cards/forum": [
+		1160,
+		1470
+	],
+	"cards/interactive": [
+		767,
+		861
+	],
+	"cards/kollateral": [
+		1600,
+		900
+	],
+	"cards/kollateral1": [
+		1600,
+		1069
+	],
+	"cards/kollateral2": [
+		1600,
+		1069
+	],
+	"cards/kollateral3": [
+		1600,
+		1069
+	],
+	"cards/kollateral4": [
+		1600,
+		1069
+	],
+	"cards/MAIN_16-9": [
+		1280,
+		720
+	],
+	"profile/riccardo-pichi": [
+		765,
+		763
+	],
+	"projects/beyond/demo": [
+		1280,
+		720
+	],
+	"projects/beyond/side1": [
+		1280,
+		720
+	],
+	"projects/beyond/side2": [
+		1280,
+		720
+	],
+	"projects/beyond/side3": [
+		1280,
+		720
+	],
+	"projects/beyond/side4": [
+		1280,
+		720
+	],
+	"projects/beyond/side5": [
+		1280,
+		720
+	],
+	"projects/beyond/side6": [
+		1280,
+		720
+	],
+	"projects/beyond/_side1": [
+		1280,
+		720
+	],
+	"projects/beyond/_side2": [
+		1280,
+		720
+	],
+	"projects/beyond/_side3": [
+		1280,
+		720
+	],
+	"projects/beyond/_side4": [
+		1280,
+		720
+	],
+	"projects/beyond/_side5": [
+		1280,
+		720
+	],
+	"projects/beyond/_side6": [
+		1280,
+		720
+	],
+	"projects/bmw/hero": [
+		1440,
+		1024
+	],
+	"projects/bmw/landing": [
+		1280,
+		664
+	],
+	"projects/bmw/ooh": [
+		1600,
+		892
+	],
+	"projects/bmw/scroll": [
+		1280,
+		664
+	],
+	"projects/bmw/story": [
+		1280,
+		664
+	],
+	"projects/circularthub/1": [
+		1600,
+		900
+	],
+	"projects/circularthub/2": [
+		1600,
+		900
+	],
+	"projects/circularthub/3": [
+		1600,
+		900
+	],
+	"projects/circularthub/4": [
+		1600,
+		900
+	],
+	"projects/circularthub/5": [
+		1600,
+		900
+	],
+	"projects/circularthub/6": [
+		1600,
+		900
+	],
+	"projects/circularthub/7": [
+		1600,
+		900
+	],
+	"projects/circularthub/card": [
+		1600,
+		900
+	],
+	"projects/circularthub/hero": [
+		1600,
+		900
+	],
+	"projects/forum/1": [
+		1600,
+		900
+	],
+	"projects/forum/2": [
+		1600,
+		900
+	],
+	"projects/forum/3": [
+		1600,
+		900
+	],
+	"projects/forum/4": [
+		1600,
+		900
+	],
+	"projects/forum/5": [
+		1600,
+		900
+	],
+	"projects/forum/6": [
+		1600,
+		900
+	],
+	"projects/forum/7": [
+		1600,
+		900
+	],
+	"projects/forum/still1": [
+		1600,
+		900
+	],
+	"projects/forum/still2": [
+		1600,
+		900
+	],
+	"projects/forum/still3": [
+		1600,
+		900
+	],
+	"projects/forum/still4": [
+		1600,
+		863
+	],
+	"projects/forum/still5": [
+		1600,
+		859
+	],
+	"projects/forum/titolo": [
+		1600,
+		900
+	],
+	"projects/forum/video1": [
+		1280,
+		720
+	],
+	"projects/forum/video2": [
+		1280,
+		720
+	],
+	"projects/forum/video3": [
+		1280,
+		720
+	],
+	"projects/forum/video4": [
+		1280,
+		720
+	],
+	"projects/friendsinmyhead/still1": [
+		1600,
+		678
+	],
+	"projects/friendsinmyhead/still2": [
+		1600,
+		685
+	],
+	"projects/friendsinmyhead/still3": [
+		1600,
+		676
+	],
+	"projects/friendsinmyhead/still4": [
+		1600,
+		678
+	],
+	"projects/friendsinmyhead/still5": [
+		1600,
+		680
+	],
+	"projects/friendsinmyhead/still6": [
+		1600,
+		680
+	],
+	"projects/friendsinmyhead/still7": [
+		1600,
+		677
+	],
+	"projects/oneofthesedays/1": [
+		1600,
+		898
+	],
+	"projects/oneofthesedays/10": [
+		1600,
+		901
+	],
+	"projects/oneofthesedays/2": [
+		1600,
+		899
+	],
+	"projects/oneofthesedays/3": [
+		1600,
+		894
+	],
+	"projects/oneofthesedays/4": [
+		1600,
+		897
+	],
+	"projects/oneofthesedays/5": [
+		1600,
+		900
+	],
+	"projects/oneofthesedays/6": [
+		1600,
+		901
+	],
+	"projects/oneofthesedays/7": [
+		1600,
+		899
+	],
+	"projects/oneofthesedays/8": [
+		1600,
+		916
+	],
+	"projects/oneofthesedays/9": [
+		1600,
+		899
+	],
+	"projects/romacratermundi/1": [
+		1600,
+		1205
+	],
+	"projects/romacratermundi/10": [
+		1600,
+		1205
+	],
+	"projects/romacratermundi/11": [
+		1600,
+		1205
+	],
+	"projects/romacratermundi/12": [
+		1600,
+		1205
+	],
+	"projects/romacratermundi/13": [
+		1600,
+		1205
+	],
+	"projects/romacratermundi/14": [
+		1600,
+		1205
+	],
+	"projects/romacratermundi/15": [
+		1600,
+		1205
+	],
+	"projects/romacratermundi/16": [
+		1600,
+		1205
+	],
+	"projects/romacratermundi/2": [
+		1600,
+		1205
+	],
+	"projects/romacratermundi/3": [
+		1600,
+		1205
+	],
+	"projects/romacratermundi/4": [
+		1600,
+		1205
+	],
+	"projects/romacratermundi/5": [
+		1600,
+		1205
+	],
+	"projects/romacratermundi/6": [
+		1600,
+		1205
+	],
+	"projects/romacratermundi/7": [
+		1600,
+		1205
+	],
+	"projects/romacratermundi/8": [
+		1600,
+		1205
+	],
+	"projects/romacratermundi/9": [
+		1600,
+		1205
+	],
+	"projects/romacratermundi/card": [
+		1600,
+		2125
+	],
+	"projects/romacratermundi/hero": [
+		1600,
+		1205
+	],
+	"projects/romacratermundi/still1": [
+		1600,
+		989
+	],
+	"projects/romacratermundi/still2": [
+		1600,
+		1122
+	],
+	"projects/romacratermundi/still3": [
+		1600,
+		1123
+	],
+	"projects/romacratermundi/still4": [
+		1600,
+		1107
+	],
+	"projects/romacratermundi/still5": [
+		1600,
+		1124
+	],
+	"projects/romacratermundi/still6": [
+		1600,
+		1117
+	],
+	"projects/romacratermundi/still7": [
+		1600,
+		1129
+	],
+	"projects/romacratermundi/titolo": [
+		1600,
+		1085
+	],
+	"projects/rxink/BannerLinkedin": [
+		1526,
+		396
+	],
+	"projects/rxink/black": [
+		1600,
+		1596
+	],
+	"projects/rxink/construction": [
+		1593,
+		1003
+	],
+	"projects/rxink/green": [
+		400,
+		400
+	],
+	"projects/rxink/LOGOANIMATION10": [
+		1280,
+		720
+	],
+	"projects/rxink/logoanimationverticale": [
+		1280,
+		2276
+	],
+	"projects/rxink/pattern": [
+		1600,
+		1600
+	],
+	"projects/rxink/think": [
+		1600,
+		1600
+	],
+	"projects/rxink/yellow": [
+		1600,
+		1600
+	],
+	"projects/rxink/yellow1": [
+		400,
+		400
+	],
+	"projects/videocitta/hero": [
+		1600,
+		1099
+	],
+	"projects/videocitta/still1": [
+		1600,
+		843
+	],
+	"projects/videocitta/video1": [
+		720,
+		1280
+	],
+	"projects/videocitta/video2": [
+		1072,
+		608
+	],
+	"projects/videocitta/video3": [
+		1072,
+		608
+	],
+	"projects/videocitta/video4": [
+		1072,
+		608
+	],
+	"projects/videocitta/video5": [
+		720,
+		1280
+	],
+	"projects/videocitta/video6": [
+		1072,
+		608
+	],
+	"projects/vinted/1": [
+		1600,
+		900
+	],
+	"projects/vinted/2": [
+		1600,
+		900
+	],
+	"projects/vinted/3": [
+		1600,
+		900
+	],
+	"projects/vinted/4": [
+		1600,
+		900
+	],
+	"projects/vinted/5": [
+		1600,
+		900
+	],
+	"projects/vinted/6": [
+		1600,
+		900
+	],
+	"projects/vinted/card": [
+		1600,
+		900
+	]
+}

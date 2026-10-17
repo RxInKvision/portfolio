@@ -1,300 +1,317 @@
 <script>
-    import { onMount, onDestroy } from 'svelte';
-    import { gsap } from 'gsap';
-    import { ScrollTrigger } from 'gsap/ScrollTrigger';
-    import Navbar from '$lib/components/Navbar.svelte';
+	import Media from '$lib/components/Media.svelte';
+	import Marquee from '$lib/components/Marquee.svelte';
+	import { t, ui, site } from '$lib/i18n.svelte.js';
+	import { splitLines, reveal, clipReveal, parallax, magnetic } from '$lib/motion.svelte.js';
 
-    let ready = false;
-    let scrollY = 0;
-    let mouseX = 0;
-    let mouseY = 0;
+	const experience = [
+		{
+			when: { en: 'Now', it: 'Oggi' },
+			what: {
+				en: 'Art Director & Creative Technologist',
+				it: 'Art Director & Creative Technologist'
+			},
+			where: site.agency.name,
+			url: site.agency.url,
+			note: {
+				en: 'Creative direction, VFX and AI film direction',
+				it: 'Direzione creativa, regia VFX e AI'
+			}
+		},
+		{
+			when: { en: '2024', it: '2024' },
+			what: { en: 'Live AV performance — Symbioglitch', it: 'Performance AV live — Symbioglitch' },
+			where: 'Videocittà, Rome',
+			note: {
+				en: 'With Alice Felloni, on a 25 m projection wall',
+				it: 'Con Alice Felloni, su una parete di proiezione di 25 m'
+			}
+		},
+		{
+			when: { en: 'Live', it: 'Live' },
+			what: { en: 'Audio-reactive visuals', it: 'Visual audio-reattivi' },
+			where: 'Spazio900, Rome',
+			note: {
+				en: 'Real-time visuals for club nights and events',
+				it: 'Visual in tempo reale per serate ed eventi'
+			}
+		},
+		{
+			when: { en: 'Education', it: 'Formazione' },
+			what: {
+				en: 'Media Design & New Technologies for Art — 110/110',
+				it: "Media Design e Nuove Tecnologie per l'Arte — 110/110"
+			},
+			where: 'IED Rome',
+			note: {
+				en: 'Video, motion, VFX, web, installations',
+				it: 'Video, motion, VFX, web, installazioni'
+			}
+		}
+	];
 
-    let pageContainer;
-    let svgLayer1, svgLayer2, svgLayer3, svgLayer4, svgLayer5;
-
-    let mouseMoveEnabled = false;
-    let throttleTimer = false;
-    let lastMouseX = 0;
-    let lastMouseY = 0;
-
-    onMount(() => {
-        gsap.registerPlugin(ScrollTrigger);
-
-        document.documentElement.style.setProperty('--background-color', '#111');
-        document.documentElement.style.setProperty('--text-color', '#FFE964');
-        document.documentElement.style.setProperty('--page-secondary-text', '#C4C4C4');
-
-        if (pageContainer) {
-            pageContainer.classList.add('dark-mode');
-        }
-
-        const allLogos = document.querySelectorAll('.responsive-svg');
-        allLogos.forEach((logo) => {
-            logo.classList.add('on-dark');
-        });
-
-        // --- CHANGE: The Definitive Fix for the Race Condition Bug ---
-        // We now wait for the browser to confirm that all fonts are fully loaded
-        // and rendered before we attempt to set up any animations. This ensures
-        // the layout is stable and all trigger points are calculated correctly.
-        document.fonts.ready.then(function () {
-            // Now that the layout is stable, we can safely set up the animations.
-            setupScrollAnimations();
-        });
-
-
-        window.addEventListener('scroll', updatePatternPositions);
-        
-        setTimeout(() => {
-            ready = true;
-            setTimeout(() => {
-                mouseMoveEnabled = true;
-            }, 600);
-        }, 300);
-    });
-
-    onDestroy(() => {
-        ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-        window.removeEventListener('scroll', updatePatternPositions);
-    });
-    
-    function setupScrollAnimations() {
-        // The batch method is still the most robust way to handle the animations.
-        const batchSettings = {
-            once: true,
-            start: 'top 85%',
-            onEnter: batch => gsap.from(batch, {
-                opacity: 0,
-                y: 40,
-                duration: 1.5,
-                ease: 'power3.out',
-                stagger: 0.15,
-                overwrite: true
-            })
-        };
-
-        // Create a separate, reliable batch for each group of elements.
-        ScrollTrigger.batch('.profile-image-container', batchSettings);
-        ScrollTrigger.batch('.sidebar-section h3', batchSettings);
-        ScrollTrigger.batch('.contact-list li', batchSettings);
-        ScrollTrigger.batch('.social-links a', batchSettings);
-        ScrollTrigger.batch('.skill-tag', batchSettings);
-        ScrollTrigger.batch('.page-header > *', batchSettings);
-        ScrollTrigger.batch('.section-title, .narrative, .story-block', batchSettings);
-        ScrollTrigger.batch('.journey-milestone', batchSettings);
-        ScrollTrigger.batch('.cta-section > *', batchSettings);
-        ScrollTrigger.batch('footer > *', batchSettings);
-        
-        // After setting everything up based on the stable layout,
-        // do one final refresh to be absolutely sure.
-        ScrollTrigger.refresh();
-    }
-
-    function updatePatternPositions() {
-        const currentScrollY = window.scrollY;
-        if (svgLayer1) svgLayer1.style.transform = `translate(${lastMouseX * 20}px, ${lastMouseY * 20 + currentScrollY * 0.08}px) rotate(${currentScrollY * 0.002}deg)`;
-        if (svgLayer2) svgLayer2.style.transform = `translate(${lastMouseX * 15}px, ${lastMouseY * 15 + currentScrollY * 0.06}px)`;
-        if (svgLayer3) svgLayer3.style.transform = `translate(${lastMouseX * 10}px, ${lastMouseY * 10 + currentScrollY * 0.04}px)`;
-        if (svgLayer4) svgLayer4.style.transform = `translate(${lastMouseX * -12}px, ${lastMouseY * -12 - currentScrollY * 0.05}px) rotate(${-currentScrollY * 0.001}deg)`;
-        if (svgLayer5) svgLayer5.style.transform = `translate(${lastMouseX * -15}px, ${lastMouseY * -15 - currentScrollY * 0.07}px)`;
-    }
-
-    function handleMouseMove(e) {
-        if (!mouseMoveEnabled || throttleTimer) return;
-
-        throttleTimer = true;
-        setTimeout(() => {
-            throttleTimer = false;
-        }, 5);
-        
-        requestAnimationFrame(() => {
-            mouseX = (e.clientX / window.innerWidth) * 2 - 1;
-            mouseY = (e.clientY / window.innerHeight) * 2 - 1;
-            
-            lastMouseX += (mouseX - lastMouseX) * 0.1;
-            lastMouseY += (mouseY - lastMouseY) * 0.1;
-        
-            if (ready) {
-                updatePatternPositions();
-            }
-        });
-    }
+	const toolkit = [
+		{
+			group: { en: 'Film & VFX', it: 'Film & VFX' },
+			items: ['DaVinci Resolve', 'Premiere Pro', 'After Effects', 'Blender']
+		},
+		{
+			group: { en: 'AI & Generative', it: 'AI & Generativo' },
+			items: ['Generative video', 'Generative image', 'AI-assisted workflows']
+		},
+		{
+			group: { en: 'Real-time', it: 'Real-time' },
+			items: ['TouchDesigner', 'Resolume Arena', 'Ableton Live', 'Arduino', 'DMX / MIDI']
+		},
+		{
+			group: { en: 'Code', it: 'Codice' },
+			items: ['Svelte', 'React', 'Three.js', 'WebGL / GLSL', 'Web Audio']
+		},
+		{
+			group: { en: 'Design', it: 'Design' },
+			items: ['Figma', 'Illustrator', 'Photoshop', 'InDesign']
+		}
+	];
 </script>
 
 <svelte:head>
-    <title>About | Riccardo Pichi</title>
-    <meta name="description" content="About Riccardo Pichi - Media Designer and Visual Artist" />
-    <style>
-      html {
-        scroll-behavior: smooth;
-      }
-    </style>
+	<title>About — Riccardo Pichi | RXINK</title>
+	<meta
+		name="description"
+		content="Riccardo Pichi is an Art Director and Creative Technologist at Arsenale 23 in Rome, specialising in VFX direction and AI filmmaking."
+	/>
 </svelte:head>
 
-<svelte:window bind:scrollY on:mousemove={handleMouseMove} />
+<section class="head wrap">
+	<p class="mono muted">{t(ui.about.title)} — Riccardo Pichi</p>
+	{#key t(ui.about.statement)}
+		<h1 class="statement" use:splitLines={{ immediate: true, delay: 0.15, stagger: 0.06 }}>
+			{t(ui.about.statement)}
+		</h1>
+	{/key}
+</section>
 
-<div class="landing-page" bind:this={pageContainer} class:dark-mode={true}>
-    <div class="svg-background-container">
-        <div class="svg-layer svg-layer-1" bind:this={svgLayer1}><div class="svg-pattern bg-far" /></div>
-        <div class="svg-layer svg-layer-2" bind:this={svgLayer2}><div class="svg-pattern bg-medium-far" /></div>
-        <div class="svg-layer svg-layer-3" bind:this={svgLayer3}><div class="svg-pattern bg-middle" /></div>
-        <div class="svg-layer svg-layer-4" bind:this={svgLayer4}><div class="svg-pattern bg-medium-near" /></div>
-        <div class="svg-layer svg-layer-5" bind:this={svgLayer5}><div class="svg-pattern bg-near" /></div>
-    </div>
+<section class="bio wrap">
+	<div class="portrait-col">
+		<div class="portrait" use:clipReveal>
+			<div class="pinner" use:parallax={{ amount: 10 }}>
+				<Media
+					src="profile/riccardo-pichi"
+					fill
+					eager
+					sizes="(max-width: 760px) 100vw, 40vw"
+					alt="Riccardo Pichi"
+				/>
+			</div>
+		</div>
+		<div class="now mono" use:reveal>
+			<span class="muted">{t(ui.about.now)}</span>
+			<span>{t(ui.hero.role)}</span>
+			<a class="link yellow" href={site.agency.url} target="_blank" rel="noopener"
+				>@ {site.agency.name} ↗</a
+			>
+		</div>
+	</div>
 
-    <Navbar />
+	<div class="bio-text">
+		{#each ui.about.bio as para, i}
+			{#key t(para)}
+				<p class:lead={i === 0} use:splitLines>{t(para)}</p>
+			{/key}
+		{/each}
+		<div class="focus" use:reveal>
+			<span class="mono muted">{t(ui.about.focus)}</span>
+			<div class="tags">
+				<span>VFX Direction</span><span>AI Filmmaking</span><span>Art Direction</span><span
+					>Creative Technology</span
+				>
+			</div>
+		</div>
+		<a href="/contact" class="pill" use:magnetic use:reveal>{t(ui.cta.button)} →</a>
+	</div>
+</section>
 
-    <div class="about-container">
-        <div class="about-sidebar">
-            <div class="profile-section">
-                <div class="profile-image-container">
-                    <img src="/images/profile/riccardo-pichi.jpg" alt="Riccardo Pichi" class="profile-image" />
-                </div>
-                <div class="sidebar-section">
-                    <h3>CONTACT</h3>
-                    <ul class="sidebar-list contact-list">
-                        <li><div class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20,4H4C2.9,4,2,4.9,2,6v12c0,1.1,0.9,2,2,2h16c1.1,0,2-0.9,2-2V6C22,4.9,21.1,4,20,4z M20,8l-8,5L4,8V6l8,5l8-5V8z"/></svg></div><span>rxink.designer@gmail.com</span></li>
-                        <li><div class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12,2C8.13,2,5,5.13,5,9c0,5.25,7,13,7,13s7-7.75,7-13C19,5.13,15.87,2,12,2z M12,11.5c-1.38,0-2.5-1.12-2.5-2.5s1.12-2.5,2.5-2.5s2.5,1.12,2.5,2.5S13.38,11.5,12,11.5z"/></svg></div><span>Rome</span></li>
-                    </ul>
-                    <div class="social-links">
-                        <a href="https://www.instagram.com/rinktonic/" target="_blank" rel="noopener noreferrer" class="social-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
-                        <a href="https://www.linkedin.com/in/riccardopichi/" target="_blank" rel="noopener noreferrer" class="social-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
-                    </div>
-                </div>
-                <div class="sidebar-section tags-section">
-                    <h3>CORE SKILLS</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Audiovisual Interaction</span>
-                        <span class="skill-tag">Motion Design</span>
-                        <span class="skill-tag">Creative Coding</span>
-                        <span class="skill-tag">Live Visuals</span>
-                        <span class="skill-tag">Projection Mapping</span>
-                        <span class="skill-tag">Visual Identity</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="about-content">
-            <div class="page-header">
-                <div class="name-container">
-                    <h1>RICCARDO PICHI</h1>
-                    <div class="position-text">MEDIA DESIGNER | VISUAL ARTIST</div>
-                </div>
-                <div class="header-accent" />
-            </div>
-            <div class="story-section">
-                <h2 class="section-title">PROFILE</h2>
-                <div class="story-content">
-                    <p class="narrative">
-                        My work lies at the intersection of <span class="fw-bold">art, technology, and space</span>. Since childhood, I’ve used computers not just for consumption, but as tools for creation. This hands-on approach across <span class="fw-regular-italic">both physical and digital media</span> has been the foundation of my practice.
-                    </p>
-                    <div class="story-block">
-                        <p>
-                            This path naturally led me to IED Rome, where I recently graduated with honors (110/110) in <span class="fw-medium">Media Design and New Technologies for Art</span>. The program was the perfect fit for my eclectic and restless nature, allowing me to dive into a wide range of outputs: <span class="fw-light">from video clips, motion graphics, and VFX to dynamic websites, app prototypes, and large-scale multimedia installations.</span>
-                        </p>
-                    </div>
-                    <div class="journey-milestone">
-                        <div class="milestone-dot" />
-                        <div class="milestone-content">
-                            <h3>From Theory to Practice</h3>
-                            <p>
-                                My education has been intensely practical. I thrive on turning theory into tangible results, which has led me to perform live, creating audioreactive visuals for major events like <span class="fw-medium">Videocittà 2024</span> (with Alice Felloni) and at renowned venues such as <span class="fw-medium">Spazio900</span>.
-                            </p>
-                            <p style="margin-top: 1rem;">
-                                These high-pressure environments taught me to be methodical and adaptable. And, of course, there's a unique satisfaction in seeing your work command a massive LED wall.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="journey-milestone">
-                        <div class="milestone-dot" />
-                        <div class="milestone-content">
-                            <h3>My Focus</h3>
-                            <p>
-                                My primary ambition is to design and develop <span class="fw-bold">large-scale installations</span>. Whether for artistic or commercial purposes, this is where my passion converges: the orchestration of space, narrative, and technology to create a single, powerful experience. The process of bringing something from <span class="fw-regular-italic">non-existence to reality</span> is what truly drives me.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="cta-section">
-                <p class="cta-message">
-                    I'm always open to new collaborations and challenges. If you have an idea that requires a blend of creative vision and technical expertise, let's connect.
-                </p>
-                <div class="cta-buttons">
-                    <a href="/works" class="cta-button">SEE MY WORK</a>
-                    <a href="/contact" class="cta-button outline">GET IN TOUCH</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <footer>
-        <div class="footer-content">
-            <p class="copyright">&copy; 2025 RICCARDO PICHI</p>
-            <p class="tagline">THINK IN'INK</p>
-        </div>
-    </footer>
-</div>
+<Marquee items={['Think in ink', 'Rome', 'Arsenale 23', 'VFX', 'AI Film']} />
+
+<section class="exp wrap">
+	<p class="mono muted label">{t(ui.about.experience)}</p>
+	<ol>
+		{#each experience as e}
+			<li use:reveal={{ y: 30 }}>
+				<span class="mono yellow">{t(e.when)}</span>
+				<div>
+					<h3>{t(e.what)}</h3>
+					<p class="muted">{t(e.note)}</p>
+				</div>
+				{#if e.url}
+					<a class="mono link where" href={e.url} target="_blank" rel="noopener">{e.where} ↗</a>
+				{:else}
+					<span class="mono where">{e.where}</span>
+				{/if}
+			</li>
+		{/each}
+	</ol>
+</section>
+
+<section class="kit wrap">
+	<p class="mono muted label">{t(ui.about.toolkit)}</p>
+	<div class="kit-grid">
+		{#each toolkit as g, i}
+			<div use:reveal={{ delay: i * 0.06 }}>
+				<h4 class="mono yellow">{t(g.group)}</h4>
+				<ul>
+					{#each g.items as item}<li>{item}</li>{/each}
+				</ul>
+			</div>
+		{/each}
+	</div>
+</section>
 
 <style>
-    :root { font-family: 'IBM Plex Mono', monospace; }
-    .fw-bold { font-weight: 700; color: var(--page-text); }
-    .fw-medium { font-weight: 500; color: var(--page-text); }
-    .fw-regular-italic { font-style: italic; color: var(--page-secondary-text); }
-    .fw-light { font-weight: 300; color: var(--page-secondary-text); }
-    .dark-mode { --page-bg: #111; --page-text: #FFE964; --page-secondary-text: #C4C4C4; --page-accent: #4A8D65; }
-    :global(.responsive-svg.on-light) { filter: brightness(0) saturate(100%); }
-    :global(.responsive-svg.on-dark) { filter: invert(90%) sepia(39%) saturate(692%) hue-rotate(325deg) brightness(103%) contrast(103%); }
-    .svg-background-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; pointer-events: none; }
-    .svg-layer { position: absolute; top: -150%; left: -150%; width: 400%; height: 400%; will-change: transform; }
-    .svg-layer-1 { opacity: 0.02; }
-    .svg-layer-2 { opacity: 0.03; }
-    .svg-layer-3 { opacity: 0.04; }
-    .svg-layer-4 { opacity: 0.03; }
-    .svg-layer-5 { opacity: 0.02; }
-    .svg-pattern { position: absolute; width: 100%; height: 100%; background-repeat: repeat; filter: grayscale(100%); mix-blend-mode: overlay; }
-    .bg-far { background-image: url('/images/full-logo.svg'); background-size: 600px auto; }
-    .bg-medium-far { background-image: url('/images/logotype.svg'); background-size: 450px auto; }
-    .bg-middle { background-image: url('/images/pictogram.svg'); background-size: 200px auto; }
-    .bg-medium-near { background-image: url('/images/logotype.svg'); background-size: 250px auto; transform: rotate(45deg); }
-    .bg-near { background-image: url('/images/pictogram.svg'); background-size: 100px auto; }
-    .landing-page { min-height: 100vh; overflow-x: hidden; position: relative; }
-    .about-container { display: grid; grid-template-columns: 320px 1fr; gap: 4rem; max-width: 1200px; margin: 0 auto; padding: 8rem 2rem 4rem; position: relative; z-index: 2; }
-    .about-sidebar { position: sticky; top: 8rem; align-self: start; }
-    .profile-image-container { position: relative; margin-bottom: 2.5rem; overflow: hidden; border-radius: 8px;}
-    .profile-image { width: 100%; display: block; }
-    .sidebar-section { margin-bottom: 2.5rem; }
-    h3 { color: var(--page-secondary-text); font-size: 0.8rem; margin: 0 0 1rem 0; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; }
-    .sidebar-list { list-style: none; padding: 0; margin: 0; }
-    .contact-list li { display: flex; align-items: center; margin-bottom: 0.8rem; font-size: 0.9rem; color: var(--page-secondary-text);}
-    .icon { color: var(--page-accent); margin-right: 0.8rem; }
-    .social-links { display: flex; gap: 1rem; margin-top: 1.2rem; }
-    .social-link { color: var(--page-secondary-text); transition: all 0.3s ease; }
-    .social-link:hover { color: var(--page-text); transform: translateY(-2px); }
-    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.8rem; }
-    .skill-tag { font-family: 'IBM Plex Mono', monospace; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); border: 1px solid rgba(255, 255, 255, 0.1); color: var(--page-secondary-text); padding: 0.6rem 1rem; border-radius: 6px; transition: all 0.3s ease; }
-    .skill-tag:hover { transform: translateY(-2px); background: rgba(255, 255, 255, 0.1); color: var(--page-text); border-color: rgba(74, 141, 101, 0.5); }
-    .about-content { padding-right: 1rem; }
-    .page-header { margin-bottom: 4rem; position: relative; }
-    .name-container { margin-bottom: 1rem; }
-    h1 { font-family: 'IBM Plex Mono', monospace; font-size: 3rem; color: var(--page-text); margin: 0 0 0.5rem 0; line-height: 1.1; font-weight: 700; }
-    .position-text { color: var(--page-accent); font-size: 1rem; letter-spacing: 0.05em; }
-    .header-accent { width: 80px; height: 3px; background-color: var(--page-accent); }
-    .section-title { font-size: 1.3rem; color: var(--page-accent); margin: 0 0 2rem 0; letter-spacing: 0.05em; }
-    .story-section { margin-bottom: 5rem; }
-    .narrative { font-size: 1.2rem; line-height: 1.7; margin-bottom: 2rem; max-width: 65ch; color: var(--page-secondary-text); font-weight: 300; }
-    .story-block { border-left: 2px solid rgba(255,255,255,0.15); padding-left: 1.5rem; margin: 2rem 0; color: var(--page-secondary-text); line-height: 1.7; font-weight: 300;}
-    .journey-milestone { display: flex; margin-bottom: 2.5rem; position: relative; }
-    .milestone-dot { width: 10px; height: 10px; background-color: var(--page-accent); border-radius: 50%; margin-top: 8px; margin-right: 1.5rem; flex-shrink: 0; }
-    .milestone-content h3 { font-size: 1.1rem; color: var(--page-text); margin-bottom: 0.8rem; font-weight: 500; }
-    .milestone-content p { line-height: 1.7; color: var(--page-secondary-text); max-width: 65ch; font-weight: 300;}
-    .cta-section { margin-top: 5rem; padding: 3rem; background-color: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; text-align: center; }
-    .cta-message { font-size: 1.2rem; line-height: 1.6; margin-bottom: 2rem; max-width: 700px; margin: 0 auto 2rem auto; color: var(--page-secondary-text); font-weight: 300;}
-    .cta-buttons { display: flex; justify-content: center; gap: 1.5rem; }
-    .cta-button { display: inline-block; padding: 0.8rem 1.5rem; background-color: var(--page-accent); color: #000; text-decoration: none; font-weight: 700; font-size: 0.9rem; border-radius: 4px; transition: all 0.3s ease; }
-    .cta-button:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); }
-    .cta-button.outline { background-color: transparent; border: 1px solid var(--page-accent); color: var(--page-text); }
-    footer { padding: 3rem 2rem; border-top: 1px solid rgba(255,255,255,0.1); position: relative; z-index: 2; max-width: 1200px; margin: 5rem auto 0 auto; }
-    .footer-content { display: flex; justify-content: space-between; }
-    .copyright, .tagline { font-size: 0.8rem; color: var(--page-secondary-text);}
-    .tagline { color: var(--page-accent); }
+	.head {
+		padding-top: calc(var(--header-h) + clamp(60px, 10vw, 160px));
+		padding-bottom: clamp(60px, 8vw, 140px);
+	}
+	.statement {
+		font-weight: 400;
+		font-size: clamp(36px, 6.2vw, 112px);
+		line-height: 0.98;
+		letter-spacing: -0.045em;
+		max-width: 18ch;
+		margin-top: 24px;
+	}
+	.bio {
+		display: grid;
+		grid-template-columns: 5fr 7fr;
+		gap: clamp(32px, 6vw, 120px);
+		padding-bottom: clamp(80px, 10vw, 160px);
+	}
+	.portrait-col {
+		position: sticky;
+		top: calc(var(--header-h) + 24px);
+		align-self: start;
+		display: grid;
+		gap: 24px;
+	}
+	.portrait {
+		position: relative;
+		aspect-ratio: 4 / 5;
+		overflow: hidden;
+		filter: grayscale(1) contrast(1.05);
+		transition: filter 1s var(--ease-out);
+	}
+	.portrait:hover {
+		filter: none;
+	}
+	.pinner {
+		position: absolute;
+		inset: 0;
+	}
+	.now {
+		display: grid;
+		gap: 4px;
+	}
+	.bio-text {
+		display: grid;
+		align-content: start;
+		gap: 28px;
+	}
+	.bio-text p {
+		max-width: 46ch;
+		color: rgba(241, 239, 231, 0.82);
+	}
+	.bio-text p.lead {
+		color: var(--paper);
+		max-width: 28ch;
+	}
+	.focus {
+		display: grid;
+		gap: 12px;
+		padding-top: 24px;
+		border-top: 1px solid var(--line);
+	}
+	.tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px;
+	}
+	.tags span {
+		padding: 10px 16px;
+		border: 1px solid var(--line);
+		border-radius: 999px;
+	}
+	.pill {
+		justify-self: start;
+		padding: 16px 28px;
+		border-radius: 999px;
+		background: var(--yellow);
+		color: var(--ink);
+	}
+	.label {
+		margin-bottom: 32px;
+	}
+	.exp {
+		padding-block: clamp(80px, 10vw, 160px);
+	}
+	.exp li {
+		display: grid;
+		grid-template-columns: 160px 1fr auto;
+		gap: 24px;
+		align-items: baseline;
+		padding-block: clamp(20px, 2.6vw, 36px);
+		border-top: 1px solid var(--line);
+	}
+	.exp li:last-child {
+		border-bottom: 1px solid var(--line);
+	}
+	.exp h3 {
+		font-weight: 400;
+		font-size: clamp(22px, 2.6vw, 40px);
+		letter-spacing: -0.03em;
+		line-height: 1.1;
+		margin-bottom: 6px;
+	}
+	.where {
+		text-align: right;
+	}
+	.kit {
+		padding-bottom: clamp(100px, 12vw, 200px);
+	}
+	.kit-grid {
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		gap: var(--gutter);
+	}
+	.kit-grid div {
+		padding-top: 16px;
+		border-top: 1px solid var(--line);
+	}
+	.kit-grid h4 {
+		font-weight: 400;
+		margin-bottom: 16px;
+	}
+	.kit-grid li {
+		padding-block: 4px;
+		color: rgba(241, 239, 231, 0.82);
+	}
+
+	@media (max-width: 900px) {
+		.bio {
+			grid-template-columns: 1fr;
+		}
+		.portrait-col {
+			position: static;
+		}
+		.kit-grid {
+			grid-template-columns: 1fr 1fr;
+			row-gap: 40px;
+		}
+		.exp li {
+			grid-template-columns: 1fr;
+			gap: 8px;
+		}
+		.where {
+			text-align: left;
+		}
+	}
 </style>

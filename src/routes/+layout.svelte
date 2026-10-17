@@ -1,71 +1,116 @@
 <script>
-    import { onMount } from 'svelte';
-    import { fade } from 'svelte/transition';
-    import VideoIntro from '$lib/components/videoIntro.svelte';
+	import '../app.css';
+	import { onMount } from 'svelte';
+	import { onNavigate, afterNavigate } from '$app/navigation';
+	import { page } from '$app/state';
+	import Header from '$lib/components/Header.svelte';
+	import Footer from '$lib/components/Footer.svelte';
+	import Preloader from '$lib/components/Preloader.svelte';
+	import Cursor from '$lib/components/Cursor.svelte';
+	import Pictogram from '$lib/components/Pictogram.svelte';
+	import { setLang } from '$lib/i18n.svelte.js';
+	import {
+		app,
+		setReady,
+		gsap,
+		ScrollTrigger,
+		initScroll,
+		getLenis,
+		reducedMotion
+	} from '$lib/motion.svelte.js';
 
-    let showIntro = false;
-    let siteVisible = false;
+	let { children } = $props();
+	let curtain;
 
-    onMount(() => {
-        if (!sessionStorage.getItem('introShown')) {
-            showIntro = true;
-        } else {
-            siteVisible = true;
-        }
-    });
+	onMount(() => {
+		setLang(document.documentElement.dataset.lang === 'it' ? 'it' : 'en');
+		initScroll();
+		const refresh = () => ScrollTrigger.refresh();
+		document.fonts.ready.then(refresh);
+		window.addEventListener('load', refresh);
+		return () => window.removeEventListener('load', refresh);
+	});
 
-    function handleIntroComplete() {
-        showIntro = false;
-        siteVisible = true;
-        sessionStorage.setItem('introShown', 'true');
-    }
+	// Page transition: a yellow curtain rises, the route swaps underneath, then it leaves.
+	onNavigate((nav) => {
+		if (!nav.from || nav.from.url.pathname === nav.to?.url.pathname || reducedMotion()) return;
+		setReady(false);
+		return new Promise((resolve) => {
+			gsap
+				.timeline()
+				.set(curtain, { visibility: 'visible', yPercent: 100 })
+				.to(curtain, { yPercent: 0, duration: 0.75, ease: 'expo.inOut' })
+				.add(resolve);
+		});
+	});
+
+	afterNavigate((nav) => {
+		if (nav.type === 'enter') return;
+		getLenis()?.scrollTo(0, { immediate: true, force: true });
+		if (!getLenis()) window.scrollTo(0, 0);
+		if (reducedMotion() || nav.from?.url.pathname === nav.to?.url.pathname) {
+			setReady(true);
+			return;
+		}
+		requestAnimationFrame(() => {
+			ScrollTrigger.refresh();
+			gsap.to(curtain, {
+				yPercent: -100,
+				duration: 0.85,
+				delay: 0.1,
+				ease: 'expo.inOut',
+				onStart: () => setTimeout(() => setReady(true), 250),
+				onComplete: () => gsap.set(curtain, { visibility: 'hidden' })
+			});
+		});
+	});
 </script>
 
 <svelte:head>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap');
-        
-        :root {
-            --page-bg: #111;
-            --page-text: #FFE964;
-            --page-secondary-text: #C4C4C4;
-            --page-accent: #4A8D65;
-        }
-        
-        *, *::before, *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        
-        html, body {
-            font-family: 'IBM Plex Mono', monospace !important;
-            background-color: var(--page-bg);
-            color: var(--page-text);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-        
-        a { color: inherit; text-decoration: none; }
-        img { max-width: 100%; height: auto; display: block; }
-    </style>
+	<meta property="og:site_name" content="RXINK — Riccardo Pichi" />
+	<meta property="og:type" content="website" />
+	<meta property="og:image" content="{page.url.origin}/og.jpg" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<link rel="canonical" href="{page.url.origin}{page.url.pathname}" />
 </svelte:head>
 
-<div class="app">
-    {#if showIntro}
-        <VideoIntro src="/video/intro.mp4" on:complete={handleIntroComplete} />
-    {/if}
+<Preloader />
+<Cursor />
+<Header />
 
-    {#if siteVisible}
-        <main transition:fade={{ duration: 500 }}>
-            <slot />
-        </main>
-    {/if}
+<div class="curtain" bind:this={curtain} aria-hidden="true">
+	<Pictogram class="curtain-picto" />
 </div>
 
+<main>
+	{@render children()}
+</main>
+
+<Footer />
+<div class="grain" aria-hidden="true"></div>
+
 <style>
-    .app {
-        min-height: 100vh;
-        position: relative;
-    }
+	.curtain {
+		position: fixed;
+		inset: 0;
+		z-index: 120;
+		background: var(--yellow);
+		color: var(--ink);
+		visibility: hidden;
+		display: grid;
+		place-items: center;
+	}
+	.curtain :global(.curtain-picto) {
+		width: 44px;
+		height: auto;
+	}
+	main {
+		position: relative;
+		min-height: 100vh;
+	}
+	:global(html.has-cursor),
+	:global(html.has-cursor a),
+	:global(html.has-cursor button) {
+		cursor: none;
+	}
 </style>

@@ -1,61 +1,255 @@
-/* src/app.css */
+/* ───────────────────────── Fonts ───────────────────────── */
+@font-face {
+	font-family: 'Favorit';
+	src: url('/fonts/ABCFavorit-Light.woff2') format('woff2');
+	font-weight: 300;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Favorit';
+	src: url('/fonts/ABCFavorit-Regular.woff2') format('woff2');
+	font-weight: 400;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Favorit';
+	src: url('/fonts/ABCFavorit-Bold.woff2') format('woff2');
+	font-weight: 700;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Favorit Mono';
+	src: url('/fonts/ABCFavoritMono-Regular.woff2') format('woff2');
+	font-weight: 400;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Favorit Mono';
+	src: url('/fonts/ABCFavoritMono-Bold.woff2') format('woff2');
+	font-weight: 700;
+	font-display: swap;
+}
 
-/* Import del font per tutto il sito */
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap');
-
-/* Variabili Globali per il Tema Scuro */
+/* ───────────────────────── Tokens ───────────────────────── */
 :root {
-    --page-bg: #111;
-    --page-text: #FFE964;
-    --page-secondary-text: #C4C4C4;
-    --page-accent: #4A8D65;
-    
-    /* Imposta il font di base per tutto il sito */
-    font-family: 'IBM Plex Mono', monospace;
+	--ink: #0b0b0b;
+	--ink-2: #141414;
+	--ink-3: #1d1d1d;
+	--paper: #f1efe7;
+	--yellow: #ffe964;
+	--green: #4a8d65;
+	--muted: rgba(241, 239, 231, 0.56);
+	--line: rgba(241, 239, 231, 0.14);
+
+	--sans: 'Favorit', 'Helvetica Neue', Arial, sans-serif;
+	--mono: 'Favorit Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+	--gutter: clamp(16px, 3.2vw, 48px);
+	--header-h: 72px;
+	--ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+	--ease-inout: cubic-bezier(0.76, 0, 0.24, 1);
+
+	--fs-mono: clamp(10.5px, 0.72vw, 12px);
+	--fs-body: clamp(15px, 1.05vw, 17px);
+	--fs-lead: clamp(20px, 2vw, 32px);
+	--fs-h3: clamp(26px, 3vw, 48px);
+	--fs-h2: clamp(40px, 6.4vw, 112px);
+	--fs-h1: clamp(52px, 11vw, 200px);
+
+	color-scheme: dark;
 }
 
-/* Stili di base del Body */
+/* ───────────────────────── Reset ───────────────────────── */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+html {
+	-webkit-text-size-adjust: 100%;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+html.lenis,
+html.lenis body {
+	height: auto;
+}
+.lenis.lenis-smooth {
+	scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+	overflow: hidden;
+}
 body {
-    background-color: var(--page-bg);
-    color: var(--page-text);
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-    margin: 0;
+	margin: 0;
+	background: var(--ink);
+	color: var(--paper);
+	font-family: var(--sans);
+	font-size: var(--fs-body);
+	line-height: 1.5;
+	overflow-x: hidden;
 }
-
-/* Stili generici per i link */
+img,
+video,
+svg,
+iframe {
+	display: block;
+	max-width: 100%;
+}
 a {
-    color: var(--page-accent);
-    text-decoration: none;
-    transition: color 0.3s ease;
+	color: inherit;
+	text-decoration: none;
+}
+button {
+	font: inherit;
+	color: inherit;
+	background: none;
+	border: 0;
+	padding: 0;
+	cursor: pointer;
+}
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+figure,
+dl,
+dd {
+	margin: 0;
+	padding: 0;
+}
+ul,
+ol {
+	list-style: none;
+}
+::selection {
+	background: var(--yellow);
+	color: var(--ink);
+}
+:focus-visible {
+	outline: 1px solid var(--yellow);
+	outline-offset: 4px;
 }
 
-a:hover {
-    color: var(--page-text);
+/* ───────────────────────── Utilities ───────────────────────── */
+.wrap {
+	padding-inline: var(--gutter);
+	width: 100%;
+}
+.mono {
+	font-family: var(--mono);
+	font-size: var(--fs-mono);
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	line-height: 1.4;
+}
+.muted {
+	color: var(--muted);
+}
+.yellow {
+	color: var(--yellow);
+}
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	white-space: nowrap;
+}
+.display {
+	font-weight: 400;
+	letter-spacing: -0.045em;
+	line-height: 0.88;
+}
+.lead {
+	font-size: var(--fs-lead);
+	line-height: 1.22;
+	letter-spacing: -0.02em;
 }
 
-/* src/app.css */
-
-/* ... (tutti gli stili che hai già) ... */
-
-
-/* --- NUOVO: Stili per Animazioni Globali --- */
-
-/* Stato iniziale degli elementi da animare */
-.animatable {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+/* Split-text line masks (populated by the `split` action) */
+.line-mask {
+	display: block;
+	overflow: hidden;
+	padding-bottom: 0.08em;
+	margin-bottom: -0.08em;
+}
+.line-inner {
+	display: block;
+	will-change: transform;
 }
 
-/* Stato finale quando l'elemento diventa visibile */
-.animatable.visible {
-    opacity: 1;
-    transform: translateY(0);
+/* Hide elements that will be revealed by JS, only when JS is on */
+.js [data-reveal] {
+	opacity: 0;
 }
 
-/* Applica un leggero ritardo a elementi multipli per un effetto a cascata */
-.animatable:nth-child(2) { transition-delay: 0.1s; }
-.animatable:nth-child(3) { transition-delay: 0.2s; }
-.animatable:nth-child(4) { transition-delay: 0.3s; }
-/* ... puoi continuare se necessario ... */
+/* Underline hover for text links */
+.link {
+	position: relative;
+	display: inline-block;
+}
+.link::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: -2px;
+	height: 1px;
+	background: currentColor;
+	transform: scaleX(0);
+	transform-origin: right;
+	transition: transform 0.6s var(--ease-out);
+}
+.link:hover::after {
+	transform: scaleX(1);
+	transform-origin: left;
+}
+
+/* Film grain */
+.grain {
+	pointer-events: none;
+	position: fixed;
+	inset: -50%;
+	z-index: 90;
+	opacity: 0.07;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+	animation: grain 1s steps(6) infinite;
+}
+@keyframes grain {
+	0% {
+		transform: translate(0, 0);
+	}
+	20% {
+		transform: translate(-6%, 4%);
+	}
+	40% {
+		transform: translate(4%, -8%);
+	}
+	60% {
+		transform: translate(-8%, -2%);
+	}
+	80% {
+		transform: translate(6%, 6%);
+	}
+	100% {
+		transform: translate(0, 0);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.001ms !important;
+		transition-duration: 0.001ms !important;
+	}
+	.js [data-reveal] {
+		opacity: 1;
+	}
+}

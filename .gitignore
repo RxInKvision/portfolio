@@ -21,3 +21,7 @@ Thumbs.db
 # Vite
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# Original heavy media (optimized copies live in static/media)
+/media-src
+/_legacy-draft

@@ -343,6 +343,40 @@ export const projects = [
 		]
 	},
 	{
+		slug: 'street-notes',
+		title: 'Street Notes',
+		client: { en: 'Personal — photography', it: 'Personale — fotografia' },
+		year: 2026,
+		featured: true,
+		disciplines: ['photo'],
+		role: { en: 'Photography', it: 'Fotografia' },
+		cover: 'projects/photography/tramonto',
+		hero: {
+			type: 'image',
+			src: 'projects/photography/atrio',
+			ratio: '16 / 9',
+			position: '50% 72%'
+		},
+		summary: {
+			en: 'Street photographs between Edinburgh and the road: low sun, silhouettes and the quiet drama of ordinary moments.',
+			it: 'Fotografie di strada tra Edimburgo e i viaggi: sole basso, silhouette e la drammaturgia silenziosa dei momenti qualunque.'
+		},
+		description: {
+			en: 'A running notebook kept with the camera rather than a pen. The same eye I bring to directing — where the light falls, when a figure enters the frame, what to leave in shadow — applied to streets, lobbies, alleys and shorelines, one frame at a time.',
+			it: 'Un taccuino tenuto con la macchina fotografica invece che con la penna. Lo stesso sguardo che porto nella regia (dove cade la luce, quando una figura entra nell’inquadratura, cosa lasciare in ombra) applicato a strade, atri, vicoli e spiagge, uno scatto alla volta.'
+		},
+		gallery: [
+			{ type: 'image', src: 'projects/photography/tramonto' },
+			{ type: 'image', src: 'projects/photography/gabbia' },
+			{ type: 'image', src: 'projects/photography/impalcatura' },
+			{ type: 'image', src: 'projects/photography/notte' },
+			{ type: 'image', src: 'projects/photography/vicolo-1' },
+			{ type: 'image', src: 'projects/photography/vicolo-2' },
+			{ type: 'image', src: 'projects/photography/torre' },
+			{ type: 'image', src: 'projects/photography/spiaggia' }
+		]
+	},
+	{
 		slug: 'forum-archive-reverie',
 		title: 'Archive Reverie',
 		client: 'Forum Studios',

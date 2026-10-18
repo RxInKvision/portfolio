@@ -67,8 +67,15 @@
 			{:else if p.hero.type === 'video'}
 				<Media type="video" src={p.hero.src} eager alt={p.title} />
 			{:else}
-				<div class="hero-img" use:parallax={{ amount: 8 }}>
-					<Media src={p.hero.src} eager sizes="100vw" alt={p.title} />
+				<div class="hero-img" style:aspect-ratio={p.hero.ratio} use:parallax={{ amount: 8 }}>
+					<Media
+						src={p.hero.src}
+						fill={!!p.hero.ratio}
+						position={p.hero.position}
+						eager
+						sizes="100vw"
+						alt={p.title}
+					/>
 				</div>
 			{/if}
 		</section>
@@ -78,33 +85,37 @@
 			<p class="lead text" use:splitLines>{t(p.description)}</p>
 		</section>
 
-		<section class="duo wrap">
-			<div use:reveal>
-				<p class="mono yellow">(02) — {t(ui.project.challenge)}</p>
-				<p>{t(p.challenge)}</p>
-			</div>
-			<div use:reveal={{ delay: 0.1 }}>
-				<p class="mono yellow">(03) — {t(ui.project.approach)}</p>
-				<p>{t(p.solution)}</p>
-			</div>
-		</section>
+		{#if p.challenge && p.solution}
+			<section class="duo wrap">
+				<div use:reveal>
+					<p class="mono yellow">(02) — {t(ui.project.challenge)}</p>
+					<p>{t(p.challenge)}</p>
+				</div>
+				<div use:reveal={{ delay: 0.1 }}>
+					<p class="mono yellow">(03) — {t(ui.project.approach)}</p>
+					<p>{t(p.solution)}</p>
+				</div>
+			</section>
+		{/if}
 
-		<section class="duo wrap">
-			<div use:reveal>
-				<p class="mono muted">{t(ui.project.highlights)}</p>
-				<ul class="highlights">
-					{#each t(p.highlights) as h, i}
-						<li><span class="mono yellow">{String(i + 1).padStart(2, '0')}</span>{h}</li>
-					{/each}
-				</ul>
-			</div>
-			<div use:reveal={{ delay: 0.1 }}>
-				<p class="mono muted">{t(ui.project.tools)}</p>
-				<ul class="tools">
-					{#each p.tools as tool}<li class="mono">{tool}</li>{/each}
-				</ul>
-			</div>
-		</section>
+		{#if p.highlights || p.tools?.length}
+			<section class="duo wrap">
+				<div use:reveal>
+					<p class="mono muted">{t(ui.project.highlights)}</p>
+					<ul class="highlights">
+						{#each t(p.highlights) as h, i}
+							<li><span class="mono yellow">{String(i + 1).padStart(2, '0')}</span>{h}</li>
+						{/each}
+					</ul>
+				</div>
+				<div use:reveal={{ delay: 0.1 }}>
+					<p class="mono muted">{t(ui.project.tools)}</p>
+					<ul class="tools">
+						{#each p.tools as tool}<li class="mono">{tool}</li>{/each}
+					</ul>
+				</div>
+			</section>
+		{/if}
 
 		{#if p.gallery?.length}
 			<section class="gallery wrap" aria-label={t(ui.project.gallery)}>

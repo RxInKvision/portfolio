@@ -12,6 +12,7 @@
 		eager = false,
 		sizes = '(max-width: 760px) 100vw, 60vw',
 		poster = null,
+		position = null,
 		videoEl = $bindable(),
 		class: klass = ''
 	} = $props();
@@ -43,6 +44,7 @@
 			{alt}
 			width={dims[0]}
 			height={dims[1]}
+			style:object-position={position}
 			loading={eager ? 'eager' : 'lazy'}
 			decoding="async"
 			fetchpriority={eager ? 'high' : 'auto'}

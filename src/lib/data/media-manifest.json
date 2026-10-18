@@ -487,7 +487,15 @@
 		1440,
 		1799
 	],
+	"projects/photography/muro-giallo": [
+		1440,
+		1440
+	],
 	"projects/photography/notte": [
+		1440,
+		1800
+	],
+	"projects/photography/nuvole": [
 		1440,
 		1800
 	],
@@ -495,11 +503,19 @@
 		1084,
 		1440
 	],
+	"projects/photography/strada-notte": [
+		1440,
+		1800
+	],
 	"projects/photography/torre": [
 		1440,
 		1920
 	],
 	"projects/photography/tramonto": [
+		1440,
+		1800
+	],
+	"projects/photography/vetro": [
 		1440,
 		1800
 	],
@@ -510,6 +526,94 @@
 	"projects/photography/vicolo-2": [
 		1440,
 		1440
+	],
+	"projects/photography-people/neve-1": [
+		1440,
+		1915
+	],
+	"projects/photography-people/neve-2": [
+		1440,
+		1915
+	],
+	"projects/photography-people/neve-3": [
+		1440,
+		1915
+	],
+	"projects/photography-people/tetto-1": [
+		1440,
+		1920
+	],
+	"projects/photography-people/tetto-2": [
+		1440,
+		1920
+	],
+	"projects/photography-people/tetto-3": [
+		1440,
+		1920
+	],
+	"projects/photography-transit/01": [
+		1440,
+		1913
+	],
+	"projects/photography-transit/02": [
+		1440,
+		1912
+	],
+	"projects/photography-transit/03": [
+		1440,
+		1913
+	],
+	"projects/photography-transit/04": [
+		1440,
+		1913
+	],
+	"projects/photography-transit/05": [
+		1440,
+		1913
+	],
+	"projects/photography-transit/06": [
+		1440,
+		1913
+	],
+	"projects/photography-transit/07": [
+		1440,
+		1913
+	],
+	"projects/photography-transit/08": [
+		1440,
+		1913
+	],
+	"projects/photography-transit/09": [
+		1440,
+		1913
+	],
+	"projects/photography-transit/10": [
+		1440,
+		1913
+	],
+	"projects/photography-transit/11": [
+		1440,
+		1913
+	],
+	"projects/photography-transit/12": [
+		1440,
+		1913
+	],
+	"projects/photography-transit/13": [
+		1440,
+		1913
+	],
+	"projects/photography-transit/14": [
+		1440,
+		1913
+	],
+	"projects/photography-transit/15": [
+		1440,
+		1913
+	],
+	"projects/photography-transit/montagna": [
+		1440,
+		1800
 	],
 	"projects/romacratermundi/1": [
 		1600,

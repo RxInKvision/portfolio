@@ -313,8 +313,8 @@
 		visibility: hidden;
 	}
 	.hero-line h1 {
-		font-size: clamp(40px, 7vw, 128px);
-		max-width: 15ch;
+		font-size: clamp(34px, 5.6vw, 104px);
+		max-width: 17ch;
 		margin-top: 20px;
 	}
 

@@ -67,33 +67,33 @@ export const projects = [
 			}
 		},
 		summary: {
-			en: 'Two spec spots for Unicum, made with AI. The bottle had to look like the bottle.',
-			it: "Due spot spec per Unicum, fatti con l'AI. La bottiglia doveva sembrare la bottiglia."
+			en: 'Two spec spots for Unicum, made with generative video.',
+			it: 'Due spot spec per Unicum, realizzati con video generativo.'
 		},
 		description: {
-			en: 'Nobody asked for these. I wanted to see whether an AI-made commercial could sit next to a shot one without embarrassment. “Molto + di un amaro” follows a guy from a supermarket aisle into places that don’t exist; “L’unico che non avanza mai” is a party where every bottle is left over, except one. Script, shot list and edit came first. The AI came after.',
-			it: "Non li ha chiesti nessuno. Volevo capire se uno spot fatto con l'AI può stare accanto a uno girato senza fare brutta figura. “Molto + di un amaro” segue un ragazzo dalla corsia del supermercato in posti che non esistono; “L’unico che non avanza mai” è una festa in cui avanza tutto, tranne una bottiglia. Prima script, shot list e montaggio. L'AI dopo."
+			en: 'Two unsolicited spots, made to understand how far AI can go in a real advertising workflow. I wrote the scripts and shot lists first, then generated each shot and edited the spots with sound and end card.',
+			it: 'Due spot non commissionati, per capire fin dove l’AI può entrare in un vero flusso di lavoro pubblicitario. Prima ho scritto sceneggiature e shot list, poi ho generato le inquadrature una per una e montato gli spot con suono ed end card.'
 		},
 		challenge: {
-			en: 'Keeping the product faithful (shape, label, colour) and the characters consistent shot after shot — and avoiding the glossy look that screams AI.',
-			it: 'Tenere il prodotto fedele (forma, etichetta, colore) e i personaggi coerenti inquadratura dopo inquadratura, evitando il look patinato che urla AI.'
+			en: 'Keeping the product accurate and the characters consistent across many shots.',
+			it: 'Tenere il prodotto fedele e i personaggi coerenti in molte inquadrature.'
 		},
 		solution: {
-			en: 'Treated it like a normal shoot: script, references, shot list, then generation shot by shot and a real edit with sound and end card.',
-			it: 'L’ho trattato come un set normale: script, reference, shot list, poi generazione inquadratura per inquadratura e un montaggio vero, con suono ed end card.'
+			en: 'Product and cast references, shot-by-shot generation and a conventional edit.',
+			it: 'Reference di prodotto e cast, generazione inquadratura per inquadratura e un montaggio tradizionale.'
 		},
 		highlights: {
 			en: [
 				'Two complete spots: 40 s and 30 s',
 				'Consistent product and characters across locations',
-				'Concept, copy and end card',
-				'Edit and sound designed like a broadcast commercial'
+				'Concept and copy',
+				'Edit, sound and end card'
 			],
 			it: [
 				'Due spot completi: 40 s e 30 s',
 				'Prodotto e personaggi coerenti tra location diverse',
-				'Concept, copy ed end card',
-				'Montaggio e suono pensati come uno spot broadcast'
+				'Concept e copy',
+				'Montaggio, suono ed end card'
 			]
 		},
 		tools: ['Generative AI video', 'Reference-driven prompting', 'Editing & sound'],
@@ -167,33 +167,33 @@ export const projects = [
 			ref: 'Guy Ritchie'
 		},
 		summary: {
-			en: 'Eight short tests on Seedance 2.5, copying the camera and the cutting of directors I like. The cast is me and my colleagues.',
-			it: 'Otto test brevi su Seedance 2.5, copiando camera e montaggio di registi che amo. Il cast siamo io e i miei colleghi.'
+			en: 'Eight short tests on Seedance 2.5, studying the camera work and editing of directors I admire. The cast is my colleagues and me.',
+			it: 'Otto test brevi su Seedance 2.5, studiando camera e montaggio di registi che ammiro. Il cast siamo io e i miei colleghi.'
 		},
 		description: {
-			en: 'Homework, basically. The best way to understand a director is to try to copy them: where the camera sits, which lens, how long a shot holds, when it cuts. I did it with a generative model and real faces — mine and my colleagues’ — to see how far the tool follows intent, and where it gives up.',
-			it: 'Compiti a casa, in sostanza. Il modo migliore per capire un regista è provare a copiarlo: dove sta la camera, che ottica, quanto dura un’inquadratura, quando stacca. L’ho fatto con un modello generativo e volti veri, il mio e quelli dei colleghi, per vedere fin dove lo strumento segue un’intenzione e dove si arrende.'
+			en: 'Each test looks at one director: where the camera is, which lens, how long a shot lasts, when it cuts. It is a way to study their work, and to learn what generative tools can and cannot do.',
+			it: 'Ogni test guarda a un regista: dove sta la camera, che ottica usa, quanto dura un’inquadratura, quando stacca. È un modo per studiare il loro lavoro e capire cosa gli strumenti generativi sanno fare e cosa no.'
 		},
 		challenge: {
-			en: 'Generative models love a generic, polished image. Getting them to respect blocking, coverage and rhythm — and to keep faces consistent — is the actual work.',
-			it: 'I modelli generativi adorano l’immagine generica e lucida. Fargli rispettare blocking, copertura e ritmo, e tenere i volti coerenti, è il lavoro vero.'
+			en: 'Getting the model to respect framing, blocking and rhythm, and keeping faces consistent.',
+			it: 'Far rispettare al modello inquadrature, blocking e ritmo, e tenere i volti coerenti.'
 		},
 		solution: {
-			en: 'Prompts written like shot lists, reference stills of the cast, and a lot of retakes. Whatever works here ends up in client work; whatever doesn’t stays a lesson.',
-			it: 'Prompt scritti come shot list, foto di riferimento del cast e molti ciak. Quello che funziona finisce nei lavori per i clienti; quello che non funziona resta una lezione.'
+			en: 'Prompts written as shot lists, reference images of the cast, many attempts.',
+			it: 'Prompt scritti come shot list, immagini di riferimento del cast, molti tentativi.'
 		},
 		highlights: {
 			en: [
 				'Eight studies, 10–30 s each',
 				'Western, noir, war, boxing, period, night thriller',
 				'Real cast kept consistent across shots',
-				'Photography and editing modelled on great directors'
+				'Camera work and editing studied from directors I admire'
 			],
 			it: [
 				'Otto studi da 10–30 s',
 				'Western, noir, guerra, boxe, film in costume, thriller notturno',
 				'Cast reale coerente tra le inquadrature',
-				'Fotografia e montaggio modellati sui grandi registi'
+				'Camera e montaggio studiati da registi che ammiro'
 			]
 		},
 		tools: ['Seedance 2.5', 'Higgsfield', 'Reference-driven prompting'],
@@ -395,20 +395,20 @@ export const projects = [
 			}
 		},
 		summary: {
-			en: 'Six short films shot in China. Rivers, markets, clay, bamboo.',
-			it: 'Sei corti girati in Cina. Fiumi, mercati, argilla, bambù.'
+			en: 'Six short films shot while travelling in China.',
+			it: 'Sei corti girati durante un viaggio in Cina.'
 		},
 		description: {
-			en: 'Shot while travelling, with no script and no set: one place per film, cut to its own rhythm. Real people, available light, and a lot of waiting for the right moment.',
-			it: 'Girati in viaggio, senza copione e senza set: un luogo per film, montato sul suo ritmo. Persone vere, luce disponibile e molta attesa del momento giusto.'
+			en: 'One place per film: the Yellow River, a market, a square, a riverside, a ceramics workshop, a bamboo forest. No script: I filmed what was happening and built each piece in the edit.',
+			it: 'Un luogo per film: il Fiume Giallo, un mercato, una piazza, un lungofiume, un laboratorio di ceramica, un bosco di bambù. Nessun copione: ho ripreso quello che succedeva e costruito ogni pezzo al montaggio.'
 		},
 		challenge: {
-			en: 'Things happen once. You either get them or you don’t — and six different places still had to feel like one series.',
-			it: 'Le cose succedono una volta sola. O le prendi o no, e sei luoghi diversi dovevano comunque sembrare una serie.'
+			en: 'Working with real situations that happen only once, and keeping six places coherent as a series.',
+			it: 'Lavorare con situazioni reali che succedono una volta sola, e tenere sei luoghi coerenti come serie.'
 		},
 		solution: {
-			en: '4K open gate to keep the frame free for horizontal and vertical, one consistent grade, and an edit led by sound. All in DaVinci Resolve.',
-			it: '4K open gate per lasciare libero il formato, orizzontale e verticale, un grading unico e un montaggio guidato dal suono. Tutto in DaVinci Resolve.'
+			en: '4K open gate for both horizontal and vertical formats, one grade for all six films, an edit led by sound. In DaVinci Resolve.',
+			it: '4K open gate per formati orizzontali e verticali, un unico grading per tutti e sei, montaggio guidato dal suono. In DaVinci Resolve.'
 		},
 		highlights: {
 			en: [
@@ -539,236 +539,6 @@ export const projects = [
 		]
 	},
 	{
-		slug: 'street-notes',
-		title: 'Street Notes',
-		client: {
-			en: 'Personal — photography',
-			it: 'Personale — fotografia'
-		},
-		year: 2026,
-		featured: true,
-		disciplines: ['photo'],
-		role: {
-			en: 'Photography',
-			it: 'Fotografia'
-		},
-		cover: 'projects/photography/tramonto',
-		hero: {
-			type: 'image',
-			src: 'projects/photography/atrio',
-			ratio: '16 / 9',
-			position: '50% 72%'
-		},
-		summary: {
-			en: 'Street photographs, mostly Edinburgh. Low sun, silhouettes, people minding their own business.',
-			it: 'Fotografie di strada, soprattutto Edimburgo. Sole basso, silhouette, gente che si fa i fatti suoi.'
-		},
-		description: {
-			en: 'No project behind these, just a camera that’s usually with me. I tend to wait for the light, and for someone to walk into it.',
-			it: 'Nessun progetto dietro, solo una macchina fotografica che di solito ho con me. Tendo ad aspettare la luce, e che qualcuno ci passi dentro.'
-		},
-		gallery: [
-			{
-				type: 'image',
-				src: 'projects/photography/tramonto'
-			},
-			{
-				type: 'image',
-				src: 'projects/photography/gabbia'
-			},
-			{
-				type: 'image',
-				src: 'projects/photography/impalcatura'
-			},
-			{
-				type: 'image',
-				src: 'projects/photography/notte'
-			},
-			{
-				type: 'image',
-				src: 'projects/photography/vicolo-1'
-			},
-			{
-				type: 'image',
-				src: 'projects/photography/vicolo-2'
-			},
-			{
-				type: 'image',
-				src: 'projects/photography/torre'
-			},
-			{
-				type: 'image',
-				src: 'projects/photography/spiaggia'
-			},
-			{
-				type: 'image',
-				src: 'projects/photography/vetro'
-			},
-			{
-				type: 'image',
-				src: 'projects/photography/muro-giallo'
-			},
-			{
-				type: 'image',
-				src: 'projects/photography/strada-notte'
-			},
-			{
-				type: 'image',
-				src: 'projects/photography/nuvole'
-			}
-		]
-	},
-	{
-		slug: 'in-transit',
-		title: 'In Transit',
-		client: {
-			en: 'Personal — photography',
-			it: 'Personale — fotografia'
-		},
-		year: 2026,
-		disciplines: ['photo'],
-		role: {
-			en: 'Photography',
-			it: 'Fotografia'
-		},
-		cover: 'projects/photography-transit/02',
-		hero: {
-			type: 'image',
-			src: 'projects/photography-transit/11',
-			ratio: '16 / 9',
-			position: '50% 40%'
-		},
-		summary: {
-			en: 'A Chinese city seen through a moving car window. Blurry on purpose.',
-			it: 'Una città cinese vista dal finestrino di un’auto in corsa. Mossa, di proposito.'
-		},
-		description: {
-			en: 'A moving car and no attempt to keep anything sharp. Neon, traffic, overpasses and too many tower blocks — what a city looks like when you’re only passing through. It ends on a mountain, because sooner or later you get out of the car.',
-			it: 'Un’auto in movimento e nessun tentativo di tenere qualcosa a fuoco. Neon, traffico, cavalcavia e troppi palazzoni: com’è una città quando ci passi soltanto. Finisce su una montagna, perché prima o poi dalla macchina si scende.'
-		},
-		gallery: [
-			{
-				type: 'image',
-				src: 'projects/photography-transit/01'
-			},
-			{
-				type: 'image',
-				src: 'projects/photography-transit/02'
-			},
-			{
-				type: 'image',
-				src: 'projects/photography-transit/03'
-			},
-			{
-				type: 'image',
-				src: 'projects/photography-transit/04'
-			},
-			{
-				type: 'image',
-				src: 'projects/photography-transit/05'
-			},
-			{
-				type: 'image',
-				src: 'projects/photography-transit/06'
-			},
-			{
-				type: 'image',
-				src: 'projects/photography-transit/07'
-			},
-			{
-				type: 'image',
-				src: 'projects/photography-transit/08'
-			},
-			{
-				type: 'image',
-				src: 'projects/photography-transit/09'
-			},
-			{
-				type: 'image',
-				src: 'projects/photography-transit/10'
-			},
-			{
-				type: 'image',
-				src: 'projects/photography-transit/11'
-			},
-			{
-				type: 'image',
-				src: 'projects/photography-transit/12'
-			},
-			{
-				type: 'image',
-				src: 'projects/photography-transit/13'
-			},
-			{
-				type: 'image',
-				src: 'projects/photography-transit/14'
-			},
-			{
-				type: 'image',
-				src: 'projects/photography-transit/15'
-			},
-			{
-				type: 'image',
-				src: 'projects/photography-transit/montagna'
-			}
-		]
-	},
-	{
-		slug: 'people',
-		title: 'People',
-		client: {
-			en: 'Personal — photography',
-			it: 'Personale — fotografia'
-		},
-		year: 2026,
-		disciplines: ['photo'],
-		role: {
-			en: 'Photography',
-			it: 'Fotografia'
-		},
-		cover: 'projects/photography-people/tetto-2',
-		hero: {
-			type: 'image',
-			src: 'projects/photography-people/neve-1',
-			ratio: '16 / 9',
-			position: '50% 25%'
-		},
-		summary: {
-			en: 'Portraits on a rooftop and in a snowstorm.',
-			it: 'Ritratti su un tetto e sotto una nevicata.'
-		},
-		description: {
-			en: 'Portraits without a studio: a rooftop on a hot afternoon, a slope in the middle of a snowstorm. I’d rather catch people while they’re doing something than ask them to pose.',
-			it: 'Ritratti senza studio: un tetto in un pomeriggio caldo, una pista in mezzo a una nevicata. Preferisco prendere le persone mentre fanno qualcosa che chiedergli di mettersi in posa.'
-		},
-		gallery: [
-			{
-				type: 'image',
-				src: 'projects/photography-people/neve-1'
-			},
-			{
-				type: 'image',
-				src: 'projects/photography-people/neve-2'
-			},
-			{
-				type: 'image',
-				src: 'projects/photography-people/neve-3'
-			},
-			{
-				type: 'image',
-				src: 'projects/photography-people/tetto-1'
-			},
-			{
-				type: 'image',
-				src: 'projects/photography-people/tetto-2'
-			},
-			{
-				type: 'image',
-				src: 'projects/photography-people/tetto-3'
-			}
-		]
-	},
-	{
 		slug: 'forum-archive-reverie',
 		title: 'Archive Reverie',
 		client: 'Forum Studios',
@@ -787,20 +557,20 @@ export const projects = [
 			poster: 'projects/forum/titolo'
 		},
 		summary: {
-			en: 'Forum Studios’ 55-year archive, turned into a 3D space you can wander through, play and perform with.',
-			it: 'I 55 anni di archivio dei Forum Studios trasformati in uno spazio 3D da esplorare, suonare e usare dal vivo.'
+			en: 'An interactive 3D archive for the 55th anniversary of Forum Studios.',
+			it: 'Un archivio 3D interattivo per i 55 anni dei Forum Studios.'
 		},
 		description: {
-			en: 'For Forum Studios’ 55th anniversary. Instead of yet another searchable database, the archive became a place: images and sounds floating in 3D, found more by accident than by search. The same material feeds a web app, a 9600 px wide video installation and live performances.',
-			it: 'Per i 55 anni dei Forum Studios. Invece dell’ennesimo database con la barra di ricerca, l’archivio è diventato un luogo: immagini e suoni sospesi in 3D, che si trovano più per caso che cercandoli. Lo stesso materiale alimenta una web app, un’installazione video larga 9600 px e performance live.'
+			en: 'Images and sounds from the studio’s archive placed in a 3D space you can explore. The same material is used in a web app, a 9600 px wide video installation and live performances.',
+			it: 'Immagini e suoni dell’archivio dello studio disposti in uno spazio 3D da esplorare. Lo stesso materiale è usato in una web app, in un’installazione video larga 9600 px e in performance live.'
 		},
 		challenge: {
-			en: 'Making an archive feel alive rather than catalogued — and treating three unsynchronised screens as one canvas.',
-			it: 'Far sembrare vivo un archivio invece che catalogato, e trattare tre schermi non sincronizzati come un’unica tela.'
+			en: 'Presenting an archive as something to explore rather than search, and treating three unsynchronised screens as one canvas.',
+			it: 'Presentare l’archivio come qualcosa da esplorare più che da cercare, e trattare tre schermi non sincronizzati come un’unica tela.'
 		},
 		solution: {
-			en: 'One system, five outputs: a 3D web app, a creation tool, an offline render pipeline, the installation and a live set. The archive becomes an instrument.',
-			it: 'Un sistema, cinque output: web app 3D, tool di creazione, pipeline di rendering offline, installazione e set live. L’archivio diventa uno strumento.'
+			en: 'A single system with five outputs: web app, creation tool, render pipeline, installation and live set.',
+			it: 'Un unico sistema con cinque output: web app, tool di creazione, pipeline di rendering, installazione e set live.'
 		},
 		highlights: {
 			en: [
@@ -917,20 +687,20 @@ export const projects = [
 			poster: 'projects/vinted/card'
 		},
 		summary: {
-			en: 'A Vinted spot told by the clothes you never wear.',
-			it: 'Uno spot Vinted raccontato dai vestiti che non metti mai.'
+			en: 'A Vinted spot told from the point of view of a forgotten garment.',
+			it: 'Uno spot Vinted raccontato dal punto di vista di un capo dimenticato.'
 		},
 		description: {
-			en: 'Vinted ads usually talk about the seller. This one sides with what’s left at the back of the wardrobe: the camera hides among the clothes and waits. Slightly ironic, slightly sad, like most wardrobes.',
-			it: 'Le pubblicità di Vinted di solito parlano di chi vende. Questa sta dalla parte di ciò che resta in fondo all’armadio: la camera si nasconde tra i vestiti e aspetta. Un po’ ironica, un po’ malinconica, come la maggior parte degli armadi.'
+			en: 'Instead of the seller, the story follows what is left in the wardrobe. The camera sits among the clothes, with a tone between ironic and melancholic.',
+			it: 'Invece del venditore, la storia segue ciò che resta nell’armadio. La camera è posizionata tra i vestiti, con un tono tra l’ironico e il malinconico.'
 		},
 		challenge: {
-			en: 'Standing out from seller-centred campaigns with the story of an object.',
-			it: 'Distinguersi dalle campagne centrate sul venditore con la storia di un oggetto.'
+			en: 'Finding a different angle from seller-focused campaigns.',
+			it: 'Trovare un punto di vista diverso dalle campagne centrate sul venditore.'
 		},
 		solution: {
-			en: 'Object POV, copy that’s half joke and half confession, and an edit that doesn’t overstay. Script to final cut.',
-			it: 'Object POV, un copy metà battuta e metà confessione, e un montaggio che non si dilunga. Dallo script al montaggio finale.'
+			en: 'Object POV, simple copy and a short edit. From script to final cut.',
+			it: 'Object POV, un copy semplice e un montaggio breve. Dallo script al montaggio finale.'
 		},
 		highlights: {
 			en: [
@@ -997,20 +767,20 @@ export const projects = [
 			poster: 'cards/kollateral1'
 		},
 		summary: {
-			en: 'A torn sheet, fans, sound and light. It breathes.',
-			it: 'Un telo strappato, ventilatori, suono e luce. Respira.'
+			en: 'An installation prototype: a torn sheet moved by sound, with light coming through.',
+			it: 'Un prototipo di installazione: un telo strappato mosso dal suono, attraversato dalla luce.'
 		},
 		description: {
-			en: 'An installation prototype about light getting through damage. A burnt, torn sheet hangs in the dark; fans driven by the music make it swell and collapse, and the light comes through the tears.',
-			it: 'Un prototipo di installazione sulla luce che passa attraverso il danno. Un telo bruciato e strappato è appeso al buio; ventilatori pilotati dalla musica lo gonfiano e lo sgonfiano, e la luce passa dagli strappi.'
+			en: 'A burnt, torn sheet hangs in the dark. Fans driven by the music move it, and moving lights pass through the tears.',
+			it: 'Un telo bruciato e strappato è appeso al buio. Ventilatori pilotati dalla musica lo muovono, e le luci passano attraverso gli strappi.'
 		},
 		challenge: {
-			en: 'Syncing an original score, the physical movement of the fabric and moving lights so that it reads as one body.',
-			it: 'Sincronizzare musica originale, movimento fisico del telo e luci mobili in modo che sembrino un unico corpo.'
+			en: 'Synchronising music, fabric movement and lights.',
+			it: 'Sincronizzare musica, movimento del telo e luci.'
 		},
 		solution: {
-			en: 'Ableton runs the score and sends MIDI cues; TouchDesigner drives the fans and the DMX moving heads in real time.',
-			it: 'Ableton gestisce la musica e manda cue MIDI; TouchDesigner pilota in tempo reale ventilatori e teste mobili via DMX.'
+			en: 'Ableton for the score and MIDI cues, TouchDesigner for the fans and DMX lights.',
+			it: 'Ableton per la musica e i cue MIDI, TouchDesigner per ventilatori e luci DMX.'
 		},
 		highlights: {
 			en: [
@@ -1079,20 +849,20 @@ export const projects = [
 			src: 'projects/bmw/landing'
 		},
 		summary: {
-			en: 'A concept campaign to sell an electric BMW M3 E30 to people who remember the original.',
-			it: 'Una campagna concept per vendere una BMW M3 E30 elettrica a chi si ricorda l’originale.'
+			en: 'A concept campaign for an electric re-edition of the BMW M3 E30.',
+			it: 'Una campagna concept per una riedizione elettrica della BMW M3 E30.'
 		},
 		description: {
-			en: 'A spec campaign built on “RE:” — re:ignite, re:discover, re:trace — and on the fact that nostalgia sells. The hub is a website: landing page, an animated 3D model of the car, a timeline and a sales page for a hypothetical electric re-edition.',
-			it: 'Una campagna spec costruita su “RE:” (re:ignite, re:discover, re:trace) e sul fatto che la nostalgia vende. Il centro è un sito: landing, modello 3D animato dell’auto, timeline e pagina di vendita di un’ipotetica riedizione elettrica.'
+			en: 'A spec campaign built around the word “RE:”. The main piece is a website with a landing page, an animated 3D model of the car, a timeline and a sales page.',
+			it: 'Una campagna spec costruita attorno alla parola “RE:”. Il pezzo principale è un sito con landing, modello 3D animato dell’auto, timeline e pagina di vendita.'
 		},
 		challenge: {
-			en: 'Selling an ’80s icon to today’s buyers without turning it into a museum piece — and keeping a 3D-heavy site fast.',
-			it: 'Vendere un’icona anni ’80 a chi compra oggi senza farla diventare un pezzo da museo, e tenere veloce un sito pieno di 3D.'
+			en: 'Presenting an ’80s car to today’s audience, and keeping a 3D-heavy site fast.',
+			it: 'Presentare un’auto degli anni ’80 al pubblico di oggi, e tenere veloce un sito con molto 3D.'
 		},
 		solution: {
-			en: 'Copy built on shared memories, a car rendered in Blender, a Svelte site, plus OOH and social cut-downs.',
-			it: 'Copy costruito su ricordi comuni, auto renderizzata in Blender, sito in Svelte e declinazioni OOH e social.'
+			en: 'Copy based on shared memories, the car rendered in Blender, a Svelte site, OOH and social adaptations.',
+			it: 'Copy basato su ricordi comuni, auto renderizzata in Blender, sito in Svelte, adattamenti OOH e social.'
 		},
 		highlights: {
 			en: [
@@ -1162,20 +932,20 @@ export const projects = [
 			src: 'projects/videocitta/video6'
 		},
 		summary: {
-			en: 'Live visuals on a 25-metre wall at Videocittà 2024. Nature, people and a lot of glitch.',
-			it: 'Visual live su una parete di 25 metri a Videocittà 2024. Natura, persone e parecchio glitch.'
+			en: 'Live visuals on a 25-metre wall at Videocittà 2024, with Alice Felloni.',
+			it: 'Visual live su una parete di 25 metri a Videocittà 2024, con Alice Felloni.'
 		},
 		description: {
-			en: 'An audiovisual performance with Alice Felloni about our not-so-healthy relationship with nature. Footage cut at random and pushed until it breaks, set against sounds that don’t belong to it, to see what new meanings come out.',
-			it: 'Una performance audiovisiva con Alice Felloni sul nostro rapporto non proprio sano con la natura. Footage montato a caso e spinto fino a rompersi, accostato a suoni che non gli appartengono, per vedere che significati nuovi saltano fuori.'
+			en: 'An audiovisual performance about the relationship between people and nature, using randomly edited and heavily processed footage.',
+			it: 'Una performance audiovisiva sul rapporto tra persone e natura, con footage montato in modo casuale e molto processato.'
 		},
 		challenge: {
-			en: 'Running generative, heavily processed visuals across 25 metres of wall, live, without anything crashing.',
-			it: 'Far girare visual generativi e molto processati su 25 metri di parete, dal vivo, senza che nulla crashi.'
+			en: 'Running generative visuals live across a 25-metre wall, reliably.',
+			it: 'Far girare visual generativi dal vivo su 25 metri di parete, in modo affidabile.'
 		},
 		solution: {
-			en: 'TouchDesigner for generation, Resolume Arena for blending and mapping, MIDI controllers to play it. And rehearsals.',
-			it: 'TouchDesigner per la generazione, Resolume Arena per blending e mapping, controller MIDI per suonarlo. E prove.'
+			en: 'TouchDesigner for generation, Resolume Arena for mapping, MIDI controllers for live control.',
+			it: 'TouchDesigner per la generazione, Resolume Arena per il mapping, controller MIDI per il controllo live.'
 		},
 		highlights: {
 			en: [
@@ -1239,20 +1009,20 @@ export const projects = [
 			src: 'projects/beyond/demo'
 		},
 		summary: {
-			en: 'An installation that only makes sense if you walk up to it.',
-			it: 'Un’installazione che ha senso solo se ti avvicini.'
+			en: 'An interactive installation that changes as you get closer.',
+			it: 'Un’installazione interattiva che cambia man mano che ti avvicini.'
 		},
 		description: {
-			en: 'From a distance you see an abstract texture. Step closer and it turns into a recognisable object. A small argument for slowing down and actually looking.',
-			it: 'Da lontano vedi una texture astratta. Ti avvicini e diventa un oggetto riconoscibile. Un piccolo argomento a favore del rallentare e guardare davvero.'
+			en: 'From a distance the image is an abstract texture; up close it becomes a recognisable object.',
+			it: 'Da lontano l’immagine è una texture astratta; da vicino diventa un oggetto riconoscibile.'
 		},
 		challenge: {
-			en: 'A smooth, stable transition tied to the viewer’s exact distance — no lag, no jumps.',
-			it: 'Una transizione fluida e stabile legata alla distanza esatta dello spettatore, senza ritardi né salti.'
+			en: 'A smooth transition tied to the viewer’s distance.',
+			it: 'Una transizione fluida legata alla distanza dello spettatore.'
 		},
 		solution: {
-			en: 'Ultrasonic sensors on Arduino feed TouchDesigner, which maps distance to a point in a pre-rendered transition. Framed screens or projectors, adaptable to any space.',
-			it: 'Sensori a ultrasuoni su Arduino mandano i dati a TouchDesigner, che mappa la distanza su un punto di una transizione pre-renderizzata. Schermi incorniciati o proiettori, adattabili a ogni spazio.'
+			en: 'Ultrasonic sensors on Arduino, and TouchDesigner mapping distance to a pre-rendered transition.',
+			it: 'Sensori a ultrasuoni su Arduino e TouchDesigner, che lega la distanza a una transizione pre-renderizzata.'
 		},
 		highlights: {
 			en: [
@@ -1350,20 +1120,20 @@ export const projects = [
 			poster: 'projects/friendsinmyhead/still4'
 		},
 		summary: {
-			en: 'A short film shot in one hour from four random words: hunt, voices, water, madness.',
-			it: 'Un corto girato in un’ora partendo da quattro parole a caso: caccia, voci, acqua, follia.'
+			en: 'A short film shot in one hour from four random words.',
+			it: 'Un corto girato in un’ora partendo da quattro parole casuali.'
 		},
 		description: {
-			en: 'A creative exercise with a stopwatch. A young man with schizophrenia wanders into a hunting reserve, and things go badly. Black and white, handheld, cut fast — partly by choice, partly because there was one hour.',
-			it: 'Un esercizio creativo con il cronometro. Un ragazzo schizofrenico entra in una riserva di caccia e le cose vanno male. Bianco e nero, camera a mano, montaggio serrato: un po’ per scelta, un po’ perché c’era un’ora.'
+			en: 'Hunt, voices, water, madness: a young man with schizophrenia in a hunting reserve. Black and white, handheld, fast editing.',
+			it: 'Caccia, voci, acqua, follia: un ragazzo schizofrenico in una riserva di caccia. Bianco e nero, camera a mano, montaggio veloce.'
 		},
 		challenge: {
-			en: 'Making something coherent out of unrelated words, with almost no time.',
-			it: 'Fare qualcosa di coerente da parole slegate, con quasi zero tempo.'
+			en: 'Building a coherent story from unrelated words in very little time.',
+			it: 'Costruire una storia coerente da parole slegate in pochissimo tempo.'
 		},
 		solution: {
-			en: 'Turning the limits into style: handheld camera, rough black and white, fast cuts.',
-			it: 'Trasformare i limiti in stile: camera a mano, bianco e nero grezzo, stacchi veloci.'
+			en: 'Using the constraints as the style.',
+			it: 'Usare i vincoli come stile.'
 		},
 		highlights: {
 			en: [
@@ -1426,20 +1196,20 @@ export const projects = [
 			poster: 'projects/oneofthesedays/10'
 		},
 		summary: {
-			en: 'An animated tribute to Pink Floyd’s track, cut obsessively to the beat.',
-			it: 'Un tributo animato al brano dei Pink Floyd, montato in modo ossessivo sul ritmo.'
+			en: 'An animated tribute to the Pink Floyd track.',
+			it: 'Un tributo animato al brano dei Pink Floyd.'
 		},
 		description: {
-			en: 'Illustrator drawings animated in After Effects: flat shapes, repetition, difference blend modes and an edit that follows the music almost too closely.',
-			it: 'Disegni in Illustrator animati in After Effects: forme piatte, ripetizioni, metodi di fusione in differenza e un montaggio che segue la musica quasi troppo da vicino.'
+			en: 'Drawings made in Illustrator and animated in After Effects, edited closely to the music.',
+			it: 'Disegni fatti in Illustrator e animati in After Effects, montati a stretto contatto con la musica.'
 		},
 		challenge: {
-			en: 'Not illustrating the song literally, while keeping attention up for its full length.',
-			it: 'Non illustrare il brano alla lettera, tenendo alta l’attenzione per tutta la durata.'
+			en: 'Following the music without illustrating it literally.',
+			it: 'Seguire la musica senza illustrarla alla lettera.'
 		},
 		solution: {
-			en: 'Few shapes, few colours, a lot of rhythm.',
-			it: 'Poche forme, pochi colori, molto ritmo.'
+			en: 'Simple shapes, a limited palette, rhythm.',
+			it: 'Forme semplici, palette ridotta, ritmo.'
 		},
 		highlights: {
 			en: [
@@ -1498,85 +1268,386 @@ export const projects = [
 		]
 	},
 	{
-		slug: 'rxink-personal-brand',
-		title: 'RXINK',
-		client: 'Personal brand',
-		year: 2024,
-		disciplines: ['brand'],
-		role: {
-			en: 'Brand Identity, Logo Animation',
-			it: 'Brand Identity, Logo Animation'
+		slug: 'edinburgh',
+		title: 'Edinburgh',
+		client: {
+			en: 'Personal — photography',
+			it: 'Personale — fotografia'
 		},
-		cover: 'projects/rxink/yellow1',
-		preview: 'projects/rxink/LOGOANIMATION10',
+		year: 2026,
+		disciplines: ['photo'],
+		role: {
+			en: 'Photography',
+			it: 'Fotografia'
+		},
+		featured: true,
+		cover: 'projects/photography/tramonto',
 		hero: {
-			type: 'video',
-			src: 'projects/rxink/LOGOANIMATION10'
+			type: 'image',
+			src: 'projects/photography/notte',
+			ratio: '16 / 9',
+			position: '50% 65%'
 		},
 		summary: {
-			en: 'My own identity: logo, pictogram, colours, type and a few animations.',
-			it: 'La mia identità: logo, pittogramma, colori, font e qualche animazione.'
+			en: 'Street photographs from Edinburgh.',
+			it: 'Fotografie di strada a Edimburgo.'
 		},
 		description: {
-			en: 'The brand you’re looking at. A wordmark made of slanted bars, a three-bar pictogram, black, yellow and green, and a few motion rules so it doesn’t just sit there. Think in ink.',
-			it: 'Il brand che stai guardando. Un logotipo fatto di barre inclinate, un pittogramma a tre barre, nero, giallo e verde, e qualche regola di motion perché non stia lì fermo. Think in ink.'
+			en: 'Mostly late light: people on the pavement, workers on scaffolding, a lit niche, an alley, a stone column.',
+			it: 'Soprattutto luce di fine giornata: persone sul marciapiede, operai sull’impalcatura, una nicchia illuminata, un vicolo, una colonna di pietra.'
 		},
-		challenge: {
-			en: 'Being recognisable without shouting, and flexible enough for print, screens and motion.',
-			it: 'Essere riconoscibile senza urlare, e abbastanza flessibile per stampa, schermi e motion.'
-		},
-		solution: {
-			en: 'A strong wordmark, a simple pictogram and a small palette. Most of the work was taking things out.',
-			it: 'Un logotipo forte, un pittogramma semplice e una palette ridotta. La maggior parte del lavoro è stata togliere.'
-		},
-		highlights: {
-			en: [
-				'Logo, pictogram and identity system',
-				'Colour palette and typography',
-				'Logo animation and motion graphics',
-				'Complete brand book'
-			],
-			it: [
-				'Logo, pittogramma e sistema di identità',
-				'Palette colori e tipografia',
-				'Logo animation e motion graphics',
-				'Brandbook completo'
-			]
-		},
-		tools: ['Illustrator', 'After Effects', 'Figma'],
-		figma:
-			'https://embed.figma.com/proto/bCQ5r2B4hhs3sL12B7zodE/Untitled?page-id=120%3A1332&node-id=120-1333&starting-point-node-id=120%3A1333&scaling=scale-down&content-scaling=fixed&embed-host=share',
 		gallery: [
 			{
 				type: 'image',
-				src: 'projects/rxink/construction',
+				src: 'projects/photography/tramonto'
+			},
+			{
+				type: 'image',
+				src: 'projects/photography/gabbia'
+			},
+			{
+				type: 'image',
+				src: 'projects/photography/impalcatura'
+			},
+			{
+				type: 'image',
+				src: 'projects/photography/torre'
+			},
+			{
+				type: 'image',
+				src: 'projects/photography/vicolo-1'
+			},
+			{
+				type: 'image',
+				src: 'projects/photography/vicolo-2'
+			}
+		]
+	},
+	{
+		slug: 'xian',
+		title: 'Xi’an',
+		client: {
+			en: 'Personal — photography',
+			it: 'Personale — fotografia'
+		},
+		year: 2026,
+		disciplines: ['photo'],
+		role: {
+			en: 'Photography',
+			it: 'Fotografia'
+		},
+		cover: 'projects/photography-transit/02',
+		hero: {
+			type: 'image',
+			src: 'projects/photography-transit/11',
+			ratio: '16 / 9',
+			position: '50% 40%'
+		},
+		summary: {
+			en: 'Xi’an from a car window, and Mount Hua.',
+			it: 'Xi’an dal finestrino di un’auto, e il monte Hua.'
+		},
+		description: {
+			en: 'Taken from a moving car: traffic, overpasses, neon and towers, left blurred on purpose. The last frame is from Mount Hua.',
+			it: 'Scattate da un’auto in movimento: traffico, cavalcavia, neon e palazzi, lasciati mossi di proposito. L’ultima foto è dal monte Hua.'
+		},
+		gallery: [
+			{
+				type: 'image',
+				src: 'projects/photography-transit/01'
+			},
+			{
+				type: 'image',
+				src: 'projects/photography-transit/02'
+			},
+			{
+				type: 'image',
+				src: 'projects/photography-transit/03'
+			},
+			{
+				type: 'image',
+				src: 'projects/photography-transit/04'
+			},
+			{
+				type: 'image',
+				src: 'projects/photography-transit/05'
+			},
+			{
+				type: 'image',
+				src: 'projects/photography-transit/06'
+			},
+			{
+				type: 'image',
+				src: 'projects/photography-transit/07'
+			},
+			{
+				type: 'image',
+				src: 'projects/photography-transit/08'
+			},
+			{
+				type: 'image',
+				src: 'projects/photography-transit/09'
+			},
+			{
+				type: 'image',
+				src: 'projects/photography-transit/10'
+			},
+			{
+				type: 'image',
+				src: 'projects/photography-transit/11'
+			},
+			{
+				type: 'image',
+				src: 'projects/photography-transit/12'
+			},
+			{
+				type: 'image',
+				src: 'projects/photography-transit/13'
+			},
+			{
+				type: 'image',
+				src: 'projects/photography-transit/14'
+			},
+			{
+				type: 'image',
+				src: 'projects/photography-transit/15'
+			},
+			{
+				type: 'image',
+				src: 'projects/photography-transit/montagna'
+			}
+		]
+	},
+	{
+		slug: 'marrakech',
+		title: 'Marrakech',
+		client: {
+			en: 'Personal — photography',
+			it: 'Personale — fotografia'
+		},
+		year: 2024,
+		disciplines: ['photo'],
+		role: {
+			en: 'Photography',
+			it: 'Fotografia'
+		},
+		cover: 'projects/photography-marrakech/minareto',
+		hero: {
+			type: 'image',
+			src: 'projects/photography/atrio',
+			ratio: '16 / 9',
+			position: '50% 72%'
+		},
+		summary: {
+			en: 'A few photographs from Marrakech.',
+			it: 'Qualche fotografia da Marrakech.'
+		},
+		description: {
+			en: 'Cleaning in an entrance hall, a ceiling of lanterns, a minaret seen through a blue frame, a fountain.',
+			it: 'Le pulizie in un atrio, un soffitto di lanterne, un minareto visto attraverso una cornice blu, una fontana.'
+		},
+		gallery: [
+			{
+				type: 'image',
+				src: 'projects/photography-marrakech/minareto'
+			},
+			{
+				type: 'image',
+				src: 'projects/photography-marrakech/lanterne'
+			},
+			{
+				type: 'image',
+				src: 'projects/photography-marrakech/fontana'
+			},
+			{
+				type: 'image',
+				src: 'projects/photography/atrio'
+			}
+		]
+	},
+	{
+		slug: 'acquedotti',
+		title: 'Acquedotti',
+		client: {
+			en: 'Personal — photography',
+			it: 'Personale — fotografia'
+		},
+		year: 2024,
+		disciplines: ['photo'],
+		role: {
+			en: 'Photography',
+			it: 'Fotografia'
+		},
+		cover: 'projects/photography-acquedotti/05',
+		hero: {
+			type: 'image',
+			src: 'projects/photography-acquedotti/01'
+		},
+		summary: {
+			en: 'Parco degli Acquedotti, Rome, early on a foggy morning.',
+			it: 'Parco degli Acquedotti, Roma, una mattina presto con la nebbia.'
+		},
+		description: {
+			en: 'A walk at dawn among the aqueducts, the trees and the fog.',
+			it: 'Una passeggiata all’alba tra gli acquedotti, gli alberi e la nebbia.'
+		},
+		gallery: [
+			{
+				type: 'image',
+				src: 'projects/photography-acquedotti/02'
+			},
+			{
+				type: 'image',
+				src: 'projects/photography-acquedotti/03'
+			},
+			{
+				type: 'image',
+				src: 'projects/photography-acquedotti/05',
 				span: 'full'
 			},
 			{
 				type: 'image',
-				src: 'projects/rxink/black'
+				src: 'projects/photography-acquedotti/04'
 			},
 			{
 				type: 'image',
-				src: 'projects/rxink/green'
+				src: 'projects/photography-acquedotti/06'
 			},
 			{
 				type: 'image',
-				src: 'projects/rxink/pattern',
+				src: 'projects/photography-acquedotti/07'
+			},
+			{
+				type: 'image',
+				src: 'projects/photography-acquedotti/08'
+			},
+			{
+				type: 'image',
+				src: 'projects/photography-acquedotti/09',
+				span: 'full'
+			}
+		]
+	},
+	{
+		slug: 'ordinary-days',
+		title: 'Ordinary Days',
+		client: {
+			en: 'Personal — photography',
+			it: 'Personale — fotografia'
+		},
+		year: 2026,
+		disciplines: ['photo'],
+		role: {
+			en: 'Photography',
+			it: 'Fotografia'
+		},
+		cover: 'projects/photography-everyday/operaio',
+		hero: {
+			type: 'image',
+			src: 'projects/photography/vetro',
+			ratio: '16 / 9',
+			position: '50% 40%'
+		},
+		summary: {
+			en: 'Photographs from ordinary days.',
+			it: 'Fotografie di giorni qualunque.'
+		},
+		description: {
+			en: 'No particular place or project: a race, a wall, a worker, a pool ladder, a train seat, a few evenings.',
+			it: 'Nessun luogo o progetto in particolare: una corsa, un muro, un operaio, la scaletta di una piscina, il sedile di un treno, qualche sera.'
+		},
+		gallery: [
+			{
+				type: 'image',
+				src: 'projects/photography-everyday/corsa-1'
+			},
+			{
+				type: 'image',
+				src: 'projects/photography-everyday/corsa-2'
+			},
+			{
+				type: 'image',
+				src: 'projects/photography/muro-giallo',
 				span: 'full'
 			},
 			{
-				type: 'video',
-				src: 'projects/rxink/logoanimationverticale'
+				type: 'image',
+				src: 'projects/photography-everyday/operaio'
 			},
 			{
 				type: 'image',
-				src: 'projects/rxink/think'
+				src: 'projects/photography-everyday/piscina'
 			},
 			{
 				type: 'image',
-				src: 'projects/rxink/BannerLinkedin',
-				span: 'full'
+				src: 'projects/photography-everyday/treno'
+			},
+			{
+				type: 'image',
+				src: 'projects/photography/spiaggia'
+			},
+			{
+				type: 'image',
+				src: 'projects/photography/strada-notte'
+			},
+			{
+				type: 'image',
+				src: 'projects/photography/nuvole'
+			}
+		]
+	},
+	{
+		slug: 'people',
+		title: 'People',
+		client: {
+			en: 'Personal — photography',
+			it: 'Personale — fotografia'
+		},
+		year: 2026,
+		disciplines: ['photo'],
+		role: {
+			en: 'Photography',
+			it: 'Fotografia'
+		},
+		cover: 'projects/photography-people/tetto-2',
+		hero: {
+			type: 'image',
+			src: 'projects/photography-people/neve-1',
+			ratio: '16 / 9',
+			position: '50% 25%'
+		},
+		summary: {
+			en: 'Portraits on a rooftop and in the snow.',
+			it: 'Ritratti su un tetto e sulla neve.'
+		},
+		description: {
+			en: 'Portraits made without a studio, while people were doing something else.',
+			it: 'Ritratti fatti senza studio, mentre le persone facevano altro.'
+		},
+		gallery: [
+			{
+				type: 'image',
+				src: 'projects/photography-people/neve-1'
+			},
+			{
+				type: 'image',
+				src: 'projects/photography-people/neve-2'
+			},
+			{
+				type: 'image',
+				src: 'projects/photography-people/neve-3'
+			},
+			{
+				type: 'image',
+				src: 'projects/photography-people/tetto-1'
+			},
+			{
+				type: 'image',
+				src: 'projects/photography-people/tetto-2'
+			},
+			{
+				type: 'image',
+				src: 'projects/photography-people/tetto-3'
 			}
 		]
 	},
@@ -1596,20 +1667,20 @@ export const projects = [
 			src: 'projects/romacratermundi/hero'
 		},
 		summary: {
-			en: 'Rome’s potholes, photographed as if they were moon craters. They kind of are.',
-			it: 'Le buche di Roma fotografate come crateri lunari. In effetti un po’ lo sono.'
+			en: 'A photo series and book on Rome’s potholes.',
+			it: 'Una serie fotografica e un libro sulle buche di Roma.'
 		},
 		description: {
-			en: 'A photo series and a printed book about the most Roman of landscapes: the pothole. Out of context, cracks and holes in the asphalt become craters and abstract surfaces. Laid out in InDesign, printed on proper paper.',
-			it: 'Una serie fotografica e un libro stampato sul paesaggio più romano che ci sia: la buca. Fuori contesto, crepe e voragini nell’asfalto diventano crateri e superfici astratte. Impaginato in InDesign, stampato su carta come si deve.'
+			en: 'Potholes photographed out of context, where they start to look like craters and abstract surfaces. Laid out in InDesign and printed.',
+			it: 'Buche fotografate fuori contesto, dove iniziano a sembrare crateri e superfici astratte. Impaginato in InDesign e stampato.'
 		},
 		challenge: {
-			en: 'Finding something worth looking at in something everyone curses.',
-			it: 'Trovare qualcosa da guardare in una cosa che tutti maledicono.'
+			en: 'Finding something worth looking at in an everyday problem.',
+			it: 'Trovare qualcosa da guardare in un problema quotidiano.'
 		},
 		solution: {
-			en: 'Treating each pothole as a landscape: framing, light, post. The book’s sequence does the rest.',
-			it: 'Trattare ogni buca come un paesaggio: inquadratura, luce, post. La sequenza del libro fa il resto.'
+			en: 'Careful framing, light and post-production, and a sequence that works as a book.',
+			it: 'Cura di inquadratura, luce e post-produzione, e una sequenza che funzioni come libro.'
 		},
 		highlights: {
 			en: [
@@ -1725,6 +1796,89 @@ export const projects = [
 		]
 	},
 	{
+		slug: 'rxink-personal-brand',
+		title: 'RXINK',
+		client: 'Personal brand',
+		year: 2024,
+		disciplines: ['brand'],
+		role: {
+			en: 'Brand Identity, Logo Animation',
+			it: 'Brand Identity, Logo Animation'
+		},
+		cover: 'projects/rxink/yellow1',
+		preview: 'projects/rxink/LOGOANIMATION10',
+		hero: {
+			type: 'video',
+			src: 'projects/rxink/LOGOANIMATION10'
+		},
+		summary: {
+			en: 'My personal identity: logo, pictogram, colours, type and motion.',
+			it: 'La mia identità personale: logo, pittogramma, colori, font e motion.'
+		},
+		description: {
+			en: 'A wordmark made of slanted bars, a three-bar pictogram, a black, yellow and green palette and a few motion rules.',
+			it: 'Un logotipo fatto di barre inclinate, un pittogramma a tre barre, una palette nero, giallo e verde e qualche regola di motion.'
+		},
+		challenge: {
+			en: 'Recognisable and flexible across print, screen and motion.',
+			it: 'Riconoscibile e flessibile tra stampa, schermo e motion.'
+		},
+		solution: {
+			en: 'Few elements, used consistently.',
+			it: 'Pochi elementi, usati con coerenza.'
+		},
+		highlights: {
+			en: [
+				'Logo, pictogram and identity system',
+				'Colour palette and typography',
+				'Logo animation and motion graphics',
+				'Complete brand book'
+			],
+			it: [
+				'Logo, pittogramma e sistema di identità',
+				'Palette colori e tipografia',
+				'Logo animation e motion graphics',
+				'Brandbook completo'
+			]
+		},
+		tools: ['Illustrator', 'After Effects', 'Figma'],
+		figma:
+			'https://embed.figma.com/proto/bCQ5r2B4hhs3sL12B7zodE/Untitled?page-id=120%3A1332&node-id=120-1333&starting-point-node-id=120%3A1333&scaling=scale-down&content-scaling=fixed&embed-host=share',
+		gallery: [
+			{
+				type: 'image',
+				src: 'projects/rxink/construction',
+				span: 'full'
+			},
+			{
+				type: 'image',
+				src: 'projects/rxink/black'
+			},
+			{
+				type: 'image',
+				src: 'projects/rxink/green'
+			},
+			{
+				type: 'image',
+				src: 'projects/rxink/pattern',
+				span: 'full'
+			},
+			{
+				type: 'video',
+				src: 'projects/rxink/logoanimationverticale'
+			},
+			{
+				type: 'image',
+				src: 'projects/rxink/think'
+			},
+			{
+				type: 'image',
+				src: 'projects/rxink/BannerLinkedin',
+				span: 'full'
+			}
+		]
+	},
+	{
 		slug: 'circularthub',
 		title: 'CirculArtHub',
 		client: 'Digital platform',
@@ -1740,20 +1894,20 @@ export const projects = [
 			src: 'projects/circularthub/hero'
 		},
 		summary: {
-			en: 'A marketplace for art and design made from reclaimed materials: brand, UX and a clickable prototype.',
-			it: 'Un marketplace per arte e design fatti con materiali di recupero: brand, UX e prototipo cliccabile.'
+			en: 'Brand, UX and prototype for a marketplace of upcycled art and design.',
+			it: 'Brand, UX e prototipo per un marketplace di arte e design upcycled.'
 		},
 		description: {
-			en: 'A platform for selling upcycled pieces and giving the people who make them some visibility. Brand identity, user journey and every screen prototyped in Figma.',
-			it: 'Una piattaforma per vendere pezzi upcycled e dare un po’ di visibilità a chi li fa. Brand identity, user journey e tutte le schermate prototipate in Figma.'
+			en: 'A platform for selling pieces made from reclaimed materials. Brand identity, user journey and every screen prototyped in Figma.',
+			it: 'Una piattaforma per vendere pezzi fatti con materiali di recupero. Brand identity, user journey e tutte le schermate prototipate in Figma.'
 		},
 		challenge: {
-			en: 'An interface that works for makers and buyers, and talks about sustainability without preaching.',
-			it: 'Un’interfaccia che funzioni per chi crea e per chi compra, e che parli di sostenibilità senza fare la predica.'
+			en: 'An interface that works for both makers and buyers.',
+			it: 'Un’interfaccia che funzioni sia per chi crea sia per chi compra.'
 		},
 		solution: {
-			en: 'Image first, simple navigation, and flows tested in Figma before anyone wrote a line of code.',
-			it: 'Immagini prima di tutto, navigazione semplice e flussi testati in Figma prima che qualcuno scrivesse una riga di codice.'
+			en: 'Image-led layouts, simple navigation, flows tested in Figma.',
+			it: 'Layout guidati dalle immagini, navigazione semplice, flussi testati in Figma.'
 		},
 		highlights: {
 			en: [

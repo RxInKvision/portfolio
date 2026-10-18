@@ -1,7 +1,8 @@
 import { error } from '@sveltejs/kit';
 import { projects, getProject, nextProject } from '$lib/data/projects.js';
 
-export const entries = () => projects.map((p) => ({ slug: p.slug }));
+export const entries = () =>
+	projects.flatMap((p) => [{ slug: p.slug }, { slug: p.slug, lang: 'it' }]);
 
 export function load({ params }) {
 	const project = getProject(params.slug);

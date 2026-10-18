@@ -1,10 +1,11 @@
 <script>
 	import { page } from '$app/state';
 	import Media from '$lib/components/Media.svelte';
+	import { projectJsonLd } from '$lib/seo.js';
 	import VideoEmbed from '$lib/components/VideoEmbed.svelte';
 	import Film from '$lib/components/Film.svelte';
 	import { disciplines } from '$lib/data/projects.js';
-	import { t, ui } from '$lib/i18n.svelte.js';
+	import { t, ui, href, site, pathFor, i18n } from '$lib/i18n.svelte.js';
 	import { splitLines, reveal, clipReveal, parallax, magnetic } from '$lib/motion.svelte.js';
 
 	let { data } = $props();
@@ -15,18 +16,19 @@
 </script>
 
 <svelte:head>
-	<title>{p.title} — {t(p.client)} | Riccardo Pichi</title>
-	<meta name="description" content={p.summary.en} />
-	<meta property="og:title" content="{p.title} — Riccardo Pichi" />
-	<meta property="og:description" content={p.summary.en} />
-	<meta property="og:image" content="{page.url.origin}/media/{p.cover}.webp" />
+	<title>{p.title} — {t(p.client)} | Riccardo Pichi (RXINK)</title>
+	<meta name="description" content="{t(p.summary)} {t(ui.seo.byline)}." />
+	<meta property="og:title" content="{p.title} — Riccardo Pichi (RXINK)" />
+	<meta property="og:description" content={t(p.summary)} />
+	<meta property="og:image" content="{site.url}/media/{p.cover}.webp" />
+	{@html projectJsonLd(p, site.url + pathFor(`/works/${p.slug}`), i18n.lang)}
 </svelte:head>
 
 {#key p.slug + t(p.summary)}
 	<article>
 		<header class="head wrap">
 			<p class="mono muted" use:reveal={{ y: 16 }}>
-				<a href="/works" class="link">{t(ui.nav.works)}</a> / {t(p.client)}
+				<a href={href('/works')} class="link">{t(ui.nav.works)}</a> / {t(p.client)}
 			</p>
 			<h1 class="display" use:splitLines={{ immediate: true, delay: 0.1 }}>{p.title}</h1>
 			<p class="lead summary" use:splitLines={{ immediate: true, delay: 0.3 }}>{t(p.summary)}</p>
@@ -159,7 +161,7 @@
 			</section>
 		{/if}
 
-		<a href="/works/{next.slug}" class="next" data-cursor={t(ui.view)}>
+		<a href={href(`/works/${next.slug}`)} class="next" data-cursor={t(ui.view)}>
 			<div class="next-bg"><Media src={next.cover} fill sizes="100vw" alt="" /></div>
 			<div class="wrap next-inner">
 				<p class="mono">{t(ui.project.next)} →</p>

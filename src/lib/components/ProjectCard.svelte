@@ -1,6 +1,6 @@
 <script>
 	import Media from './Media.svelte';
-	import { t, ui } from '$lib/i18n.svelte.js';
+	import { t, ui, href } from '$lib/i18n.svelte.js';
 	import { disciplines } from '$lib/data/projects.js';
 	import { clipReveal, parallax, finePointer, reveal, autoplay } from '$lib/motion.svelte.js';
 	import { onMount } from 'svelte';
@@ -27,7 +27,7 @@
 </script>
 
 <a
-	href="/works/{project.slug}"
+	href={href(`/works/${project.slug}`)}
 	class="card"
 	onpointerenter={enter}
 	onpointerleave={leave}
@@ -36,7 +36,13 @@
 	<div class="frame" style:aspect-ratio={ratio} use:clipReveal>
 		<div class="inner" use:parallax={{ amount: 10 }}>
 			<div class="layer">
-				<Media src={project.cover} fill {sizes} {eager} alt={project.title} />
+				<Media
+					src={project.cover}
+					fill
+					{sizes}
+					{eager}
+					alt="{project.title} — {t(project.client)} — Riccardo Pichi"
+				/>
 				{#if project.preview}
 					<video
 						bind:this={preview}

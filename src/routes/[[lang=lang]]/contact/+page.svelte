@@ -13,11 +13,10 @@
 </script>
 
 <svelte:head>
-	<title>Contact — Riccardo Pichi | RXINK</title>
-	<meta
-		name="description"
-		content="Get in touch with Riccardo Pichi for VFX direction, AI filmmaking, art direction and creative technology projects."
-	/>
+	<title>{t(ui.seo.contact.title)}</title>
+	<meta name="description" content={t(ui.seo.contact.description)} />
+	<meta property="og:title" content={t(ui.seo.contact.title)} />
+	<meta property="og:description" content={t(ui.seo.contact.description)} />
 </svelte:head>
 
 <section class="contact wrap">

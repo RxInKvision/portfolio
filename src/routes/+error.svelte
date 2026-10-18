@@ -1,7 +1,7 @@
 <script>
 	import { page } from '$app/state';
 	import { onMount } from 'svelte';
-	import { t, ui } from '$lib/i18n.svelte.js';
+	import { t, ui, href } from '$lib/i18n.svelte.js';
 	import { setReady } from '$lib/motion.svelte.js';
 
 	onMount(() => setReady(true));
@@ -12,7 +12,7 @@
 <section class="err wrap">
 	<p class="mono yellow">Error {page.status}</p>
 	<h1 class="display">{t(ui.notFound.title)}</h1>
-	<a href="/" class="mono link">← {t(ui.notFound.back)}</a>
+	<a href={href('/')} class="mono link">← {t(ui.notFound.back)}</a>
 </section>
 
 <style>

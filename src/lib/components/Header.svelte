@@ -3,7 +3,7 @@
 	import { onMount } from 'svelte';
 	import { beforeNavigate } from '$app/navigation';
 	import Pictogram from './Pictogram.svelte';
-	import { t, ui, i18n, setLang, site } from '$lib/i18n.svelte.js';
+	import { t, ui, i18n, site, href, pathFor, basePath } from '$lib/i18n.svelte.js';
 	import { app, gsap, lockScroll, magnetic } from '$lib/motion.svelte.js';
 
 	const links = [
@@ -16,7 +16,14 @@
 	let hidden = $state(false);
 	let overlay;
 
-	const isActive = (href) => page.url.pathname.startsWith(href);
+	const isActive = (path) => basePath(page.url.pathname).startsWith(path);
+	// Remember an explicit language choice (so Italian browsers aren't redirected again).
+	const remember = (lang) => {
+		try {
+			localStorage.setItem('rxink-lang', lang);
+		} catch {}
+	};
+	const langHref = (lang) => pathFor(page.url.pathname, lang);
 
 	onMount(() => {
 		const fmt = new Intl.DateTimeFormat('en-GB', {
@@ -76,7 +83,7 @@
 </script>
 
 <header class="header" class:hidden class:open={app.menuOpen}>
-	<a href="/" class="brand" aria-label="RXINK — home">
+	<a href={href('/')} class="brand" aria-label="RXINK — home">
 		<Pictogram class="picto" />
 		<span class="mono">Riccardo Pichi</span>
 	</a>
@@ -89,12 +96,22 @@
 
 	<nav class="nav" aria-label="Main">
 		{#each links as l}
-			<a href={l.href} class="mono link" class:active={isActive(l.href)}>{t(l.label)}</a>
+			<a href={href(l.href)} class="mono link" class:active={isActive(l.href)}>{t(l.label)}</a>
 		{/each}
 		<div class="lang mono" role="group" aria-label="Language">
-			<button class:on={i18n.lang === 'en'} onclick={() => setLang('en')}>EN</button>
+			<a
+				href={langHref('en')}
+				hreflang="en"
+				class:on={i18n.lang === 'en'}
+				onclick={() => remember('en')}>EN</a
+			>
 			<span>/</span>
-			<button class:on={i18n.lang === 'it'} onclick={() => setLang('it')}>IT</button>
+			<a
+				href={langHref('it')}
+				hreflang="it"
+				class:on={i18n.lang === 'it'}
+				onclick={() => remember('it')}>IT</a
+			>
 		</div>
 	</nav>
 
@@ -111,9 +128,9 @@
 
 <div class="overlay" bind:this={overlay} aria-hidden={!app.menuOpen}>
 	<nav class="m-nav">
-		<a href="/" class="m-link"><span class="m-item">Home</span></a>
+		<a href={href('/')} class="m-link"><span class="m-item">Home</span></a>
 		{#each links as l, i}
-			<a href={l.href} class="m-link" class:active={isActive(l.href)}>
+			<a href={href(l.href)} class="m-link" class:active={isActive(l.href)}>
 				<span class="m-item"><sup class="mono">0{i + 1}</sup>{t(l.label)}</span>
 			</a>
 		{/each}
@@ -124,9 +141,19 @@
 		</div>
 		<div class="m-row">
 			<div class="lang mono">
-				<button class:on={i18n.lang === 'en'} onclick={() => setLang('en')}>EN</button>
+				<a
+					href={langHref('en')}
+					hreflang="en"
+					class:on={i18n.lang === 'en'}
+					onclick={() => remember('en')}>EN</a
+				>
 				<span>/</span>
-				<button class:on={i18n.lang === 'it'} onclick={() => setLang('it')}>IT</button>
+				<a
+					href={langHref('it')}
+					hreflang="it"
+					class:on={i18n.lang === 'it'}
+					onclick={() => remember('it')}>IT</a
+				>
 			</div>
 			<div class="m-social mono">
 				{#each site.socials as s}<a href={s.url} target="_blank" rel="noopener">{s.label}</a>{/each}
@@ -205,12 +232,12 @@
 		gap: 6px;
 		opacity: 0.9;
 	}
-	.lang button {
+	.lang a {
 		opacity: 0.4;
 		transition: opacity 0.3s;
 	}
-	.lang button.on,
-	.lang button:hover {
+	.lang a.on,
+	.lang a:hover {
 		opacity: 1;
 	}
 	.menu-btn {

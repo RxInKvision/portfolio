@@ -1,7 +1,7 @@
 <script>
 	import Media from '$lib/components/Media.svelte';
 	import Marquee from '$lib/components/Marquee.svelte';
-	import { t, ui, site } from '$lib/i18n.svelte.js';
+	import { t, ui, site, href } from '$lib/i18n.svelte.js';
 	import { splitLines, reveal, clipReveal, parallax, magnetic } from '$lib/motion.svelte.js';
 
 	const experience = [
@@ -112,11 +112,10 @@
 </script>
 
 <svelte:head>
-	<title>About — Riccardo Pichi | RXINK</title>
-	<meta
-		name="description"
-		content="Riccardo Pichi is an Art Director and Creative Technologist at Arsenale 23 in Rome, specialising in VFX direction and AI filmmaking."
-	/>
+	<title>{t(ui.seo.about.title)}</title>
+	<meta name="description" content={t(ui.seo.about.description)} />
+	<meta property="og:title" content={t(ui.seo.about.title)} />
+	<meta property="og:description" content={t(ui.seo.about.description)} />
 </svelte:head>
 
 <section class="head wrap">
@@ -147,6 +146,7 @@
 			<a class="link yellow" href={site.agency.url} target="_blank" rel="noopener"
 				>@ {site.agency.name} ↗</a
 			>
+			<span class="muted aka">{site.aka.join(' · ')}</span>
 		</div>
 	</div>
 
@@ -164,7 +164,7 @@
 				><span>Immersive & VR</span><span>AI Tutoring</span>
 			</div>
 		</div>
-		<a href="/contact" class="pill" use:magnetic use:reveal>{t(ui.cta.button)} →</a>
+		<a href={href('/contact')} class="pill" use:magnetic use:reveal>{t(ui.cta.button)} →</a>
 	</div>
 </section>
 

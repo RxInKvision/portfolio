@@ -1,16 +1,23 @@
 // Tiny bilingual layer. `t(value)` accepts a plain string or an { en, it } object.
 export const i18n = $state({ lang: 'en' });
 
+// Language follows the URL: English at /..., Italian at /it/...
 export function setLang(lang) {
 	i18n.lang = lang;
-	if (typeof document !== 'undefined') {
-		document.documentElement.lang = lang;
-		document.documentElement.dataset.lang = lang;
-		try {
-			localStorage.setItem('rxink-lang', lang);
-		} catch {}
-	}
+	if (typeof document !== 'undefined') document.documentElement.lang = lang;
 }
+
+// Path without the language prefix ('/it/works' -> '/works').
+export const basePath = (pathname) => pathname.replace(/^\/it(?=\/|$)/, '') || '/';
+
+// Path for a given language ('/works', 'it' -> '/it/works').
+export const pathFor = (path, lang = i18n.lang) => {
+	const base = basePath(path);
+	return lang === 'it' ? (base === '/' ? '/it' : `/it${base}`) : base;
+};
+
+// Shorthand for internal links in the current language.
+export const href = (path) => pathFor(path);
 
 export const t = (value) =>
 	value && typeof value === 'object' ? (value[i18n.lang] ?? value.en) : value;
@@ -153,6 +160,50 @@ export const ui = {
 		location: { en: 'Location', it: 'Dove' },
 		available: { en: 'Taking on projects', it: 'Disponibile per progetti' }
 	},
+	seo: {
+		home: {
+			title: {
+				en: 'Riccardo Pichi (RXINK) — Art Director & Creative Technologist in Rome',
+				it: 'Riccardo Pichi (RXINK) — Art Director e Creative Technologist a Roma'
+			},
+			description: {
+				en: 'Portfolio of Riccardo Pichi (RXINK, rxink.png), Art Director and Creative Technologist at Arsenale 23 in Rome. VFX and AI film direction, photography, immersive installations and creative technology. IED Rome graduate.',
+				it: 'Portfolio di Riccardo Pichi (RXINK, rxink.png), Art Director e Creative Technologist in Arsenale 23 a Roma. Regia VFX e AI, fotografia, installazioni immersive e creative technology. Laureato allo IED di Roma.'
+			},
+			h1: {
+				en: 'Riccardo Pichi (RXINK) — Art Director and Creative Technologist in Rome',
+				it: 'Riccardo Pichi (RXINK) — Art Director e Creative Technologist a Roma'
+			}
+		},
+		works: {
+			title: { en: 'Work — Riccardo Pichi | RXINK', it: 'Lavori — Riccardo Pichi | RXINK' },
+			description: {
+				en: 'Projects by Riccardo Pichi (RXINK): films, VFX and AI direction, installations, campaigns, photography and brand identities.',
+				it: 'Progetti di Riccardo Pichi (RXINK): film, regia VFX e AI, installazioni, campagne, fotografia e brand identity.'
+			}
+		},
+		about: {
+			title: {
+				en: 'About Riccardo Pichi — Art Director & Creative Technologist | RXINK',
+				it: 'Profilo di Riccardo Pichi — Art Director e Creative Technologist | RXINK'
+			},
+			description: {
+				en: 'Riccardo Pichi (RXINK, rikipiki) is an Art Director and Creative Technologist at Arsenale 23 in Rome, focused on VFX and AI direction. Media Design graduate from IED Rome.',
+				it: 'Riccardo Pichi (RXINK, rikipiki) è Art Director e Creative Technologist in Arsenale 23 a Roma, con un focus sulla regia VFX e AI. Laureato in Media Design allo IED di Roma.'
+			}
+		},
+		contact: {
+			title: { en: 'Contact — Riccardo Pichi | RXINK', it: 'Contatti — Riccardo Pichi | RXINK' },
+			description: {
+				en: 'Contact Riccardo Pichi, Art Director and Creative Technologist in Rome, for direction, VFX, AI film and creative technology projects.',
+				it: 'Contatta Riccardo Pichi, Art Director e Creative Technologist a Roma, per progetti di regia, VFX, AI e creative technology.'
+			}
+		},
+		byline: {
+			en: 'Riccardo Pichi, Art Director & Creative Technologist',
+			it: 'Riccardo Pichi, Art Director e Creative Technologist'
+		}
+	},
 	notFound: {
 		title: { en: 'Page not found.', it: 'Pagina non trovata.' },
 		back: { en: 'Back home', it: 'Torna alla home' }
@@ -160,7 +211,10 @@ export const ui = {
 };
 
 export const site = {
+	// Public address of the site: keep in sync with SITE_URL in svelte.config.js.
+	url: 'https://portfolio-liard-delta-52.vercel.app',
 	name: 'Riccardo Pichi',
+	aka: ['RXINK', 'rxink.png', 'rikipiki', 'rink'],
 	brand: 'RXINK',
 	email: 'rxink.designer@gmail.com',
 	city: 'Rome, IT',

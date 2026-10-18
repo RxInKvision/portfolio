@@ -8,7 +8,7 @@ export const SITE_URL = 'https://portfolio-liard-delta-52.vercel.app';
 const config = {
 	kit: {
 		adapter: adapter(),
-		prerender: { origin: SITE_URL }
+		prerender: { origin: SITE_URL, entries: ['*', '/it', '/sitemap.xml'] }
 	}
 };
 

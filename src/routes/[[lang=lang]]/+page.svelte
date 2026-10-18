@@ -5,7 +5,7 @@
 	import Logotype from '$lib/components/Logotype.svelte';
 	import { LOGO_W, LOGO_H, LOGO_PATHS } from '$lib/brand.js';
 	import { projects } from '$lib/data/projects.js';
-	import { t, ui, site } from '$lib/i18n.svelte.js';
+	import { t, ui, site, href } from '$lib/i18n.svelte.js';
 	import {
 		app,
 		gsap,
@@ -100,20 +100,16 @@
 </script>
 
 <svelte:head>
-	<title>Riccardo Pichi — Art Director & Creative Technologist | RXINK</title>
-	<meta
-		name="description"
-		content="Riccardo Pichi (RXINK) — Art Director & Creative Technologist at Arsenale 23, Rome. VFX direction, AI filmmaking, installations and interactive experiences."
-	/>
-	<meta property="og:title" content="Riccardo Pichi — Art Director & Creative Technologist" />
-	<meta
-		property="og:description"
-		content="VFX direction, AI filmmaking and creative technology. Rome."
-	/>
+	<title>{t(ui.seo.home.title)}</title>
+	<meta name="description" content={t(ui.seo.home.description)} />
+	<meta property="og:title" content={t(ui.seo.home.title)} />
+	<meta property="og:description" content={t(ui.seo.home.description)} />
 	<link rel="preload" as="video" href="/media/reel/reel.mp4" />
 </svelte:head>
 
 <!-- HERO -->
+<h1 class="sr-only">{t(ui.seo.home.h1)}</h1>
+
 <section class="hero" bind:this={hero}>
 	<div class="sticky" bind:this={sticky}>
 		<svg class="clip-def" width="0" height="0" aria-hidden="true">
@@ -153,7 +149,7 @@
 
 		<div class="hero-line wrap" bind:this={heroLine}>
 			<p class="mono yellow">VFX · AI Film · Art Direction · Creative Technology</p>
-			<h1 class="display">{t(ui.hero.line)}</h1>
+			<p class="display">{t(ui.hero.line)}</p>
 		</div>
 	</div>
 </section>
@@ -167,7 +163,7 @@
 		</p>
 	{/key}
 	<div class="intro-foot" use:reveal>
-		<a href="/about" class="pill" use:magnetic>{t(ui.nav.about)} →</a>
+		<a href={href('/about')} class="pill" use:magnetic>{t(ui.nav.about)} →</a>
 		<div class="now mono">
 			<span class="muted">{t(ui.hero.at)}</span>
 			<span>{site.agency.name} — {t(ui.hero.role)}</span>
@@ -182,7 +178,7 @@
 		{#key t(ui.selected)}
 			<h2 class="display" use:splitLines>{t(ui.selected)}</h2>
 		{/key}
-		<a href="/works" class="mono link">{t(ui.allWork)} ({projects.length}) →</a>
+		<a href={href('/works')} class="mono link">{t(ui.allWork)} ({projects.length}) →</a>
 	</div>
 
 	<div class="work-grid">
@@ -198,7 +194,9 @@
 	</div>
 
 	<div class="work-more" use:reveal>
-		<a href="/works" class="pill big" use:magnetic>{t(ui.allWork)} <sup>{projects.length}</sup></a>
+		<a href={href('/works')} class="pill big" use:magnetic
+			>{t(ui.allWork)} <sup>{projects.length}</sup></a
+		>
 	</div>
 </section>
 
@@ -312,7 +310,7 @@
 		padding-bottom: clamp(32px, 7vh, 80px);
 		visibility: hidden;
 	}
-	.hero-line h1 {
+	.hero-line .display {
 		font-size: clamp(34px, 5.6vw, 104px);
 		max-width: 17ch;
 		margin-top: 20px;

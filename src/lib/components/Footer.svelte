@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import Logotype from './Logotype.svelte';
-	import { t, ui, site } from '$lib/i18n.svelte.js';
+	import { t, ui, site, href } from '$lib/i18n.svelte.js';
 	import {
 		gsap,
 		ScrollTrigger,
@@ -65,9 +65,9 @@
 		</div>
 		<div>
 			<span class="muted">Menu</span>
-			<a class="link" href="/works">{t(ui.nav.works)}</a>
-			<a class="link" href="/about">{t(ui.nav.about)}</a>
-			<a class="link" href="/contact">{t(ui.nav.contact)}</a>
+			<a class="link" href={href('/works')}>{t(ui.nav.works)}</a>
+			<a class="link" href={href('/about')}>{t(ui.nav.about)}</a>
+			<a class="link" href={href('/contact')}>{t(ui.nav.contact)}</a>
 		</div>
 		<div class="right">
 			<button class="link" onclick={() => scrollTo(0)}>{t(ui.footer.top)} ↑</button>

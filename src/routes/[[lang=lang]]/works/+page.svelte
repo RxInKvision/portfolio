@@ -4,7 +4,7 @@
 	import { fade } from 'svelte/transition';
 	import ProjectCard from '$lib/components/ProjectCard.svelte';
 	import { projects, disciplines } from '$lib/data/projects.js';
-	import { t, ui } from '$lib/i18n.svelte.js';
+	import { t, ui, href } from '$lib/i18n.svelte.js';
 	import { gsap, splitLines, reveal, finePointer } from '$lib/motion.svelte.js';
 
 	let filter = $state('all');
@@ -33,11 +33,10 @@
 </script>
 
 <svelte:head>
-	<title>Work — Riccardo Pichi | RXINK</title>
-	<meta
-		name="description"
-		content="Selected work by Riccardo Pichi: films, VFX, AI filmmaking, installations, campaigns and brand identities."
-	/>
+	<title>{t(ui.seo.works.title)}</title>
+	<meta name="description" content={t(ui.seo.works.description)} />
+	<meta property="og:title" content={t(ui.seo.works.title)} />
+	<meta property="og:description" content={t(ui.seo.works.description)} />
 </svelte:head>
 
 <section class="head wrap">
@@ -78,7 +77,7 @@
 		</div>
 		{#each filtered as p, i (p.slug)}
 			<a
-				href="/works/{p.slug}"
+				href={href(`/works/${p.slug}`)}
 				class="row item"
 				class:dim={hovered && hovered !== p.slug}
 				onpointerenter={() => (hovered = p.slug)}

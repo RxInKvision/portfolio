@@ -435,6 +435,42 @@
 		1600,
 		677
 	],
+	"projects/glo/banner": [
+		1600,
+		900
+	],
+	"projects/glo/hilo-1": [
+		1080,
+		1920
+	],
+	"projects/glo/hilo-2": [
+		800,
+		1422
+	],
+	"projects/glo/hilo-3": [
+		800,
+		1422
+	],
+	"projects/glo/hilo-4": [
+		864,
+		1536
+	],
+	"projects/glo/hilo-5": [
+		1080,
+		1920
+	],
+	"projects/glo/hilo-6": [
+		800,
+		1422
+	],
+	"projects/glo/hilo-7": [
+		800,
+		1422
+	],
+	"projects/glo/hilo-8": [
+		800,
+		1422
+	],
 	"projects/oneofthesedays/1": [
 		1600,
 		898
@@ -786,6 +822,34 @@
 	"projects/romacratermundi/titolo": [
 		1600,
 		1085
+	],
+	"projects/rome-15k/reel": [
+		1280,
+		720
+	],
+	"projects/rome-15k/stills/01": [
+		1280,
+		720
+	],
+	"projects/rome-15k/stills/02": [
+		1280,
+		720
+	],
+	"projects/rome-15k/stills/03": [
+		1280,
+		720
+	],
+	"projects/rome-15k/stills/04": [
+		1280,
+		720
+	],
+	"projects/rome-15k/stills/05": [
+		1280,
+		720
+	],
+	"projects/rome-15k/stills/06": [
+		1280,
+		720
 	],
 	"projects/rxink/BannerLinkedin": [
 		1526,

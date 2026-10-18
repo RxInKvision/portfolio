@@ -20,7 +20,7 @@ const KEEP_AUDIO = new Set([
 	'projects/china/bamboo.mov'
 ]);
 // Whole folders whose videos keep audio (finished films and spots).
-const AUDIO_DIRS = ['projects/ai-studies/', 'projects/unicum/'];
+const AUDIO_DIRS = ['projects/ai-studies/', 'projects/unicum/', 'projects/rome-15k/'];
 
 async function walk(dir) {
 	const entries = await readdir(dir, { withFileTypes: true });

@@ -35,6 +35,10 @@ export const disciplines = {
 	photo: {
 		en: 'Photography',
 		it: 'Fotografia'
+	},
+	cgi: {
+		en: '3D & CGI',
+		it: '3D & CGI'
 	}
 };
 
@@ -749,6 +753,72 @@ export const projects = [
 		]
 	},
 	{
+		slug: 'rome-15k',
+		title: 'Rome 15K',
+		client: {
+			en: 'Rome 15K × Ford Italia',
+			it: 'Rome 15K × Ford Italia'
+		},
+		year: 2025,
+		featured: true,
+		disciplines: ['film'],
+		role: {
+			en: 'Shooting, Edit',
+			it: 'Riprese, Montaggio'
+		},
+		cover: 'projects/rome-15k/stills/04',
+		preview: 'projects/rome-15k/reel',
+		hero: {
+			type: 'video',
+			src: 'projects/rome-15k/reel',
+			poster: 'projects/rome-15k/stills/04',
+			sound: true
+		},
+		summary: {
+			en: 'The event reel for the Rome 15K, supported by Ford Italia.',
+			it: 'Il video reel della Rome 15K, con il supporto di Ford Italia.'
+		},
+		description: {
+			en: 'I shot the race on the day and edited the reel: the start, the runners, the finish, and the Ford cars along the route.',
+			it: 'Ho girato la gara durante la giornata e montato il reel: la partenza, i corridori, l’arrivo e le auto Ford lungo il percorso.'
+		},
+		challenge: {
+			en: 'Covering a whole race on my own, on the day, without missing the moments that matter.',
+			it: 'Coprire un’intera gara da solo, in giornata, senza perdere i momenti importanti.'
+		},
+		solution: {
+			en: 'Positions planned in advance, handheld camera, and an edit built on the rhythm of the race.',
+			it: 'Posizioni pianificate in anticipo, camera a mano e un montaggio costruito sul ritmo della gara.'
+		},
+		gallery: [
+			{
+				type: 'image',
+				src: 'projects/rome-15k/stills/01'
+			},
+			{
+				type: 'image',
+				src: 'projects/rome-15k/stills/02'
+			},
+			{
+				type: 'image',
+				src: 'projects/rome-15k/stills/03'
+			},
+			{
+				type: 'image',
+				src: 'projects/rome-15k/stills/05'
+			},
+			{
+				type: 'image',
+				src: 'projects/rome-15k/stills/06'
+			},
+			{
+				type: 'image',
+				src: 'projects/rome-15k/stills/04',
+				span: 'full'
+			}
+		]
+	},
+	{
 		slug: 'kollateral',
 		title: 'Kollateral',
 		client: 'Subviral',
@@ -911,6 +981,77 @@ export const projects = [
 				type: 'image',
 				src: 'projects/bmw/hero',
 				span: 'full'
+			}
+		]
+	},
+	{
+		slug: 'glo-hilo',
+		title: 'glo Hilo',
+		client: {
+			en: 'glo — 3D renders',
+			it: 'glo — render 3D'
+		},
+		year: 2025,
+		featured: true,
+		disciplines: ['cgi'],
+		role: {
+			en: 'Modelling, Texturing, Lighting, Rendering',
+			it: 'Modellazione, Texturing, Luci, Rendering'
+		},
+		cover: 'projects/glo/hilo-5',
+		hero: {
+			type: 'image',
+			src: 'projects/glo/banner'
+		},
+		summary: {
+			en: 'Product renders for glo Hilo, modelled from scratch in Blender.',
+			it: 'Render di prodotto per glo Hilo, modellati da zero in Blender.'
+		},
+		description: {
+			en: 'The whole process done by hand, in two series of images: modelling, materials, lighting and final render.',
+			it: 'Tutto il processo fatto a mano, in due serie di immagini: modellazione, materiali, luci e render finale.'
+		},
+		challenge: {
+			en: 'Getting materials and reflections right, so the object reads as real.',
+			it: 'Rendere bene materiali e riflessi, perché l’oggetto sembri reale.'
+		},
+		solution: {
+			en: 'Modelled from references, physically based materials and a simple studio lighting setup.',
+			it: 'Modellazione da reference, materiali fisicamente corretti e un set di luci da studio essenziale.'
+		},
+		tools: ['Blender'],
+		gallery: [
+			{
+				type: 'image',
+				src: 'projects/glo/hilo-1'
+			},
+			{
+				type: 'image',
+				src: 'projects/glo/hilo-3'
+			},
+			{
+				type: 'image',
+				src: 'projects/glo/hilo-2'
+			},
+			{
+				type: 'image',
+				src: 'projects/glo/hilo-4'
+			},
+			{
+				type: 'image',
+				src: 'projects/glo/hilo-5'
+			},
+			{
+				type: 'image',
+				src: 'projects/glo/hilo-7'
+			},
+			{
+				type: 'image',
+				src: 'projects/glo/hilo-6'
+			},
+			{
+				type: 'image',
+				src: 'projects/glo/hilo-8'
 			}
 		]
 	},

@@ -166,7 +166,7 @@ export const site = {
 	city: 'Rome, IT',
 	agency: { name: 'Arsenale 23', url: 'https://www.arsenale23.com' },
 	socials: [
-		{ label: 'Instagram', url: 'https://www.instagram.com/rinktonic/' },
+		{ label: 'Instagram', url: 'https://www.instagram.com/rxink.png/' },
 		{ label: 'LinkedIn', url: 'https://www.linkedin.com/in/riccardopichi/' },
 		{ label: 'GitHub', url: 'https://github.com/RxInKvision' }
 	]

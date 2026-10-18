@@ -43,8 +43,8 @@ export const ui = {
 		at: { en: 'Currently at', it: 'Attualmente in' }
 	},
 	intro: {
-		en: 'I’m Riccardo, Art Director and Creative Technologist at Arsenale 23 in Rome. I work across direction, photography and technology, and I care about the craft behind each of them: preparation, light, editing, detail. I use AI where it helps the work.',
-		it: 'Sono Riccardo, Art Director e Creative Technologist in Arsenale 23, a Roma. Lavoro tra regia, fotografia e tecnologia, e mi interessa il mestiere che c’è dietro a ognuna: la preparazione, la luce, il montaggio, i dettagli. Uso l’AI dove aiuta il lavoro.'
+		en: 'I’m Riccardo Pichi, Art Director and Creative Technologist at Arsenale 23 in Rome. I work across direction, photography and technology, and I care about the craft behind each of them: preparation, light, editing, detail. I use AI where it helps the work.',
+		it: 'Sono Riccardo Pichi, Art Director e Creative Technologist in Arsenale 23, a Roma. Lavoro tra regia, fotografia e tecnologia, e mi interessa il mestiere che c’è dietro a ognuna: la preparazione, la luce, il montaggio, i dettagli. Uso l’AI dove aiuta il lavoro.'
 	},
 	selected: { en: 'Selected work', it: 'Lavori selezionati' },
 	allWork: { en: 'All work', it: 'Tutti i lavori' },

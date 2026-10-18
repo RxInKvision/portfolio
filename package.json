@@ -10,7 +10,8 @@
 		"prepare": "svelte-kit sync || echo ''",
 		"media": "node scripts/optimize-media.mjs",
 		"format": "prettier --write .",
-		"reel": "node scripts/make-reel.mjs"
+		"reel": "node scripts/make-reel.mjs",
+		"indexnow": "node scripts/indexnow.mjs"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^4.0.0",

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://portfolio-liard-delta-52.vercel.app/sitemap.xml
+Sitemap: https://riccardopichi.com/sitemap.xml

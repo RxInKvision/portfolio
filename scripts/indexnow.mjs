@@ -1,7 +1,7 @@
 // Tells Bing (and the other IndexNow engines: Yandex, Seznam, Naver…) that pages changed.
 // Run after a deploy: npm run indexnow
 const KEY = 'e9fc3f522d21f9ff8d4ec3c5b86871c6';
-const HOST = 'portfolio-liard-delta-52.vercel.app';
+const HOST = 'riccardopichi.com';
 
 const sitemap = await (await fetch(`https://${HOST}/sitemap.xml`)).text();
 const urlList = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);

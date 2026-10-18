@@ -212,7 +212,7 @@ export const ui = {
 
 export const site = {
 	// Public address of the site: keep in sync with SITE_URL in svelte.config.js.
-	url: 'https://portfolio-liard-delta-52.vercel.app',
+	url: 'https://riccardopichi.com',
 	name: 'Riccardo Pichi',
 	aka: ['RXINK', 'rxink.png', 'rikipiki', 'rink'],
 	brand: 'RXINK',
